@@ -1,0 +1,224 @@
+---
+title: "Quiz 170918"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+# load("./class_roll.RData")
+# class_roll0908 <- readRDS("./class_roll0908.RDs")
+# str(class_roll0908)
+quiz0918 <- read.xlsx("../data/quiz170918.xlsx", 
+                      sheetIndex = 1, 
+                      startRow = 2, 
+                      endRow = 182, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 12)), 
+                      encoding = "UTF-8",
+                      stringsAsFactors = FALSE)
+str(quiz0918)
+names(quiz0918) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "group", "Q1", "Q2", "Q3", "Q4")
+table(quiz0918$Q3)
+quiz0918$dept <- factor(quiz0918$dept)
+quiz0918$year <- factor(quiz0918$year)
+# na.group <- is.na(quiz0918$group)
+# id.na <- quiz0918$id[na.group]
+# id.na
+# quiz0918$group[is.na(quiz0918$group)] <- as.character(class_roll.order$group[is.na(quiz0918$group)])
+quiz0918$group <- factor(quiz0918$group, 
+                         levels = c("Red", "Black"))
+# class_roll.merged <- merge(class_roll0908, quiz0918, 
+#                            by = c("name", "dept", "id", "year", "e.mail"), 
+#                            all = TRUE)
+# str(class_roll.merged)
+# group.wrong <- which(class_roll.merged$group.x != class_roll.merged$group.y)
+# names(class_roll.merged)[c(7, 14)] <- c("Assigned", "Submitted")
+# class_roll.merged[group.wrong, c("id", "Assigned", "Submitted")]
+# pander(class_roll.merged)
+quiz0918$Q1 <- factor(quiz0918$Q1, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("90%", "80%", "50%", "20%", "10%", "무응답"))
+quiz0918$Q2 <- factor(quiz0918$Q2, 
+                      levels = c("가", "나", "다", "라", "무응답"), 
+                      labels = c("대한민국", "영국",  "이탈리아", "미국", "무응답"))
+quiz0918$Q3 <- factor(quiz0918$Q3, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("60% 낮은 임금", "실직 가능성", "나쁜 건강", "활동 불참", "덜 신뢰", "무응답"))
+quiz0918$Q4 <- factor(quiz0918$Q4, 
+                      levels = c("1", "2", "3", "4", "5", "6", "0"))
+quiz0918$Q4.2 <- quiz0918$Q4
+levels(quiz0918$Q4.2[quiz0918$group == "Black"]) <- c("5", "4", "3", "2", "1", "6", "0")
+levels(quiz0918$Q4.2) <- c("더불어민주당", "자유한국당", "국민의당", "바른정당", "정의당", "기타 정당", "없다/모름/응답거절")
+str(quiz0918)
+```
+
+<!--
+### Group Mismatch
+
+```{r, randomization, echo = FALSE, results = 'markup', eval = FALSE}
+pander(class_roll.merged[group.wrong, c("Assigned", "Submitted")])
+```
+-->
+
+### 응답 집계
+
+#### 해방직후 비문해율
+
+`r knitr::include_graphics("../pics/Quiz170918_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, National and Local tax, echo = FALSE}
+tbl.q1 <- table(quiz0918$group, quiz0918$Q1, 
+                useNA = "ifany")
+tbl.q1.a <- addmargins(tbl.q1)
+colnames(tbl.q1.a)[7:8] <- c("결석", "계")
+rownames(tbl.q1.a)[3] <- "계"
+pander(tbl.q1.a)
+```
+
+##### %
+
+```{r, National and Local tax in percentage, echo = FALSE}
+tbl.q1.a.p <- prop.table(tbl.q1.a[3, -(7:8)])
+tbl.q1.a.p.sum <- c(tbl.q1.a.p, 
+                    "계" = sum(tbl.q1.a.p))
+pander(round(tbl.q1.a.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+#### 세대간 문해력 격차
+
+`r knitr::include_graphics("../pics/Quiz170918_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and cabinets, echo = FALSE}
+tbl.q2 <- table(quiz0918$group, 
+                quiz0918$Q2, 
+                useNA = "ifany")
+tbl.q2.a <- addmargins(tbl.q2)
+colnames(tbl.q2.a)[6:7] <- c("결석", "계")
+rownames(tbl.q2.a)[3] <- "계"
+pander(tbl.q2.a)
+pander(chisq.test(tbl.q2, 
+                  simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, tax law and cabinets in percentage, echo = FALSE}
+tbl.q2.a.p <- prop.table(tbl.q2.a[3, -(6:7)])
+tbl.q2.a.p.sum <- c(tbl.q2.a.p, 
+                    "계" = sum(tbl.q2.a.p))
+pander(round(tbl.q2.a.p.sum*100,
+             digits = 1), 
+       caption = "")
+```
+
+#### 문해력 격차의 파급효과
+
+`r knitr::include_graphics("../pics/Quiz170918_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and laymen, echo = FALSE}
+tbl.q3 <- table(quiz0918$group, 
+                quiz0918$Q3, 
+                useNA = "ifany")
+# pander(chisq.test(tbl.q3,
+#                   simulate.p.value = TRUE))
+tbl.q3.a <- addmargins(tbl.q3)
+colnames(tbl.q3.a)[7:8] <- c("결석", "계")
+rownames(tbl.q3.a)[3] <- "계"
+pander(tbl.q3.a)
+```
+
+##### %
+
+```{r, tax law and laymen in percentage, echo = FALSE}
+tbl.q3.a.p <- prop.table(tbl.q3.a[3, -(7:8)])
+tbl.q3.a.p.sum <- c(tbl.q3.a.p, 
+                    "계" = sum(tbl.q3.a.p))
+pander(round(tbl.q3.a.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+### 정당 지지도
+
+#### 질문지 답 문항 순서의 영향
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz170918_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz170918_04_black.png", dpi = NA)`
+
+정당의석 순(Red), 또는 정당의석 역순(Black)에 따라 응답이 달라질 것으로 기대하였으나 통계적으로 유의한 차이는 관찰되지 않고 있습니다.
+
+```{r, investigation, echo = FALSE}
+tbl.q4 <- table(quiz0918$group, 
+                quiz0918$Q4.2, 
+                useNA = "always")
+
+tbl.q4.a <- addmargins(tbl.q4)
+colnames(tbl.q4.a)[8:9] <- c("결석", "계")
+rownames(tbl.q4.a)[4] <- "계"
+pander(tbl.q4.a[-3, ],
+       caption = "")
+# pander(chisq.test(tbl.q4[-3, -5], 
+#                  simulate.p.value = TRUE))
+```
+
+##### % 비교.  
+
+```{r, investigation in percentage, echo = FALSE}
+tbl.q4.no <- table(quiz0918$group, 
+                quiz0918$Q4.2, 
+                useNA = "no")
+tbl.q4.p <- prop.table(tbl.q4.no, 
+                       margin = 1)
+tbl.q4.p.sum <- cbind(tbl.q4.p, 
+                      rowSums(tbl.q4.p))
+colnames(tbl.q4.p.sum)[8] <- "계"
+pander(round(tbl.q4.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+##### % 합계
+
+```{r, overall percentage, echo = FALSE}
+tbl.q4.overall <- table(quiz0918$Q4.2, 
+                        useNA = "no")
+tbl.q4.o.p <- prop.table(tbl.q4.overall)
+tbl.q4.o.p.sum <- c(tbl.q4.o.p, 
+                    sum(tbl.q4.o.p))
+names(tbl.q4.o.p.sum)[8] <- "계"
+pander(round(tbl.q4.o.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz0918.RData")
+```

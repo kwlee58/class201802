@@ -1,0 +1,61 @@
+---
+title: "How is my lecture?"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width = 180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz1106 <- read.xlsx("../data/motive_1106.xlsx", 1, startRow = 2, endRow = 182, colIndex = c(3:7, 9:11), colClasses = c(rep("character", 8)), stringsAsFactors = FALSE)
+str(quiz1106)
+names(quiz1106) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "group", "Q1")
+quiz1106$dept <- factor(quiz1106$dept)
+quiz1106$year <- factor(quiz1106$year)
+quiz1106$group <- factor(quiz1106$group, levels = c("Red", "Black"))
+quiz1106$Q1[is.na(quiz1106$Q1)] <- 5
+# quiz1106$Q2[is.na(quiz1106$Q2)] <- 5
+quiz1106$Q1 <- factor(quiz1106$Q1, 
+                      levels = c("5", "3", "1", "결석"), 
+                      labels = c("흥미 있다", "흥미 없다", "매우 흥미없다", "결석"))
+# quiz1106$Q2 <- factor(quiz1106$Q2, 
+#                       levels = c("5", "3", "1", "결석"), 
+#                       labels = c("흥미 있다", "흥미 없다", "매우 흥미없다", "결석"))
+str(quiz1106)
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz1106))
+```
+
+## 강의 중심 수업(성장과 분배)은 흥미있는가?
+
+### 집계
+
+```{r, echo = FALSE}
+tbl.q1 <- table(quiz1106$group, quiz1106$Q1, useNA = "no")
+Q1.tbl.am <- addmargins(tbl.q1)
+colnames(Q1.tbl.am)[5] <- "계"
+rownames(Q1.tbl.am)[3] <- "계"
+pander(Q1.tbl.am[, ])
+```
+
+### %
+
+```{r, echo = FALSE}
+pander(round(prop.table(Q1.tbl.am[, -(4:5)], margin = 1)[3, ] * 100, digits = 1))
+# pander(chisq.test(tbl.q1[-3, ], simulate.p.value = TRUE))
+```
+

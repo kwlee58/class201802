@@ -1,0 +1,181 @@
+---
+title: "Quiz 171101"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz1101 <- read.xlsx("../data/quiz171101.xlsx", 
+                      1, 
+                      startRow = 2, 
+                      endRow = 182, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 11)), 
+                      stringsAsFactors = FALSE)
+str(quiz1101)
+names(quiz1101) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "group", "Q1", "Q2", "Q3", "Q4")
+quiz1101$dept <- factor(quiz1101$dept)
+quiz1101$year <- factor(quiz1101$year)
+quiz1101$group <- factor(quiz1101$group, 
+                         levels = c("Red", "Black"))
+quiz1101$Q1 <- factor(quiz1101$Q1, 
+                      levels = 1:4, 
+                      labels = c("높았던 시기에 높았다", 
+                                 "높이면 높아진다", 
+                                 "높았던 시기에 많았다", 
+                                 "높이면 많아진다"))
+quiz1101$Q2 <- factor(quiz1101$Q2, 
+                      levels = 1:4, 
+                      labels = c("황금기 함께 상승", 
+                                 "신자유주의시기 함께 상승", 
+                                 "신자유주의시기 생산성 상승", 
+                                 "신자유주의시기 임금 상승"))
+quiz1101$Q3 <- factor(quiz1101$Q3, levels = c(1:4, "무응답"), 
+                      labels = c("임금 상승 미흡", 
+                                 "고임금 상승률 가속", 
+                                 "임금격차 심화", 
+                                 "중산층 임금 회복세",
+                                 "무응답"))
+quiz1101$Q4 <- factor(quiz1101$Q4, levels = c(1:5, 9, "무응답"), 
+                      labels = c("대통령중임제", 
+                                 "이원집정부제", 
+                                 "의원내각제", 
+                                 "현재의 대통령 단임제", 
+                                 "기타", 
+                                 "모름/무응답",
+                                 "불참"))
+# quiz1101$Q4.2 <- quiz1101$Q4
+# levels(quiz1101$Q4.2) <- c("찬성", "반대", "모름/무응답")
+str(quiz1101)
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz1101))
+```
+
+### 퀴즈 응답 비교
+
+#### 최고한계세율과 소득증가율
+
+`r knitr::include_graphics("../pics/Quiz171101_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, echo = FALSE}
+Q1.tbl.am <- addmargins(table(quiz1101$group, quiz1101$Q1, exclude = NULL), margin = 1)
+colnames(Q1.tbl.am)[5] <- c("결석")
+rownames(Q1.tbl.am)[3] <- "계"
+pander(Q1.tbl.am, caption = "최고한계세율과 소득증가율")
+pander(chisq.test(Q1.tbl.am[-3, 1:5], simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, echo = FALSE}
+pander(round(prop.table(Q1.tbl.am, margin = 1)[3, ] * 100, digits = 1))
+```
+
+#### 생산성과 임금
+
+`r knitr::include_graphics("../pics/Quiz171101_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, state arithmetic, echo = FALSE}
+Q2.tbl.am <- addmargins(table(quiz1101$group, quiz1101$Q2, exclude = NULL), margin = 1)
+colnames(Q2.tbl.am)[5] <- "결석"
+rownames(Q2.tbl.am)[3] <- "계"
+pander(Q2.tbl.am, "생산성과 임금")
+pander(chisq.test(Q2.tbl.am[-3, 1:5], simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, state arithmetic in percentage, echo = FALSE}
+pander(round(prop.table(Q2.tbl.am, margin = 1)[3, ]*100, digits = 1), caption = "생산성과 임금")
+```
+
+#### 생산성과 평균 및 중위임금(1973 ~ 2014)
+
+`r knitr::include_graphics("../pics/Quiz171101_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, labour force, echo = FALSE}
+Q3.tbl.am <- addmargins(table(quiz1101$group, quiz1101$Q3, exclude = NULL), margin = 1)
+colnames(Q3.tbl.am)[5:6] <- c("불참", "결석")
+rownames(Q3.tbl.am)[3] <- "계"
+pander(Q3.tbl.am, caption = "생산성과 평균 및 중위 임금")
+pander(chisq.test(Q3.tbl.am[-3, 1:6], simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, labour force in percentage, echo = FALSE}
+pander(round(prop.table(Q3.tbl.am, margin = 1)[3, ]*100, digits = 1), 
+       caption = "생산성과 평균 및 중위임금")
+```
+
+### 통치권력구조의 개헌 방향
+
+#### 부연설명의 효과
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz171101_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz171101_04_black.png", dpi = NA)`
+
+##### 설문 원문
+
+`r knitr::include_graphics("../pics/중앙일보_설문.png", dpi = 72)`
+
+##### 집계표 발췌
+
+`r knitr::include_graphics("../pics/중앙일보_집계표.png", dpi = NA)`
+
+##### 집계표. 
+통치권력구조 중 어느 형태에 부연설명을 하였는가(Red는 이원집정부제와 의원내각제에 부연설명, Black은 부연설명 없음)에 따라 응답이 달라질 것으로 기대하였으나 관찰된 차이는 통계적으로 유의한 수준은 아님.
+
+```{r, anti-terror law, echo = FALSE}
+Q4.tbl.e <- table(quiz1101$group, quiz1101$Q4, exclude = NULL)
+Q4.tbl.am <- addmargins(Q4.tbl.e, margin = 1)
+colnames(Q4.tbl.am)[7:8] <- c("불참", "결석")
+rownames(Q4.tbl.am)[3] <- "계"
+pander(Q4.tbl.am, caption = "통치권력구조의 개헌 방향")
+pander(chisq.test(Q4.tbl.e[, -(7:8)], simulate.p.value = TRUE))
+```
+
+##### % 비교.  
+
+```{r, anti-terror law in percentage, echo = FALSE}
+Q4.tbl <- table(quiz1101$group, quiz1101$Q4)
+pander(round(prop.table(Q4.tbl[, -7], margin = 1) * 100, digits = 1))
+```
+
+#### 합산
+
+```{r, percentage in sum, echo = FALSE}
+Q4.tbl.am.2 <- addmargins(Q4.tbl, margin = 1)
+pander(round(prop.table(Q4.tbl.am.2[3, ]) * 100, digits = 1))
+```
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz1101.RData")
+```

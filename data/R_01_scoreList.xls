@@ -1,0 +1,496 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<script language=javascript>
+
+	var commonResultMessage = "null";
+	if(commonResultMessage=="" || commonResultMessage=="null") {
+		commonResultMessage = "null";
+	}
+	var localeKey = "ko";
+</script>
+ 
+
+<head>
+<title> Score_List_Save_file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+
+<table width="99%" border="1"><tr> 
+	<td valign="top" style="padding:25 5 25 5;">
+    
+<!-- Body 시작 -->
+<form name="scoreForm" method="post" action="/Score.do">
+	<table border="0" cellspacing="0" cellpadding="0"><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+			과목명&nbsp;:&nbsp;
+			응용프로그래밍:R	
+		</td>
+	</tr></table><br/>
+  
+	<table border="1" cellspacing="0" cellpadding="0" >
+	<tr>
+		<td> 	NO </td>
+		<td>	이름	</td>
+		<td style="mso-number-format:'\@'">	학번	</td>		
+		
+			<td>	총점	</td>
+		
+		
+			
+				
+				
+				
+					<td>		중간고사		</td>
+				
+
+			
+				
+				
+				
+					<td>		과제		</td>
+				
+
+			
+				
+				
+				
+					<td>		프로젝트		</td>
+				
+
+			
+				
+				
+				
+					<td>		출석(오프라인)		</td>
+				
+
+			
+		
+	</tr>
+	
+				
+					
+		
+			<tr>
+				<td>		1									</td>
+				<td>		유현재		</td>
+				<td>		20122224			</td>
+				
+					
+					<td>		90.5			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		13.6		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.9		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		2									</td>
+				<td>		임일화		</td>
+				<td>		20123431			</td>
+				
+					
+					<td>		77.4			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		7.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		35.5		</td>
+						
+						
+					
+						
+						
+						
+							<td>		15.7		</td>
+						
+						
+					
+						
+						
+						
+							<td>		19.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		3									</td>
+				<td>		서강현		</td>
+				<td>		20123719			</td>
+				
+					
+					<td>		87.3			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		10.4		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.9		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		4									</td>
+				<td>		김수빈		</td>
+				<td>		20133406			</td>
+				
+					
+					<td>		82.9			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		7.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		15.7		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		5									</td>
+				<td>		이준석		</td>
+				<td>		20133429			</td>
+				
+					
+					<td>		87.7			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		12.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		15.7		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		6									</td>
+				<td>		변아름		</td>
+				<td>		20147301			</td>
+				
+					
+					<td>		87.4			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		11.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		7									</td>
+				<td>		최남혁		</td>
+				<td>		20147303			</td>
+				
+					
+					<td>		79.5			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		9.6		</td>
+						
+						
+					
+						
+						
+						
+							<td>		35.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.9		</td>
+						
+						
+					
+						
+						
+						
+							<td>		18.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		8									</td>
+				<td>		강소현		</td>
+				<td>		20153301			</td>
+				
+					
+					<td>		86.9			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		11.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		15.7		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		9									</td>
+				<td>		이민정		</td>
+				<td>		20163237			</td>
+				
+					
+					<td>		86.6			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		10.4		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+			<tr>
+				<td>		10									</td>
+				<td>		한호		</td>
+				<td>		20163260			</td>
+				
+					
+					<td>		89.0			</td>		
+							
+				
+						
+					
+						
+						
+						
+							<td>		12.8		</td>
+						
+						
+					
+						
+						
+						
+							<td>		40.0		</td>
+						
+						
+					
+						
+						
+						
+							<td>		16.2		</td>
+						
+						
+					
+						
+						
+						
+							<td>		20.0		</td>
+						
+			
+			</tr>
+		
+	
+	</table>
+
+	
+
+</form>	
+</body>
+</html>

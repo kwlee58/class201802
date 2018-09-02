@@ -1,0 +1,187 @@
+---
+title: "Quiz 180521 : Framing Effects"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+library(magrittr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width = 180)
+```
+
+```{r, data, echo = FALSE, results = 'hide', warning = FALSE}
+quiz0521 <- "../data/quiz180521.xlsx" %>% 
+  read.xlsx(sheetIndex = 1, startRow = 2, endRow = 182, 
+            colIndex = c(3:7, 9:14), colClasses = c(rep("character", 11)), 
+            stringsAsFactors = FALSE)
+quiz0521 %>% str
+names(quiz0521) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "group", "Q1", "Q2", "Q3", "Q4")
+quiz0521$dept %<>% factor
+quiz0521$year %<>% factor
+quiz0521$group %<>% factor(levels = c("Red", "Black"))
+BFI_ans <- strsplit("개방성,성실성,외향성,친화성,신경성", split = ",")
+BFI_score <- quiz0521$Q1 %>% 
+  strsplit(split = ",") %>%
+  sapply(function(x) ifelse(x == unlist(BFI_ans), 1, 0)) %>%
+  apply(MARGIN = 2, sum) %>%
+  factor(levels = 0:5)
+MI_ans <- strsplit("신체운동,음악,공간,자기성찰,자연친화,논리수학,언어,인간친화", split = ",")
+MI_score <- quiz0521$Q2 %>% 
+  strsplit(split = ",") %>%
+  sapply(function(x) ifelse(x == unlist(MI_ans), 1, 0)) %>%
+  apply(2, sum) %>%
+  factor(levels = 0:8)
+quiz0521$Q3 %<>% factor(levels = c("가", "나", "다", "라", "마", "무응답"), 
+                        labels = c("언어", "논리수학", "인간친화", "자기성찰", "자연친화", "불참"))
+quiz0521$Q4 %<>% factor(levels = c("가", "나", "무응답"),
+                        labels = c("실업률10%(취업률90%), 인플레이션 12%", "실업률5%(취업률95%), 인플레이션 17%", "불참"))
+str(quiz0521)
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz0521))
+```
+
+### 퀴즈 응답
+
+#### BFI 줄 긋기
+
+`r knitr::include_graphics("../pics/Quiz171120_Q1.png", dpi = NA)`
+
+##### 몇 개나 맞추나?
+
+```{r, echo = FALSE}
+BFI_tbl_a <- BFI_score %>% 
+  table(quiz0521$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.)) 
+colnames(BFI_tbl_a)[7] <- "결석"
+BFI_tbl_a %>% pander
+```
+
+##### 몇 개나 맞추나? (%)
+
+```{r, BFi percentage, echo = FALSE}
+BFI_tbl_a %>% 
+  `[`(3, -(7:8)) %>%
+  prop.table %>%
+  `*`(100) %>%
+  c(., "계" = sum(.)) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
+```
+
+#### 다중지능 짝 짓기
+
+`r knitr::include_graphics("../pics/Quiz171120_Q2.png", dpi = NA)`
+
+##### 몇 개나 맞추나?
+
+```{r, MI, echo = FALSE, warning = FALSE}
+MI_tbl_a <- MI_score %>% 
+  table(quiz0521$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.)) 
+colnames(MI_tbl_a)[10] <- "결석"
+MI_tbl_a %>% pander
+```
+
+##### 몇 개나 맞추나? (%)
+
+```{r, MI percentage, echo = FALSE}
+MI_tbl_a %>% 
+  `[`(3, -(10:11)) %>%
+  prop.table %>%
+  `*`(100) %>%
+  c(., "계" = sum(.)) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
+```
+
+#### 성공한 사람들의 공통점
+
+`r knitr::include_graphics("../pics/Quiz180521_Q3.png", dpi = NA)`
+
+##### 자기성찰지능의 중요성
+
+```{r, Power of 3, echo = FALSE}
+tbl_q3_a <- quiz0521$Q3 %>%
+  table(quiz0521$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q3_a)[6:8] <- c("불참", "결석", "계")
+rownames(tbl_q3_a)[3] <- "계"
+tbl_q3_a %>% 
+  pander
+tbl_q3_a %>%
+  `[`(-3, -(6:7)) %>% 
+  chisq.test(simulate.p.value = TRUE, B = 2000) %>%
+  pander
+```
+
+##### 자기성찰지능 (%)
+
+```{r, Power of 3 in percentage, echo = FALSE}
+tbl_q3_a %>%
+  `[`(3, -(6:8)) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+### Framing Effect
+
+#### 실업률과 취업률
+
+##### Red
+
+`r knitr::include_graphics("../pics/Quiz180521_Q4_Red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz180521_Q4_Black.png", dpi = NA)`
+
+
+##### 실업률이 10%인 것과 취업률이 90%인 것은 같은 내용임에도 인플레이션과 연계하였울 때 반응이 다르게 나타날 것으로 기대하였으나 통계적으로 유의한 수준은 아님.
+
+```{r, Framing Effect, echo = FALSE}
+tbl_q4_a <- quiz0521$Q4 %>%
+  table(quiz0521$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q4_a)[3:5] <- c("불참", "결석", "계")
+rownames(tbl_q4_a) <- c("실업률 프레임", "취업률 프레임", "계")
+tbl_q4_a %>% 
+  pander
+tbl_q4_a %>%
+  `[`(-3, -(3:5)) %>%
+  chisq.test(simulate.p.value = FALSE) %>%
+  pander
+```
+
+##### % 비교.  
+
+```{r, Framing effects in percentage, echo = FALSE}
+tbl_q4_a %>% 
+  `[`(-3, -(3:5)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+
+```{r, save, echo = FALSE}
+#save.image("../R/quiz0521.rda")
+```

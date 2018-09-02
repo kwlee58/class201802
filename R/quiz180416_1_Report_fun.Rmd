@@ -1,0 +1,317 @@
+---
+title: "Quiz 180416-1"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(magrittr)
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+read_quiz <- function(x, endRow = 182) {
+  x %>% 
+  read.xlsx(sheetIndex = 1, 
+            startRow = 2, 
+            endRow = endRow, 
+            colIndex = c(3:7, 9:14), 
+            colClasses = c(rep("character", 11)), 
+            stringsAsFactors = FALSE)
+}
+quiz0416_1 <- read_quiz("../data/quiz180416_1.xlsx")
+labs <- list(Q1 = c("대한민국", "일본", "독일", "미국", "캐나다"),
+             Q2 = c("일본 5.7%", "OECD 평균 11.9%", 
+                    "룩셈부르크 15.1%", "대한민국 28.2%"),
+             Q3 = c("OECD 평균 21.9%", "터키 12.8%", 
+                    "칠레 10.2%", "한국 10.2%", "멕시코 7.4%"))
+data_setup <- function(x, labs = ""){
+  v_names <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
+names(x) <- v_names
+x$dept %<>% factor
+x$year %<>% factor
+x$group %<>% factor(levels = c("Red", "Black"))
+Q_levels <- c("가", "나", "다", "라", "마")
+#> for loop 로 바꿨으면 하는 부분
+N_Q1 <- x$Q1 %>% unique %>% length %>% `-`(1)
+Q1_levels <- Q_levels[1:N_Q1]
+Q1_labs <- labs$Q1
+if (x$Q1 %>% `%in%`("무응답") %>% any){
+  N_Q1 <- N_Q1 - 1
+  Q1_levels <- c(Q_levels[1:N_Q1], "무응답")
+  Q1_labs <- c(Q1_labs, "불참")
+} 
+N_Q2 <- x$Q2 %>% unique %>% length %>% `-`(1)
+Q2_levels <- Q_levels[1:N_Q2]
+Q2_labs <- labs$Q2
+if (x$Q2 %>% `%in%`("무응답") %>% any){
+  N_Q2 <- N_Q2 - 1
+  Q2_levels <- c(Q_levels[1:N_Q2], "무응답")
+  Q2_labs <- c(Q2_labs, "불참")
+} 
+N_Q3 <- x$Q3 %>% unique %>% length %>% `-`(1)
+Q3_levels <- Q_levels[1:N_Q3]
+Q3_labs <- labs$Q3
+if (x$Q3 %>% `%in%`("무응답") %>% any){
+  N_Q3 <- N_Q3 - 1
+  Q3_levels <- c(Q_levels[1:N_Q3], "무응답")
+  Q3_labs <- c(Q3_labs, "불참")
+} 
+#> 까지
+x$Q1 %<>% factor(levels = Q1_levels, labels = Q1_labs)
+x$Q2 %<>% factor(levels = Q2_levels, labels = Q2_labs)
+x$Q3 %<>% factor(levels = Q3_levels, labels = Q3_labs)
+Q_list <- list(x = x, N_Q1 = N_Q1, N_Q2 = N_Q2, N_Q3 = N_Q3)
+return(Q_list)
+}
+Q_list <- quiz0416_1 %>% 
+  data_setup(labs = labs)
+quiz0416_1 <- Q_list$x
+#> 결석 인원이 일정치 않아 Q4에 어떤 값들이 있는지 `table(exclude = NULL)`로 파악.
+quiz0416_1$Q4 %>% table(exclude = NULL)
+#> 몇번째에 이상한 `" "`가 있는지
+odd_id <- quiz0416_1$Q4 %>%
+  `==`(" ") %>%
+  which
+#  which(quiz0416_1$Q4 == " ")
+#> 65번 학생이 Black 에 속하므로 빈 칸, 표시하지 않은 것, 의 의미는 장기기증의사가 없는 것임. 
+quiz0416_1$Q4[odd_id] <- "X"
+#> Q1 ~ Q4 모두 응답을 안한 사람 (결석)과 일부 항목만 응답을 안한 사람 (불참) 파악
+any_na <- quiz0416_1[, 7:10] %>%
+  apply(MARGIN = 1, 
+        FUN = {. %>% is.na %>% any}) %>%
+  which
+all_na  <- quiz0416_1[, 7:10] %>%
+  apply(MARGIN = 1, 
+        FUN = {. %>% is.na %>% all}) %>%
+  which
+odd_id_2 <- setdiff(any_na, all_na)
+#> 그룹별 `Q4` 응답 비교 테이블 작성
+quiz0416_1$Q4 %>%
+  table(quiz0416_1$group, ., exclude = NULL)
+#> `factor`로 변환
+quiz0416_1$Q4 %<>% factor(level = c("O", "X"), 
+                          labels = c("있음", "없음"))
+quiz0416_1 %>% str  
+```
+
+```{r, echo = FALSE, results = 'hide'}
+quiz0416_1 %>% 
+  summary %>% 
+  pander
+```
+
+### 퀴즈 응답 비교
+
+#### OECD 2014년 3분기 실업률 비교
+
+`r knitr::include_graphics("../pics/Quiz171011_01.png", dpi = NA)`
+
+##### 실업률 가장 낮은 나라
+
+```{r, echo = FALSE}
+N_Q1 <- quiz0416_1$Q1 %>% unique %>% length %>% `-`(1)
+tbl_q1_a <- quiz0416_1$Q1 %>%
+  table(quiz0416_1$group, ., useNA = "ifany") %>%
+  addmargins
+if (quiz0416_1$Q1 %>% `%in%`("불참") %>% any){
+  N_Q1 <- N_Q1 - 1
+  colnames(tbl_q1_a)[N_Q1:(N_Q1 + 2)] %<>% `<-`(., c("불참", "결석", "계"))
+  rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+  tbl_q1_a %>% pander
+  tbl_q1_a[-3, -((N_Q1 + 1):(N_Q1 + 3))] %>% 
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+} 
+colnames(tbl_q1_a)[(N_Q1 + 1):(N_Q1 + 2)] %<>% `<-`(., c("결석", "계"))
+# colnames(tbl_q1_a)[6:7] <- c("결석", "계")
+rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+# rownames(tbl_q1_a)[3] <- "계"
+tbl_q1_a %>% pander
+tbl_q1_a[-3, -((N_Q1 + 1):(N_Q1 + 2))] %>% 
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+```
+
+##### 실업률 가장 낮은 나라 (%)
+
+```{r, echo = FALSE}
+if (quiz0416_1$Q1 %>% `%in%`("불참") %>% any) {
+  tbl_q1_a %>% 
+  `[`(3, -((N_Q1 + 1):(N_Q1 + 3))) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+}
+tbl_q1_a %>% 
+  `[`(3, -((N_Q1 + 1):(N_Q1 + 2))) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+#### 자영업자의 비율
+
+`r knitr::include_graphics("../pics/Quiz171011_02.png", dpi = NA)`
+
+##### 제대로 파악한 것은?
+
+```{r, echo = FALSE}
+N_Q2 <- quiz0416_1$Q2 %>% unique %>% length %>% `-`(1)
+tbl_q2_a <- quiz0416_1$Q2 %>%
+  table(quiz0416_1$group, ., useNA = "ifany") %>%
+  addmargins
+if (quiz0416_1$Q2 %>% `%in%`("불참") %>% any){
+  N_Q2 <- N_Q2 - 1
+  colnames(tbl_q2_a)[(N_Q2 + 1):(N_Q2 + 3)] %<>% `<-`(., c("불참", "결석", "계"))
+  rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+  tbl_q2_a %>% pander()
+#  tbl_q2_a[-3, -((N_Q2 + 1):(N_Q2 + 3))] %>% 
+#    chisq.test(simulate.p.value = TRUE) %>% 
+#    pander
+} else {
+colnames(tbl_q2_a)[(N_Q2 + 1):(N_Q2 + 2)] %<>% `<-`(., c("결석", "계"))
+rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+tbl_q2_a %>% pander
+tbl_q2_a[-3, -((N_Q2 + 1) : (N_Q2 + 2))] %>% 
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+}
+```
+
+##### 자영업자의 비율 (%)
+
+```{r, echo = FALSE}
+N_Q2 <- quiz0416_1$Q2 %>% unique %>% length %>% `-`(1)
+if (quiz0416_1$Q2 %>% `%in%`("불참") %>% any) {
+  N_Q2 <- N_Q2 - 1
+  tbl_q2_a %>% 
+  `[`(3, -((N_Q2 + 1):(N_Q2 + 3))) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+} else {
+  tbl_q2_a %>% 
+  `[`(3, -((N_Q2 + 1):(N_Q2 + 2))) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+}
+```
+
+#### 우리나라 GDP 대비 공공사회지출 비중은 터키 아래
+
+`r knitr::include_graphics("../pics/Quiz171011_03.png", dpi = NA)`
+
+##### OECD GDP 대비 공공사회지출 비중
+
+```{r, echo = FALSE}
+tbl_q3_a <- quiz0416_1$Q3 %>%
+  table(quiz0416_1$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q3_a)[6:7] %<>% `<-`(., c("결석", "계"))
+# colnames(tbl_q1_a)[6:7] <- c("결석", "계")
+rownames(tbl_q3_a)[3] %<>% `<-`(., "계")
+# rownames(tbl_q1_a)[3] <- "계"
+tbl_q3_a %>% pander
+tbl_q3_a[-3, -6] %>% 
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+```
+
+##### OECD GDP 대비 공공사회지출 비중 (%)
+
+```{r, echo = FALSE}
+tbl_q3_a %>% 
+  `[`(3, -(6:7)) %>%
+  prop.table %>%
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+### 디폴트 효과
+
+#### 표시하지 않으면 ... 으로 간주합니다의 효과
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz171011_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz171011_04_black.png", dpi = NA)`
+
+표시하지 않으면 장기 기증의사가 있는 것으로 간주하는 경우(Red)와 표시하면 장기 기증의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 기증 의사가 있다고 보는 질문지에 기증 의사 비율이 더 높게 나오는 것으로 알려져 있고, 실제로 통계적으로 유의한 차이가 관찰됨. 어디다 디폴트를 두느냐에 따라 조사결과가 달라짐.
+
+```{r, vote attitude, echo = FALSE}
+tbl_q4_a <- quiz0416_1$Q4 %>%
+  table(quiz0416_1$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q4_a)[3:4] <- c("결석", "계")
+rownames(tbl_q4_a)[3] <- "계"
+#> 카이제곱 테스트
+tbl_q4_a %>% 
+  pander
+tbl_q4_a %>%
+  `[`(-3, -(3:4)) %>%
+  chisq.test(simulate.p.value = FALSE) %>%
+  pander
+```
+
+##### % 비교.  
+
+```{r, echo = FALSE}
+tbl_q4_a %>% 
+  `[`(-3, -(3:4)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+#### 합산(%)
+
+```{r, echo = FALSE}
+tbl_q4_a %>% 
+  `[`(3, -(3:4), drop = FALSE) %>%
+  prop.table %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+### Thinking, Fast and Slow
+
+#### Article
+
+`r knitr::include_graphics("../pics/organ_donation_01.png", dpi = NA)`
+
+#### Facts Found
+
+`r knitr::include_graphics("../pics/organ_donation_02.png", dpi = NA)`
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz0416_1.rda")
+```

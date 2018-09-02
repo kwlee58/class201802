@@ -1,0 +1,224 @@
+---
+title: "Quiz 180416-2"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz0416_2 <- read.xlsx("../data/quiz180416_2.xlsx", 
+                        sheetIndex = 1, 
+                        startRow = 2, 
+                        endRow = 182, 
+                        colIndex = c(3:7, 9:14), 
+                        colClasses = c(rep("character", 11)), 
+                        stringsAsFactors = FALSE)
+str(quiz0416_2)
+names(quiz0416_2) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
+quiz0416_2$dept <- factor(quiz0416_2$dept)
+quiz0416_2$year <- factor(quiz0416_2$year)
+quiz0416_2$group <- factor(quiz0416_2$group, 
+                           levels = c("Red", "Black"))
+quiz0416_2$Q1 <- factor(quiz0416_2$Q1, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("평균:100, 중위값:200", 
+                                 "평균:200, 중위값:100", 
+                                 "평균:1,000, 중위값:100", 
+                                 "평균:100, 중위값:1,000"))
+quiz0416_2$Q2 <- factor(quiz0416_2$Q2, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("평균:100, 중위값:200", 
+                                 "평균:200, 중위값:100", 
+                                 "평균:1,000, 중위값:100", 
+                                 "평균:100, 중위값:1,000"))
+# Q3.na <- setdiff(which(is.na(quiz0416_2$Q3)), which(is.na(quiz0416_2$Q4)))
+# quiz0416_2$Q3[Q3.na] <- "무응답"
+quiz0416_2$Q3 <- factor(quiz0416_2$Q3, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("5%", "10%", "15%", "19.1%", "25%", "불참"))
+#> Q4에 어떤 값들이 있는지 `table(exclude = NULL)`로 파악.
+table(quiz0416_2$Q4, exclude = NULL)
+#> 몇번째에 이상한 `" "`가 있는지
+odds_value <- which(is.na(quiz0416_2$Q4) & !(is.na(quiz0416_2$Q3)))
+quiz0416_2$Q4[odds_value] <- "O"
+table(quiz0416_2$group, quiz0416_2$Q4, exclude = NULL)
+quiz0416_2$Q4 <- factor(quiz0416_2$Q4, 
+                        level = c("O", "X"), 
+                        labels = c("있음", "없음"))
+quiz0416_2$Q4
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz0416_2))
+```
+
+### 퀴즈 응답 비교
+
+#### 평균과 중위값
+
+`r knitr::include_graphics("../pics/Quiz171025_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, echo = FALSE}
+tbl.q1 <- table(quiz0416_2$group, quiz0416_2$Q1, 
+                useNA = "ifany")
+tbl.q1.a <- addmargins(tbl.q1)
+colnames(tbl.q1.a)[5:6] <- c("결석", "계")
+rownames(tbl.q1.a)[3] <- "계"
+pander(tbl.q1.a)
+# pander(chisq.test(tbl.q1.a[-3, -4], simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, echo = FALSE}
+tbl.q1.a.p <- prop.table(tbl.q1.a[3, -(5:6)])
+tbl.q1.a.p.sum <- c(tbl.q1.a.p, 
+                    "계" = sum(tbl.q1.a.p))
+pander(round(tbl.q1.a.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+#### 평균과 중위값
+
+`r knitr::include_graphics("../pics/Quiz171025_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, self-employed, echo = FALSE}
+tbl.q2 <- table(quiz0416_2$group, 
+                quiz0416_2$Q2, 
+                useNA = "ifany")
+tbl.q2.a <- addmargins(tbl.q2)
+colnames(tbl.q2.a)[5:6] <- c("결석", "계")
+rownames(tbl.q2.a)[3] <- "계"
+pander(tbl.q2.a)
+# pander(chisq.test(tbl.q2, 
+#                   simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, self-employed in percentage, echo = FALSE}
+tbl.q2.a.p <- prop.table(tbl.q2.a[3, -(6:7)])
+tbl.q2.a.p.sum <- c(tbl.q2.a.p, 
+                    "계" = sum(tbl.q2.a.p))
+pander(round(tbl.q2.a.p.sum * 100,
+             digits = 1), 
+       caption = "")
+```
+
+#### 연 500만원 이하 근로소득자의 비율
+
+`r knitr::include_graphics("../pics/Quiz171025_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, public expenditure, echo = FALSE}
+tbl.q3 <- table(quiz0416_2$group, 
+                quiz0416_2$Q3, 
+                useNA = "ifany")
+# pander(chisq.test(tbl.q3,
+#                   simulate.p.value = TRUE))
+tbl.q3.a <- addmargins(tbl.q3)
+colnames(tbl.q3.a)[6:8] <- c("불참", "결석", "계")
+rownames(tbl.q3.a)[3] <- "계"
+pander(tbl.q3.a)
+```
+
+##### %
+
+```{r, public expenditure in percentage, echo = FALSE}
+tbl.q3.a.p <- prop.table(tbl.q3.a[3, -(6:8)])
+tbl.q3.a.p.sum <- c(tbl.q3.a.p, 
+                    "계" = sum(tbl.q3.a.p))
+pander(round(tbl.q3.a.p.sum * 100, 
+             digits = 1), 
+       caption = "")
+```
+
+### 디폴트 효과
+
+#### 표시하지 않으면 ... 으로 간주합니다의 효과
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz171025_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz171025_04_black.png", dpi = NA)`
+
+표시하지 않으면 헌혈 의사가 있는 것으로 간주하는 경우(Red)와 표시하면 헌혈 의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 헌혈 의사가 있다고 보는 질문지에 헌혈 의사 비율이 더 높게 나오는 것으로 관찰되기는 하나,통계적으로도 유의한 수준은 아니다. 
+
+```{r, vote attitude, echo = FALSE}
+tbl.q4 <- table(quiz0416_2$group, 
+                quiz0416_2$Q4, 
+                useNA = "always")
+tbl.q4.a <- addmargins(tbl.q4)
+colnames(tbl.q4.a)[3:4] <- c("결석", "계")
+rownames(tbl.q4.a)[4] <- "계"
+pander(tbl.q4.a[-3, ],
+       caption = "")
+pander(chisq.test(tbl.q4[-3, -(3:4)], 
+                  simulate.p.value = FALSE))
+```
+
+##### % 비교.  
+
+```{r, vote attitude in percentage, echo = FALSE}
+tbl.q4.no <- table(quiz0416_2$group, 
+                quiz0416_2$Q4, 
+                useNA = "no")
+tbl.q4.p <- prop.table(tbl.q4.no[, -3], 
+                       margin = 1)
+tbl.q4.p.sum <- cbind(tbl.q4.p, 
+                      rowSums(tbl.q4.p))
+colnames(tbl.q4.p.sum)[3] <- "계"
+pander(round(tbl.q4.p.sum * 100, 
+             digits = 1), 
+       caption = "")
+```
+
+#### 합산(%)
+
+```{r, percentage in sum, echo = FALSE}
+tbl.q4.overall <- table(quiz0416_2$Q4, 
+                        useNA = "no")
+tbl.q4.o.p <- prop.table(tbl.q4.overall[-3])
+tbl.q4.o.p.sum <- c(tbl.q4.o.p, 
+                    sum(tbl.q4.o.p))
+names(tbl.q4.o.p.sum)[3] <- "계"
+pander(round(tbl.q4.o.p.sum * 100, 
+             digits = 1), 
+       caption = "")
+```
+
+### Thinking, Fast and Slow
+
+#### Article
+
+`r knitr::include_graphics("../pics/organ_donation_01.png", dpi = NA)`
+
+#### Facts Found
+
+`r knitr::include_graphics("../pics/organ_donation_02.png", dpi = NA)`
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz0416_2.RData")
+```

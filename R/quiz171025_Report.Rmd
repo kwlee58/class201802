@@ -1,0 +1,188 @@
+---
+title: "Quiz 171025"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz1025 <- read.xlsx("../data/quiz171025.xlsx", 
+                      sheetIndex = 1, 
+                      startRow = 2, 
+                      endRow = 182, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 11)), 
+                      stringsAsFactors = FALSE)
+str(quiz1025)
+names(quiz1025) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "group", "Q1", "Q2", "Q3", "Q4")
+quiz1025$dept <- factor(quiz1025$dept)
+quiz1025$year <- factor(quiz1025$year)
+quiz1025$group <- factor(quiz1025$group, 
+                         levels = c("Red", "Black"))
+quiz1025$Q1 <- factor(quiz1025$Q1, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("평균:100, 중위값:200", 
+                                 "평균:200, 중위값:100", 
+                                 "평균:1,000, 중위값:100", 
+                                 "평균:100, 중위값:1,000"))
+quiz1025$Q2 <- factor(quiz1025$Q2, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("평균:100, 중위값:200", 
+                                 "평균:200, 중위값:100", 
+                                 "평균:1,000, 중위값:100", 
+                                 "평균:100, 중위값:1,000"))
+# Q3.na <- setdiff(which(is.na(quiz1025$Q3)), which(is.na(quiz1025$Q4)))
+# quiz1025$Q3[Q3.na] <- "무응답"
+quiz1025$Q3 <- factor(quiz1025$Q3, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("5%", "10%", "15%", "19.1%", "25%", "불참"))
+quiz1025$Q4.2 <- quiz1025$Q4
+# Red <- quiz1025$group == "Red"
+# Black <- quiz1025$group == "Black"
+# quiz1025$Q4.2[Red & quiz1025$Q4.2 == "No Check"] <- "있음"
+# quiz1025$Q4.2[Red & quiz1025$Q4.2 == "Check"] <- "없음"
+# quiz1025$Q4.2[Black & quiz1025$Q4.2 == "No Check"] <- "없음"
+# quiz1025$Q4.2[Black & quiz1025$Q4.2 == "Check"] <- "있음"
+# quiz1025$Q4.2[quiz1025$Q4.2 == "NA"] <- NA
+quiz1025$Q4.2 <- factor(quiz1025$Q4.2, 
+                        level = c("O", "X"), 
+                        labels = c("있음", "없음"))
+quiz1025$Q4
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz1025))
+```
+
+### 퀴즈 응답 비교
+
+#### 평균과 중위값
+
+`r knitr::include_graphics("../pics/Quiz171025_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, PDI, echo = FALSE}
+Q1.tbl.am <- addmargins(table(quiz1025$group, quiz1025$Q1, exclude = NULL), margin = 1)
+colnames(Q1.tbl.am)[5] <- c("결석")
+rownames(Q1.tbl.am)[3] <- "계"
+pander(Q1.tbl.am, caption = "평균과 중위값")
+pander(chisq.test(Q1.tbl.am[-3, 1:5], simulate.p.value = TRUE))
+# pander(addmargins(table(quiz1025$group, quiz1025$Q1, exclude = NULL), margin=1))
+```
+
+##### %
+
+```{r, PDI in percentage, echo = FALSE}
+pander(round(prop.table(Q1.tbl.am, margin = 1)[3, ]*100, digits = 1))
+# pander(round(prop.table(addmargins(table(quiz1025$group, quiz1025$Q1, exclude = NULL), margin=1), margin=1)[4,]*100, digits=1))
+```
+
+#### 평균과 중위값
+
+`r knitr::include_graphics("../pics/Quiz171025_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, self-employed, echo = FALSE}
+Q2.tbl.am <- addmargins(table(quiz1025$group, quiz1025$Q2, exclude = NULL), margin = 1)
+colnames(Q2.tbl.am)[5] <- "결석"
+rownames(Q2.tbl.am)[3] <- "계"
+pander(Q2.tbl.am, "자영업자의 비율")
+pander(chisq.test(Q2.tbl.am[-3, 1:5], simulate.p.value = TRUE))
+# pander(addmargins(table(quiz1025$group, quiz1025$Q2, exclude = NULL), margin=1))
+```
+
+##### %
+
+```{r, self-employed in percentage, echo = FALSE}
+pander(round(prop.table(Q2.tbl.am, margin = 1)[3, ]*100, digits = 1), caption = "자영업자의 비율")
+# pander(round(prop.table(addmargins(table(quiz1025$group, quiz1025$Q2, exclude = NULL), margin=1), margin=1)[4,]*100, digits=1), caption="자영업자의 어려움")
+```
+
+#### 연500만원 이하 근로소득자의 비율
+
+`r knitr::include_graphics("../pics/Quiz171025_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, public expenditure, echo = FALSE}
+Q3.tbl.am <- addmargins(table(quiz1025$group, quiz1025$Q3, exclude = NULL), margin = 1)
+colnames(Q3.tbl.am)[6:7] <- c("불참", "결석")
+rownames(Q3.tbl.am)[3] <- "계"
+pander(Q3.tbl.am, caption = "공공사회지출 비중")
+pander(chisq.test(Q3.tbl.am[-3, 1:7], simulate.p.value = TRUE))
+# pander(addmargins(table(quiz1025$group, quiz1025$Q3, exclude = NULL), margin=1))
+```
+
+##### %
+
+```{r, public expenditure in percentage, echo = FALSE}
+pander(round(prop.table(Q3.tbl.am, margin = 1)[3, ]*100, digits = 1), caption = "공공사회지출 비중")
+# pander(round(prop.table(addmargins(table(quiz1025$group, quiz1025$Q3, exclude = NULL), margin = 1), margin = 1)[4,]*100, digits = 1), caption = "공공사회지출 비중")
+```
+
+### 디폴트 효과
+
+#### 표시하지 않으면 ... 으로 간주합니다의 효과
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz171025_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz171025_04_black.png", dpi = NA)`
+
+##### 표시하지 않으면 헌혈 의사가 있는 것으로 간주하는 경우(Red)와 표시하면 헌혈 의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 헌혈 의사가 있다고 보는 질문지에 헌혈 의사 비율이 더 높게 나오는 것으로 관찰되고,  통계적으로도 유의한 수준이다. 어디다 디폴트를 두느냐에 따라 조사결과가 달라진 사례임.
+
+```{r, vote attitude, echo = FALSE}
+Q4.tbl.e <- table(quiz1025$group, quiz1025$Q4.2, exclude = NULL)
+Q4.tbl.am <- addmargins(Q4.tbl.e, margin = 1)
+colnames(Q4.tbl.am)[3] <- "결석"
+rownames(Q4.tbl.am)[3] <- "계"
+pander(Q4.tbl.am, caption = "헌혈 의사")
+pander(chisq.test(Q4.tbl.e[, -3]))
+```
+
+##### % 비교.  
+
+```{r, vote attitude in percentage, echo = FALSE}
+Q4.tbl <- table(quiz1025$group, quiz1025$Q4.2)
+pander(round(prop.table(Q4.tbl, margin = 1)*100, digits = 1))
+```
+
+#### 합산
+
+```{r, percentage in sum, echo = FALSE}
+Q4.tbl <- table(quiz1025$group, quiz1025$Q4.2)
+Q4.tbl.am.2 <- addmargins(Q4.tbl, margin = 1)
+pander(round(prop.table(Q4.tbl.am.2[3, ])*100, digits = 1))
+```
+
+### Thinking, Fast and Slow
+
+#### Article
+
+`r knitr::include_graphics("../pics/organ_donation_01.png", dpi = NA)`
+
+#### Facts Found
+
+`r knitr::include_graphics("../pics/organ_donation_02.png", dpi = NA)`
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz1025.RData")
+```

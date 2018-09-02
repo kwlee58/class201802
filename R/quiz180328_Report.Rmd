@@ -1,0 +1,200 @@
+---
+title: "Quiz 180328"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz0328 <- read.xlsx("../data/quiz180328.xlsx", 
+                      sheetIndex = 1, 
+                      startRow = 2, 
+                      endRow = 182, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 12)), 
+                      encoding = "UTF-8",
+                      stringsAsFactors = FALSE)
+str(quiz0328)
+names(quiz0328) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
+table(quiz0328$Q3)
+quiz0328$dept <- factor(quiz0328$dept)
+quiz0328$year <- factor(quiz0328$year)
+quiz0328$group <- factor(quiz0328$group, 
+                         levels = c("Red", "Black"))
+quiz0328$Q1 <- factor(quiz0328$Q1, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("월간 독서율", "월간 독서량", "월간 도서구입율", "월간 도서구입량"))
+quiz0328$Q2 <- factor(quiz0328$Q2, 
+                      levels = c("가", "나", "다", "라", "마"), 
+                      labels = c("90%", "80%",  "70%", "60%", "50%"))
+quiz0328$Q3 <- factor(quiz0328$Q3, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("90%", "80%",  "70%", "60%", "50%", "불참"))
+quiz0328$Q4 <- factor(quiz0328$Q4, 
+                      levels = c("1", "2", "3", "무응답"))
+quiz0328$Q4.2 <- quiz0328$Q4
+levels(quiz0328$Q4.2[quiz0328$group == "Black"]) <- c("2", "1", "3", "무응답")
+levels(quiz0328$Q4.2) <- c("찬성한다", "반대한다", "모름/기타", "불참")
+str(quiz0328)
+```
+
+### 응답 집계
+
+#### 월간 독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, National and Local tax, echo = FALSE}
+tbl.q1 <- table(quiz0328$group, quiz0328$Q1, 
+                useNA = "ifany")
+tbl.q1.a <- addmargins(tbl.q1)
+colnames(tbl.q1.a)[5:6] <- c("결석", "계")
+rownames(tbl.q1.a)[3] <- "계"
+pander(tbl.q1.a)
+```
+
+##### %
+
+```{r, National and Local tax in percentage, echo = FALSE}
+tbl.q1.a.p <- prop.table(tbl.q1.a[3, -(5:6)])
+tbl.q1.a.p.sum <- c(tbl.q1.a.p, 
+                    "계" = sum(tbl.q1.a.p))
+pander(round(tbl.q1.a.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+#### 20대의 연간독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and cabinets, echo = FALSE}
+tbl.q2 <- table(quiz0328$group, 
+                quiz0328$Q2, 
+                useNA = "ifany")
+tbl.q2.a <- addmargins(tbl.q2)
+colnames(tbl.q2.a)[6:7] <- c("결석", "계")
+rownames(tbl.q2.a)[3] <- "계"
+pander(tbl.q2.a)
+pander(chisq.test(tbl.q2, 
+                  simulate.p.value = TRUE))
+```
+
+##### %
+
+```{r, tax law and cabinets in percentage, echo = FALSE}
+tbl.q2.a.p <- prop.table(tbl.q2.a[3, -(6:7)])
+tbl.q2.a.p.sum <- c(tbl.q2.a.p, 
+                    "계" = sum(tbl.q2.a.p))
+pander(round(tbl.q2.a.p.sum*100,
+             digits = 1), 
+       caption = "")
+```
+
+#### 50대의 연간독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and laymen, echo = FALSE}
+tbl.q3 <- table(quiz0328$group, 
+                quiz0328$Q3, 
+                useNA = "ifany")
+# pander(chisq.test(tbl.q3,
+#                   simulate.p.value = TRUE))
+tbl.q3.a <- addmargins(tbl.q3)
+colnames(tbl.q3.a)[6:8] <- c("불참", "결석", "계")
+rownames(tbl.q3.a)[3] <- "계"
+pander(tbl.q3.a)
+```
+
+##### %
+
+```{r, tax law and laymen in percentage, echo = FALSE}
+tbl.q3.a.p <- prop.table(tbl.q3.a[3, -(6:8)])
+tbl.q3.a.p.sum <- c(tbl.q3.a.p, 
+                    "계" = sum(tbl.q3.a.p))
+pander(round(tbl.q3.a.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+### 대통령 발의 개헌 찬반
+
+#### 부연 설명의 위치에 따른 편향
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz180328_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz180328_04_black.png", dpi = NA)`
+
+찬성 의견에만 부연 설명을 붙일 때(Red)와 반대 의견에만 부연 설명을 붙일 때(Black)에 따라 응답이 달라질 것으로 기대하였는데 매우 통계적으로 유의한 차이가 관찰되었습니다. 찬성 의견에만 자세히 설명한 Red 집단의 찬성 비율이 Black 집단보다 월등히 높을 뿐 아니라 반대 의견에만 자세한 설명을 붙인 Black 집단의 반대 비율이 Red 집단보다 월등히 높습니다. 그런데 모름/기타 기 왜 이렇게 많은가요?
+
+```{r, investigation, echo = FALSE}
+tbl.q4 <- table(quiz0328$group, 
+                quiz0328$Q4.2, 
+                useNA = "always")
+tbl.q4.a <- addmargins(tbl.q4)
+colnames(tbl.q4.a)[4:6] <- c("불참", "결석", "계")
+rownames(tbl.q4.a)[4] <- "계"
+pander(tbl.q4.a[-3, ],
+       caption = "")
+pander(chisq.test(tbl.q4[-3, -5], 
+                  simulate.p.value = TRUE))
+```
+
+##### % 비교.  
+
+```{r, investigation in percentage, echo = FALSE}
+tbl.q4.no <- table(quiz0328$group, 
+                quiz0328$Q4.2, 
+                useNA = "no")
+tbl.q4.p <- prop.table(tbl.q4.no[, -4], 
+                       margin = 1)
+tbl.q4.p.sum <- cbind(tbl.q4.p, 
+                      rowSums(tbl.q4.p))
+colnames(tbl.q4.p.sum)[4] <- "계"
+pander(round(tbl.q4.p.sum * 100, 
+             digits = 1), 
+       caption = "")
+```
+
+##### % 합계
+
+```{r, overall percentage, echo = FALSE}
+tbl.q4.overall <- table(quiz0328$Q4.2, 
+                        useNA = "no")
+tbl.q4.o.p <- prop.table(tbl.q4.overall[-4])
+tbl.q4.o.p.sum <- c(tbl.q4.o.p, 
+                    sum(tbl.q4.o.p))
+names(tbl.q4.o.p.sum)[4] <- "계"
+pander(round(tbl.q4.o.p.sum*100, 
+             digits = 1), 
+       caption = "")
+```
+
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz0328.RData")
+```

@@ -1,0 +1,23 @@
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802[?1034hKee-Wonui-iMac-27:class201802 coop2711$ [KKee-Wonui-iMac-27:class201802 coop2711$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git init
+Initialized empty Git repository in /Users/coop2711/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802/.git/
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.DS_Store[m
+	[31m.Rhistory[m
+	[31m.Rproj.user/[m
+	[31mR/[m
+	[31mclass201802.Rproj[m
+	[31mdata/[m
+	[31mdocs/[m
+	[31mpics/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git add -A .
