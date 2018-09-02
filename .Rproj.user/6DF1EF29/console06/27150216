@@ -21,3 +21,807 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git add -A .
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git commit -m "First commit"
+[master (root-commit) 075ddc5] First commit
+ 780 files changed, 296810 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 .Rhistory
+ create mode 100644 .Rproj.user/6DF1EF29/console06/27150216
+ create mode 100644 .Rproj.user/6DF1EF29/console06/27150216.env
+ create mode 100644 .Rproj.user/6DF1EF29/console06/INDEX001
+ create mode 100644 .Rproj.user/6DF1EF29/pcs/files-pane.pper
+ create mode 100644 .Rproj.user/6DF1EF29/pcs/source-pane.pper
+ create mode 100644 .Rproj.user/6DF1EF29/pcs/windowlayoutstate.pper
+ create mode 100644 .Rproj.user/6DF1EF29/pcs/workbench-pane.pper
+ create mode 100644 .Rproj.user/6DF1EF29/rmd-outputs
+ create mode 100644 .Rproj.user/6DF1EF29/saved_source_markers
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/193E255A
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/2B15F06A
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/3509EA1E
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/38D230E9
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/4D8EDA03
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/5846BA1B
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/5FF39A29
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/65EDD007
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/92A53853
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/A21F630A
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/AF3AD282
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/B3E60593
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/B5770931
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/BC69D5A5
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/E9FBCC19
+ create mode 100644 .Rproj.user/6DF1EF29/sources/prop/INDEX
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/4326B80D-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/483E6B0D
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/483E6B0D-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/5C09C470
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/5C09C470-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/661A850
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/661A850-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/87725AE2
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/87725AE2-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/8A0DF227
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/8A0DF227-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/9E57A253-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/B6F7778D
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/B6F7778D-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/C9A850BA
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/C9A850BA-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/D697FA0B-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/FCCA3F84
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/FCCA3F84-contents
+ create mode 100644 .Rproj.user/6DF1EF29/sources/s-EB5E2ACB/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/15B20129-Red_and_Black_180901_Report/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/15B20129-Red_and_Black_180901_Report/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/23F95EC3-Red_and_Black_180227_data/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/23F95EC3-Red_and_Black_180227_data/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/369678B2-Red_and_Black_180227_Report/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/3E9D45B6-Red_and_Black_180227_roll/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/505C6F8F-quiz180901_Report/1/6DF1EF29EB5E2ACB/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/505C6F8F-quiz180901_Report/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/DA517D73-quiz180227_Report/1/6DF1EF29EB5E2ACB/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/F1420D9B-Red_and_Black_180901_roll/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/F1420D9B-Red_and_Black_180901_roll/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/F8F8D3FC-Red_and_Black_180901_data/1/6DF1EF29980AA2B7/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/F8F8D3FC-Red_and_Black_180901_data/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 R/.DS_Store
+ create mode 100644 R/.Rhistory
+ create mode 100644 R/BFI_MI_1701_data.Rmd
+ create mode 100644 R/BFI_MI_1702.RData
+ create mode 100644 R/BFI_MI_1702_data.Rmd
+ create mode 100644 R/BFI_MI_1801.RData
+ create mode 100644 R/BFI_MI_1801_data.Rmd
+ create mode 100644 R/BFI_MI_1801_data.html
+ create mode 100644 R/BFI_MI_1801v2.RData
+ create mode 100644 R/CS_Final_Records1702.Rmd
+ create mode 100644 R/Class_BFI_MI_1701_report.Rmd
+ create mode 100644 R/Class_BFI_MI_1701_report_Summary.Rmd
+ create mode 100644 R/Class_BFI_MI_1702_report.Rmd
+ create mode 100644 R/Class_BFI_MI_1702_report_Summary.Rmd
+ create mode 100644 R/Class_BFI_MI_1801_report.Rmd
+ create mode 100644 R/Class_BFI_MI_1801_report.html
+ create mode 100644 R/Class_BFI_MI_1801_report_Summary.Rmd
+ create mode 100644 R/Class_BFI_MI_1801_report_Summary.html
+ create mode 100644 R/DA_R_Final_Records1801.Rmd
+ create mode 100644 R/DA_R_Final_Records1801.html
+ create mode 100644 R/DS_Final_Records1801.Rmd
+ create mode 100644 R/DS_Final_Records1801.html
+ create mode 100644 R/Final_Records1701.Rmd
+ create mode 100644 R/Final_Records1701.html
+ create mode 100644 R/Final_Records1702.Rmd
+ create mode 100644 R/Final_Records1702v2.Rmd
+ create mode 100644 R/Final_Records1801.Rmd
+ create mode 100644 R/Final_Records1801.html
+ create mode 100644 R/Final_Records1801v2.Rmd
+ create mode 100644 R/Final_Records1801v2.html
+ create mode 100644 R/Literacy_201701.Rmd
+ create mode 100644 R/Literacy_201702.Rmd
+ create mode 100644 R/Literacy_201702v2.Rmd
+ create mode 100644 R/Literacy_201801.Rmd
+ create mode 100644 R/Literacy_201801.html
+ create mode 100644 R/Media_Effects170517.Rmd
+ create mode 100644 R/Media_Effects170517_Report.Rmd
+ create mode 100644 R/Media_Effects180321.Rmd
+ create mode 100644 R/Media_Effects180321.html
+ create mode 100644 R/Media_Effects180321_Report.Rmd
+ create mode 100644 R/Media_Effects180321_Report.html
+ create mode 100644 R/Odissey_Final_Records1801.Rmd
+ create mode 100644 R/Odissey_Final_Records1801.html
+ create mode 100644 R/Oxford_Happiness1801_Report.Rmd
+ create mode 100644 R/Oxford_Happiness1801_Report.html
+ create mode 100644 R/Oxford_Happiness1801_data.Rmd
+ create mode 100644 R/Oxford_Happiness1801_data.html
+ create mode 100644 R/R_Final_Records1701.Rmd
+ create mode 100644 R/R_Final_Records1701_01.Rmd
+ create mode 100644 R/R_Final_Records1701_02.Rmd
+ create mode 100644 R/R_Final_Records1702.Rmd
+ create mode 100644 R/R_Final_Records1702_01.Rmd
+ create mode 100644 R/R_Final_Records1702_02.Rmd
+ create mode 100644 R/R_Final_Records1801.Rmd
+ create mode 100644 R/R_Final_Records1801.html
+ create mode 100644 R/R_midterm_02_v2.Rmd
+ create mode 100644 R/R_records.RData
+ create mode 100644 R/R_records_01.RData
+ create mode 100644 R/R_records_02.RData
+ create mode 100644 R/Red_and_Black_170303_data_masking.Rmd
+ create mode 100644 R/Red_and_Black_170303_masking_work.Rmd
+ create mode 100644 R/Red_and_Black_180227_Report.Rmd
+ create mode 100644 R/Red_and_Black_180227_Report.html
+ create mode 100644 R/Red_and_Black_180227_data.Rmd
+ create mode 100644 R/Red_and_Black_180227_data.html
+ create mode 100644 R/Red_and_Black_180227_roll.Rmd
+ create mode 100644 R/Red_and_Black_180227_roll.html
+ create mode 100644 R/Red_and_Black_180304_Report.Rmd
+ create mode 100644 R/Red_and_Black_180304_Report.html
+ create mode 100644 R/Red_and_Black_180304_data.Rmd
+ create mode 100644 R/Red_and_Black_180304_data.html
+ create mode 100644 R/Red_and_Black_180304_roll.Rmd
+ create mode 100644 R/Red_and_Black_180304_roll.html
+ create mode 100644 R/Red_and_Black_180307_Report.Rmd
+ create mode 100644 R/Red_and_Black_180307_Report.html
+ create mode 100644 R/Red_and_Black_180307_data.Rmd
+ create mode 100644 R/Red_and_Black_180307_data.html
+ create mode 100644 R/Red_and_Black_180307_roll.Rmd
+ create mode 100644 R/Red_and_Black_180307_roll.html
+ create mode 100644 R/Red_and_Black_180901_Report.Rmd
+ create mode 100644 R/Red_and_Black_180901_Report.html
+ create mode 100644 R/Red_and_Black_180901_data.Rmd
+ create mode 100644 R/Red_and_Black_180901_data.html
+ create mode 100644 R/Red_and_Black_180901_roll.Rmd
+ create mode 100644 R/Red_and_Black_180901_roll.html
+ create mode 100644 R/SE_Final_Records1701.Rmd
+ create mode 100644 R/SE_Final_Records1702.Rmd
+ create mode 100644 R/SE_Final_Records1801.Rmd
+ create mode 100644 R/SE_Final_Records1801.html
+ create mode 100644 R/SM_Final_Records1701.Rmd
+ create mode 100644 R/SM_records.RData
+ create mode 100644 R/THAAD160302_Report.Rmd
+ create mode 100644 R/Tax_kor.Rmd
+ create mode 100644 R/Tax_kor_15.Rmd
+ create mode 100644 R/class_roll.RData
+ create mode 100644 R/class_roll.RDs
+ create mode 100644 R/class_roll0314.RDs
+ create mode 100644 R/class_roll0908.RDs
+ create mode 100644 R/class_roll0915.RDs
+ create mode 100644 R/class_roll180307.RDs
+ create mode 100644 R/final_Records.RData
+ create mode 100644 R/final_Records1226.RData
+ create mode 100644 R/final_Records1229.RData
+ create mode 100644 R/final_data.rda
+ create mode 100644 R/food.RData
+ create mode 100644 R/food_after.RData
+ create mode 100644 R/food_after.rds
+ create mode 100644 R/food_before.RData
+ create mode 100644 R/food_before.rds
+ create mode 100644 R/food_comp1801.Rmd
+ create mode 100644 R/food_comp1801.html
+ create mode 100644 R/food_plan1801.Rmd
+ create mode 100644 R/food_plan1801.html
+ create mode 100644 R/food_survey0525.Rmd
+ create mode 100644 R/food_survey1702.Rmd
+ create mode 100644 R/food_survey1801.Rmd
+ create mode 100644 R/food_survey1801.html
+ create mode 100644 R/gorilla170529.Rmd
+ create mode 100644 R/gorilla171127.Rmd
+ create mode 100644 R/gorilla180528.Rmd
+ create mode 100644 R/gorilla180528.html
+ create mode 100644 R/gorilla_170529.RData
+ create mode 100644 R/literacy_201702.RData
+ create mode 100644 R/media_effects_201801.RData
+ create mode 100644 R/paste_p.R
+ create mode 100644 R/quiz0227_Report.Rmd
+ create mode 100644 R/quiz0227_merge_Report.Rmd
+ create mode 100644 R/quiz0227_merge_Report_reduced.Rmd
+ create mode 100644 R/quiz0305.RData
+ create mode 100644 R/quiz0307.Rmd
+ create mode 100644 R/quiz0307_Report.Rmd
+ create mode 100644 R/quiz0312.RData
+ create mode 100644 R/quiz0314.RData
+ create mode 100644 R/quiz0319.RData
+ create mode 100644 R/quiz0326.RData
+ create mode 100644 R/quiz0328.RData
+ create mode 100644 R/quiz0416_1.rda
+ create mode 100644 R/quiz0416_2.RData
+ create mode 100644 R/quiz0502.RData
+ create mode 100644 R/quiz0509_Report.Rmd
+ create mode 100644 R/quiz0509_Wason_Selection.Rmd
+ create mode 100644 R/quiz0518_Report.Rmd
+ create mode 100644 R/quiz0604.RDada
+ create mode 100644 R/quiz0828_Report.Rmd
+ create mode 100644 R/quiz0830.RData
+ create mode 100644 R/quiz0904.RData
+ create mode 100644 R/quiz0906.RData
+ create mode 100644 R/quiz0911.RData
+ create mode 100644 R/quiz0918.RData
+ create mode 100644 R/quiz0925.RData
+ create mode 100644 R/quiz0927.RData
+ create mode 100644 R/quiz0928_Report.Rmd
+ create mode 100644 R/quiz1011.RData
+ create mode 100644 R/quiz1011.rda
+ create mode 100644 R/quiz1025.RData
+ create mode 100644 R/quiz1101.RData
+ create mode 100644 R/quiz1129.RDada
+ create mode 100644 R/quiz170227.RData
+ create mode 100644 R/quiz170320_Report.Rmd
+ create mode 100644 R/quiz170327_Report.Rmd
+ create mode 100644 R/quiz170403_Report.Rmd
+ create mode 100644 R/quiz170405_Report.Rmd
+ create mode 100644 R/quiz170405_Report.html
+ create mode 100644 R/quiz170412_Report.Rmd
+ create mode 100644 R/quiz170503_Report.Rmd
+ create mode 100644 R/quiz170508_Report.Rmd
+ create mode 100644 R/quiz170508_hn_Report.Rmd
+ create mode 100644 R/quiz170515_Report.Rmd
+ create mode 100644 R/quiz170522_Report.Rmd
+ create mode 100644 R/quiz170531_Report.Rmd
+ create mode 100644 R/quiz170828.RData
+ create mode 100644 R/quiz170828_Report.Rmd
+ create mode 100644 R/quiz170828_Report.html
+ create mode 100644 R/quiz170830.Rmd
+ create mode 100644 R/quiz170830_Report.Rmd
+ create mode 100644 R/quiz170830_Report.html
+ create mode 100644 R/quiz170904_Report.Rmd
+ create mode 100644 R/quiz170906_Report.Rmd
+ create mode 100644 R/quiz170906_data.Rmd
+ create mode 100644 R/quiz170911_Report.Rmd
+ create mode 100644 R/quiz170918_Report.Rmd
+ create mode 100644 R/quiz170925_Report.Rmd
+ create mode 100644 R/quiz170925v2_Report.Rmd
+ create mode 100644 R/quiz170927.Rmd
+ create mode 100644 R/quiz171011_Report.Rmd
+ create mode 100644 R/quiz171011v2_Report.Rmd
+ create mode 100644 R/quiz171023_Report.Rmd
+ create mode 100644 R/quiz171025_Report.Rmd
+ create mode 100644 R/quiz171030_Report.Rmd
+ create mode 100644 R/quiz171101_Report.Rmd
+ create mode 100644 R/quiz171106_Report.Rmd
+ create mode 100644 R/quiz171108_Report.Rmd
+ create mode 100644 R/quiz171113_Report.Rmd
+ create mode 100644 R/quiz171115_Report.Rmd
+ create mode 100644 R/quiz171115_hn_Report.Rmd
+ create mode 100644 R/quiz171115v2_Report.Rmd
+ create mode 100644 R/quiz171115v2_Report.html
+ create mode 100644 R/quiz171120_Report.Rmd
+ create mode 100644 R/quiz171129_Report.Rmd
+ create mode 100644 R/quiz171129_Report.html
+ create mode 100644 R/quiz180227.RData
+ create mode 100644 R/quiz180227_Report.Rmd
+ create mode 100644 R/quiz180227_Report.html
+ create mode 100644 R/quiz180227_Report_f.Rmd
+ create mode 100644 R/quiz180305_Report.Rmd
+ create mode 100644 R/quiz180305_Report.html
+ create mode 100644 R/quiz180312_Report.Rmd
+ create mode 100644 R/quiz180312_Report.html
+ create mode 100644 R/quiz180314_Report.Rmd
+ create mode 100644 R/quiz180314_Report.html
+ create mode 100644 R/quiz180319_Report.Rmd
+ create mode 100644 R/quiz180319_Report.html
+ create mode 100644 R/quiz180326_Report.Rmd
+ create mode 100644 R/quiz180326_Report.html
+ create mode 100644 R/quiz180328_Report.Rmd
+ create mode 100644 R/quiz180328_Report.html
+ create mode 100644 R/quiz180402_Report.Rmd
+ create mode 100644 R/quiz180402_Report.html
+ create mode 100644 R/quiz180404_Report.Rmd
+ create mode 100644 R/quiz180404_Report.html
+ create mode 100644 R/quiz180409_Report.Rmd
+ create mode 100644 R/quiz180409_Report.html
+ create mode 100644 R/quiz180416_1_Report.Rmd
+ create mode 100644 R/quiz180416_1_Report.html
+ create mode 100644 R/quiz180416_1_Report_fun.Rmd
+ create mode 100644 R/quiz180416_1_Report_fun.html
+ create mode 100644 R/quiz180416_1_Report_pipe.Rmd
+ create mode 100644 R/quiz180416_1_Report_pipe.html
+ create mode 100644 R/quiz180416_2_Report.Rmd
+ create mode 100644 R/quiz180416_2_Report.html
+ create mode 100644 R/quiz180416_2_Report_pipe.Rmd
+ create mode 100644 R/quiz180416_2_Report_pipe.html
+ create mode 100644 R/quiz180430_1_Report.Rmd
+ create mode 100644 R/quiz180430_1_Report.html
+ create mode 100644 R/quiz180430_1_Report_pipe.Rmd
+ create mode 100644 R/quiz180430_1_Report_pipe.html
+ create mode 100644 R/quiz180430_2_Report.Rmd
+ create mode 100644 R/quiz180430_2_Report.html
+ create mode 100644 R/quiz180430_2_Report_pipe.Rmd
+ create mode 100644 R/quiz180430_2_Report_pipe.html
+ create mode 100644 R/quiz180502_Report.Rmd
+ create mode 100644 R/quiz180502_Report.html
+ create mode 100644 R/quiz180514_Report.Rmd
+ create mode 100644 R/quiz180514_Report.html
+ create mode 100644 R/quiz180516_Report.Rmd
+ create mode 100644 R/quiz180516_Report.html
+ create mode 100644 R/quiz180516_hn_Report.Rmd
+ create mode 100644 R/quiz180516_hn_Report.html
+ create mode 100644 R/quiz180521_Report.Rmd
+ create mode 100644 R/quiz180521_Report.html
+ create mode 100644 R/quiz180523_Report.Rmd
+ create mode 100644 R/quiz180523_Report.html
+ create mode 100644 R/quiz180604_Report.Rmd
+ create mode 100644 R/quiz180604_Report.html
+ create mode 100644 R/quiz180901_Report.Rmd
+ create mode 100644 R/reading170308_Report.Rmd
+ create mode 100644 R/reading170920_Report.Rmd
+ create mode 100644 R/reading180307_Report.Rmd
+ create mode 100644 R/reading180307_Report.html
+ create mode 100644 R/red_and_black_180227_data.RData
+ create mode 100644 R/red_and_black_180304_data.RData
+ create mode 100644 R/red_and_black_180307_data.RData
+ create mode 100644 R/red_and_black_180901_data.RData
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1702_report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1702_report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1702_report_Summary.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1702_report_Summary.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1801_report_Summary.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Class_BFI_MI_1801_report_Summary.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Literacy_201702.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Literacy_201702v2.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Literacy_201702v2.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Literacy_201801.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Media_Effects180321_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Media_Effects180321_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Oxford_Happiness1801_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Oxford_Happiness1801_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170828_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170828_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170829_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170901_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170901_data.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_170908_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180227_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180304_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180304_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180304_data.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180307_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180307_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180307_data.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/Red_and_Black_180901_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/THAAD160302_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/food_comp1801.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/food_plan1801.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/food_plan1801.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/food_survey1702.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/food_survey1702.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/food_survey1801.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/gorilla171127.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/gorilla180528.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170405_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170405_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170828_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170830_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170830_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170904_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170904_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170906_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170906_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170911_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170911_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170918_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170918_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170925v2_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170925v2_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170927.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz170927.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171011_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171011_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171023_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171025_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171030_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171030_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171101_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171101_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171106_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171108_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171113_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171115_hn_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171115v2_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171120_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171129_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz171129_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180227_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180227_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180305_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180305_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180312_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180314_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180319_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180319_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180326_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180328_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180402_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180404_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180404_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180409_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180409_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180416_1_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180416_2_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_1_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_1_Report_pipe.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_2_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_2_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_2_Report_pipe.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180430_2_Report_pipe.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180502_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180502_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180514_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180514_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180516_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180516_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180516_hn_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180521_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180521_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180523_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180523_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180604_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/quiz180604_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/reading170920_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/reading180307_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/sleep171106_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/sleep171106_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/rsconnect/documents/sleep171113_Report.Rmd/rpubs.com/rpubs/Document.dcf
+ create mode 100644 R/rsconnect/documents/sleep171113_Report.Rmd/rpubs.com/rpubs/Publish Document.dcf
+ create mode 100644 R/sleep171106_Report.Rmd
+ create mode 100644 R/sleep171113_Report.Rmd
+ create mode 100644 R/theme_kr.R
+ create mode 100644 R/total1226.RDS
+ create mode 100644 class201802.Rproj
+ create mode 100644 data/.DS_Store
+ create mode 100644 data/113_DT_113_STBL_1025544_Y.csv
+ create mode 100644 data/BFI.xlsx
+ create mode 100644 data/BFI180411.xlsx
+ create mode 100644 data/BFI180411v2.xlsx
+ create mode 100644 data/CS_scoreList.xls
+ create mode 100644 data/CS_scoreList.xlsx
+ create mode 100644 data/DA_R_scoreList.xlsx
+ create mode 100644 data/DS_scoreList.xlsx
+ create mode 100644 data/MI.xlsx
+ create mode 100644 data/MI180411.xlsx
+ create mode 100644 data/MI180411v2.xlsx
+ create mode 100644 data/MW1129.xlsx
+ create mode 100644 data/MW180604.xlsx
+ create mode 100644 data/Odissey_scoreList_1801.xls
+ create mode 100644 data/Odissey_scoreList_1801.xlsx
+ create mode 100644 data/R_01_scoreList.xls
+ create mode 100644 data/R_02_scoreList.xls
+ create mode 100644 data/R_scoreList_01.xlsx
+ create mode 100644 data/R_scoreList_02.xlsx
+ create mode 100644 data/R_scoreList_1801.xlsx
+ create mode 100644 data/SE_scoreList.xls
+ create mode 100644 data/SE_scoreList.xlsx
+ create mode 100644 data/SE_scoreList_1801.xls
+ create mode 100644 data/SE_scoreList_1801.xlsx
+ create mode 100644 data/assignment.xlsx
+ create mode 100644 data/assignment_v2.xlsx
+ create mode 100644 data/assignment_v3.xlsx
+ create mode 100644 data/assignment_v4.xlsx
+ create mode 100644 data/assignment_v5.xlsx
+ create mode 100644 data/class0901.xlsx
+ create mode 100644 data/class_roll0227.xlsx
+ create mode 100644 data/class_roll0301.xlsx
+ create mode 100644 data/class_roll0302.xls
+ create mode 100644 data/class_roll0302.xlsx
+ create mode 100644 data/class_roll0304.xlsx
+ create mode 100644 data/class_roll0307.xls
+ create mode 100644 data/class_roll0307.xlsx
+ create mode 100644 data/class_roll0901.xlsx
+ create mode 100644 data/class_roll_Facebook.xlsx
+ create mode 100644 data/class_roll_Facebook_MY.xlsx
+ create mode 100644 data/class_roll_Facebook_v2.xlsx
+ create mode 100644 data/class_roll_group.csv
+ create mode 100644 data/class_roll_group.csv.gsheet
+ create mode 100644 data/class_roll_group2.csv
+ create mode 100644 data/food_plan_180509.xlsx
+ create mode 100644 data/food_survey.xlsx
+ create mode 100644 data/food_survey_180509.xlsx
+ create mode 100644 data/gorilla1702.xlsx
+ create mode 100644 data/gorilla1801.xlsx
+ create mode 100644 data/gorillav3_dominilbo.xlsx
+ create mode 100644 data/learnerList.xls
+ create mode 100644 data/learnerList0301.xls
+ create mode 100644 data/learnerList0304.xls
+ create mode 100644 data/learnerList1802.xls
+ create mode 100644 data/lietracy_1702.xlsx
+ create mode 100644 data/literacy_1702.xlsx
+ create mode 100644 data/literacy_1801.xlsx
+ create mode 100644 data/literacy_ans.txt
+ create mode 100644 data/literacy_type.txt
+ create mode 100644 data/media_effects_ans.txt
+ create mode 100644 data/motive_1106.xlsx
+ create mode 100644 data/motive_1113.xlsx
+ create mode 100644 data/oxford_happiness180425.xlsx
+ create mode 100644 data/quiz0405.xlsx
+ create mode 100644 data/quiz0418.xlsx
+ create mode 100644 data/quiz170828.xls
+ create mode 100644 data/quiz170828.xlsx
+ create mode 100644 data/quiz170830.xlsx
+ create mode 100644 data/quiz170904.xlsx
+ create mode 100644 data/quiz170906.xlsx
+ create mode 100644 data/quiz170911.xlsx
+ create mode 100644 data/quiz170918.xlsx
+ create mode 100644 data/quiz170925.xlsx
+ create mode 100644 data/quiz170927.xlsx
+ create mode 100644 data/quiz171011.xlsx
+ create mode 100644 data/quiz171023.xlsx
+ create mode 100644 data/quiz171025.xlsx
+ create mode 100644 data/quiz171030.xlsx
+ create mode 100644 data/quiz171101.xlsx
+ create mode 100644 data/quiz171106.xlsx
+ create mode 100644 data/quiz171108.xlsx
+ create mode 100644 data/quiz171113.xlsx
+ create mode 100644 data/quiz171115.xlsx
+ create mode 100644 data/quiz171115_hn.xlsx
+ create mode 100644 data/quiz171115v2.xlsx
+ create mode 100644 data/quiz171120.xlsx
+ create mode 100644 data/quiz171120_old.xlsx
+ create mode 100644 data/quiz180227.xlsx
+ create mode 100644 data/quiz180227v2.xlsx
+ create mode 100644 data/quiz180305.xlsx
+ create mode 100644 data/quiz180305v2.xlsx
+ create mode 100644 data/quiz180312.xlsx
+ create mode 100644 data/quiz180314.xlsx
+ create mode 100644 data/quiz180314v2.xlsx
+ create mode 100644 data/quiz180319.xlsx
+ create mode 100644 data/quiz180321.xlsx
+ create mode 100644 data/quiz180321_old.xlsx
+ create mode 100644 data/quiz180326.xlsx
+ create mode 100644 data/quiz180328.xlsx
+ create mode 100644 data/quiz180402.xlsx
+ create mode 100644 data/quiz180404.xlsx
+ create mode 100644 data/quiz180409.xlsx
+ create mode 100644 data/quiz180416_1.xlsx
+ create mode 100644 data/quiz180416_2.xlsx
+ create mode 100644 data/quiz180430_1.xlsx
+ create mode 100644 data/quiz180430_2.xlsx
+ create mode 100644 data/quiz180502.xlsx
+ create mode 100644 data/quiz180514.xlsx
+ create mode 100644 data/quiz180516.xlsx
+ create mode 100644 data/quiz180516_hn.xlsx
+ create mode 100644 data/quiz180521.xlsx
+ create mode 100644 data/quiz180523.xlsx
+ create mode 100644 data/reading_1702.xlsx
+ create mode 100644 data/reading_1702v2.xlsx
+ create mode 100644 data/reading_1801.xlsx
+ create mode 100644 data/reading_1801v2.xlsx
+ create mode 100644 data/reportUserScoreList.xls
+ create mode 100644 data/reportUserScoreList_v2.xls
+ create mode 100644 data/reportUserScoreList_v3.xls
+ create mode 100644 data/reportUserScoreList_v4.xls
+ create mode 100644 data/reportUserScoreList_v5.xls
+ create mode 100644 data/reportUserScoreList_v5.xlsx
+ create mode 100644 data/scoreList.xls
+ create mode 100644 data/scoreList.xlsx
+ create mode 100644 data/scoreList1801.xls
+ create mode 100644 data/scoreList1801.xlsx
+ create mode 100644 data/scoreList1801v2.xlsx
+ create mode 100644 data/scoreList1801v3.xlsx
+ create mode 100644 data/scoreList_v2.xls
+ create mode 100644 data/scoreList_v2.xlsx
+ create mode 100644 data/scoreList_v3.xls
+ create mode 100644 data/scoreList_v3.xlsx
+ create mode 100644 data/scoreList_v4.xls
+ create mode 100644 data/scoreList_v4.xlsx
+ create mode 100644 data/scoreList_v5.xls
+ create mode 100644 data/scoreList_v5.xlsx
+ create mode 100644 data/scoreList_v6.xls
+ create mode 100644 data/scoreList_v6.xlsx
+ create mode 100644 data/scoreList_v7.xls
+ create mode 100644 data/scoreList_v7.xlsx
+ create mode 100644 data/scoreList_v8.xls
+ create mode 100644 data/scoreList_v8.xlsx
+ create mode 100644 data/term project1801.xlsx
+ create mode 100644 data/term_project1702.xlsx
+ create mode 100644 data/~$quiz180409.xlsx
+ create mode 100644 data/~$term project1801.xlsx
+ create mode 100644 "data/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\230\244\355\224\204\353\235\274\354\235\270 \354\266\234\354\204\235.xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\230\250\353\235\274\354\235\270 \354\266\234\354\204\235.xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \355\206\240\353\241\240.xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234\354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231(3.07) \353\217\205\354\204\234\354\213\244\355\203\234 \354\265\234\354\242\205.xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234\354\206\215\354\235\230\355\206\265\352\263\204\355\225\231 \354\275\224\353\224\251\354\236\220\353\243\214_0918.xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234\354\206\215\354\235\230\355\206\265\352\263\204\355\225\231(Facebook\353\214\223\352\270\200).xlsx"
+ create mode 100644 "data/\354\203\235\355\231\234\354\206\215\354\235\230\355\206\265\352\263\204\355\225\231(Facebook\353\257\274\352\267\234).xlsx"
+ create mode 100644 docs/Quiz 170830.pdf
+ create mode 100644 docs/Quiz 170906.pdf
+ create mode 100644 docs/Red_and_Black_170828_roll.html.pdf
+ create mode 100644 docs/Red_and_Black_170829_roll.html.pdf
+ create mode 100644 docs/Red_and_Black_170901_roll.html.pdf
+ create mode 100644 docs/Red_and_Black_180227_roll.html.pdf
+ create mode 100644 docs/Red_and_Black_180304_roll.html.pdf
+ create mode 100644 docs/Red_and_Black_180901_roll.html.pdf
+ create mode 100644 "docs/\352\267\200\353\206\215\352\267\200\354\264\214\354\235\270 \353\247\210\354\235\204 \354\202\254\353\241\200\354\241\260\354\202\254_2\354\260\250\353\205\204\353\217\204_2016 \353\263\265\354\202\254\353\263\270.pdf"
+ create mode 100644 "docs/\352\267\200\353\206\215\352\267\200\354\264\214\354\235\270 \353\247\210\354\235\204 \354\202\254\353\241\200\354\241\260\354\202\254_3\354\260\250\353\205\204\353\217\204_2017 \353\263\265\354\202\254\353\263\270.pdf"
+ create mode 100644 "docs/\352\270\260\354\264\210\355\224\204\353\241\234\352\267\270\353\236\230\353\260\215 R : \354\265\234\354\242\205_0627.pdf"
+ create mode 100644 "docs/\353\214\200\353\217\204\354\213\234 \352\267\274\352\265\220 \353\206\215\354\264\214 \353\247\210\354\235\204\354\235\230 \353\263\200\355\231\224 \354\213\244\355\203\234 \354\241\260\354\202\254_2016 \353\263\265\354\202\254\353\263\270.pdf"
+ create mode 100644 "docs/\353\215\260\354\235\264\355\204\260\352\263\274\355\225\231\352\270\260\354\210\240\352\260\234\354\232\224 : \354\265\234\354\242\205_0627.pdf"
+ create mode 100644 "docs/\353\215\260\354\235\264\355\204\260\353\266\204\354\204\235\355\224\204\353\241\234\352\267\270\353\236\230\353\260\215 R : \354\265\234\354\242\205.pdf"
+ create mode 100644 "docs/\353\215\260\354\235\264\355\204\260\353\266\204\354\204\235\355\224\204\353\241\234\352\267\270\353\236\230\353\260\215 R : \354\265\234\354\242\205_0627.pdf"
+ create mode 100644 "docs/\354\202\254\355\232\214\354\240\201\352\262\275\354\240\234\354\231\200 \355\230\221\353\217\231\354\241\260\355\225\251 \354\265\234\354\242\205.pdf"
+ create mode 100644 "docs/\354\202\254\355\232\214\354\240\201\352\262\275\354\240\234\354\231\200 \355\230\221\353\217\231\354\241\260\355\225\251 \354\265\234\354\242\205_0627.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205_0625.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205_1801.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205_full.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205v2.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205v3.pdf"
+ create mode 100644 "docs/\354\203\235\355\231\234 \354\206\215\354\235\230 \355\206\265\352\263\204\355\225\231 \354\265\234\354\242\205v4.pdf"
+ create mode 100644 "docs/\354\230\244\353\224\224\354\204\270\354\235\264 \354\265\234\354\242\205_0627.pdf"
+ create mode 100644 "docs/\354\235\221\354\232\251\355\224\204\353\241\234\352\267\270\353\236\230\353\260\215 R \354\265\234\354\242\205.pdf"
+ create mode 100644 "docs/\355\206\265\352\263\204 \353\266\204\354\204\235 \354\202\254\353\241\200 \354\227\260\352\265\254 \354\265\234\354\242\205.pdf"
+ create mode 100644 pics/Bookmarks.bak
+ create mode 100644 pics/Hanauer_Q1.png
+ create mode 100644 pics/Hanauer_Q10.png
+ create mode 100644 pics/Hanauer_Q11.png
+ create mode 100644 pics/Hanauer_Q12.png
+ create mode 100644 pics/Hanauer_Q13.png
+ create mode 100644 pics/Hanauer_Q14.png
+ create mode 100644 pics/Hanauer_Q15.png
+ create mode 100644 pics/Hanauer_Q16.png
+ create mode 100644 pics/Hanauer_Q17.png
+ create mode 100644 pics/Hanauer_Q17_sol.png
+ create mode 100644 pics/Hanauer_Q18.png
+ create mode 100644 pics/Hanauer_Q19.png
+ create mode 100644 pics/Hanauer_Q2.png
+ create mode 100644 pics/Hanauer_Q20.png
+ create mode 100644 pics/Hanauer_Q3.png
+ create mode 100644 pics/Hanauer_Q4.png
+ create mode 100644 pics/Hanauer_Q5.png
+ create mode 100644 pics/Hanauer_Q6.png
+ create mode 100644 pics/Hanauer_Q7.png
+ create mode 100644 pics/Hanauer_Q8.png
+ create mode 100644 pics/Hanauer_Q9.png
+ create mode 100644 pics/Jobs_black.png
+ create mode 100644 pics/Jobs_red.png
+ create mode 100644 pics/Mental_accounting_cash.png
+ create mode 100644 pics/Mental_accounting_ticket.png
+ create mode 100644 pics/North_and_South_black.png
+ create mode 100644 pics/North_and_South_red.png
+ create mode 100644 pics/Quiz160302_01.png
+ create mode 100644 pics/Quiz160302_02.png
+ create mode 100644 pics/Quiz160302_03.png
+ create mode 100644 pics/Quiz170830_01.png
+ create mode 100644 pics/Quiz170830_02.png
+ create mode 100644 pics/Quiz170830_03.png
+ create mode 100644 pics/Quiz170904_01.png
+ create mode 100644 pics/Quiz170904_02.png
+ create mode 100644 pics/Quiz170904_03.png
+ create mode 100644 pics/Quiz170904_Moon_black.png
+ create mode 100644 pics/Quiz170904_Moon_red.png
+ create mode 100644 pics/Quiz170906_01.png
+ create mode 100644 pics/Quiz170906_02.png
+ create mode 100644 pics/Quiz170906_03.png
+ create mode 100644 pics/Quiz170906_04.png
+ create mode 100644 pics/Quiz170911_01.png
+ create mode 100644 pics/Quiz170911_02.png
+ create mode 100644 pics/Quiz170911_03.png
+ create mode 100644 pics/Quiz170911_04_black.png
+ create mode 100644 pics/Quiz170911_04_red.png
+ create mode 100644 pics/Quiz170918_01.png
+ create mode 100644 pics/Quiz170918_02.png
+ create mode 100644 pics/Quiz170918_03.png
+ create mode 100644 pics/Quiz170918_04_black.png
+ create mode 100644 pics/Quiz170918_04_red.png
+ create mode 100644 pics/Quiz170925_01.png
+ create mode 100644 pics/Quiz170925_02.png
+ create mode 100644 pics/Quiz170925_03.png
+ create mode 100644 pics/Quiz170925_04_black.png
+ create mode 100644 pics/Quiz170925_04_red.png
+ create mode 100644 pics/Quiz170927_01.png
+ create mode 100644 pics/Quiz170927_02.png
+ create mode 100644 pics/Quiz170927_03.png
+ create mode 100644 pics/Quiz170927_04_black.png
+ create mode 100644 pics/Quiz170927_04_red.png
+ create mode 100644 pics/Quiz171011_01.png
+ create mode 100644 pics/Quiz171011_02.png
+ create mode 100644 pics/Quiz171011_03.png
+ create mode 100644 pics/Quiz171011_04_black.png
+ create mode 100644 pics/Quiz171011_04_red.png
+ create mode 100644 pics/Quiz171023_01.png
+ create mode 100644 pics/Quiz171023_02.png
+ create mode 100644 pics/Quiz171023_03.png
+ create mode 100644 pics/Quiz171023_04_black.png
+ create mode 100644 pics/Quiz171023_04_red.png
+ create mode 100644 pics/Quiz171025_01.png
+ create mode 100644 pics/Quiz171025_02.png
+ create mode 100644 pics/Quiz171025_03.png
+ create mode 100644 pics/Quiz171025_04_black.png
+ create mode 100644 pics/Quiz171025_04_red.png
+ create mode 100644 pics/Quiz171030_01.png
+ create mode 100644 pics/Quiz171030_02.png
+ create mode 100644 pics/Quiz171030_03.png
+ create mode 100644 pics/Quiz171030_04_black.png
+ create mode 100644 pics/Quiz171030_04_red.png
+ create mode 100644 pics/Quiz171101_01.png
+ create mode 100644 pics/Quiz171101_02.png
+ create mode 100644 pics/Quiz171101_03.png
+ create mode 100644 pics/Quiz171101_04_black.png
+ create mode 100644 pics/Quiz171101_04_red.png
+ create mode 100644 pics/Quiz171106_01.png
+ create mode 100644 pics/Quiz171106_02.png
+ create mode 100644 pics/Quiz171106_03.png
+ create mode 100644 pics/Quiz171106_04_black.png
+ create mode 100644 pics/Quiz171106_04_red.png
+ create mode 100644 pics/Quiz171108_Q1.png
+ create mode 100644 pics/Quiz171108_Q2.png
+ create mode 100644 pics/Quiz171108_Q3.png
+ create mode 100644 pics/Quiz171108_Q4_Black.png
+ create mode 100644 pics/Quiz171108_Q4_Red.png
+ create mode 100644 pics/Quiz171113_Q1.png
+ create mode 100644 pics/Quiz171113_Q2.png
+ create mode 100644 pics/Quiz171113_Q3.png
+ create mode 100644 pics/Quiz171113_Q4_black.png
+ create mode 100644 pics/Quiz171113_Q4_red.png
+ create mode 100644 pics/Quiz171115_Q2.png
+ create mode 100644 pics/Quiz171115_Q2_bak.png
+ create mode 100644 pics/Quiz171115_Q3_Black.png
+ create mode 100644 pics/Quiz171115_Q3_Red.png
+ create mode 100644 pics/Quiz171115_Q4_Black.png
+ create mode 100644 pics/Quiz171115_Q4_Red.png
+ create mode 100644 pics/Quiz171115_hn_Q1.png
+ create mode 100644 pics/Quiz171115_hn_Q2.png
+ create mode 100644 pics/Quiz171115_hn_Q3.png
+ create mode 100644 pics/Quiz171115_hn_Q4.png
+ create mode 100644 pics/Quiz171120_Q1.png
+ create mode 100644 pics/Quiz171120_Q2.png
+ create mode 100644 pics/Quiz180312_MB_black.png
+ create mode 100644 pics/Quiz180312_MB_red.png
+ create mode 100644 pics/Quiz180314_black.png
+ create mode 100644 pics/Quiz180314_red.png
+ create mode 100644 pics/Quiz180319_04_black.png
+ create mode 100644 pics/Quiz180319_04_red.png
+ create mode 100644 pics/Quiz180326_04_black.png
+ create mode 100644 pics/Quiz180326_04_red.png
+ create mode 100644 pics/Quiz180328_04_black.png
+ create mode 100644 pics/Quiz180328_04_red.png
+ create mode 100644 pics/Quiz180402_01.png
+ create mode 100644 pics/Quiz180402_02.png
+ create mode 100644 pics/Quiz180402_03.png
+ create mode 100644 pics/Quiz180402_04_black.png
+ create mode 100644 pics/Quiz180402_04_red.png
+ create mode 100644 pics/Quiz180404_01.png
+ create mode 100644 pics/Quiz180404_02.png
+ create mode 100644 pics/Quiz180404_03.png
+ create mode 100644 pics/Quiz180404_04_black.png
+ create mode 100644 pics/Quiz180404_04_red.png
+ create mode 100644 pics/Quiz180409_01.png
+ create mode 100644 pics/Quiz180409_02.png
+ create mode 100644 pics/Quiz180430_2_02.png
+ create mode 100644 pics/Quiz180521_Q3.png
+ create mode 100644 pics/Quiz180521_Q4_black.png
+ create mode 100644 pics/Quiz180521_Q4_red.png
+ create mode 100644 pics/Quiz180523_Q3.png
+ create mode 100644 pics/THAAD_black.png
+ create mode 100644 pics/THAAD_red.png
+ create mode 100644 pics/Terror_law_black.png
+ create mode 100644 pics/Terror_law_red.png
+ create mode 100644 pics/US_Top_Income_Share_vs_MTR_72dpi_kr.png
+ create mode 100644 pics/Wason_Selection_1.png
+ create mode 100644 pics/Wason_Selection_2.png
+ create mode 100644 pics/Wason_Selection_Black_Q3.png
+ create mode 100644 pics/Wason_Selection_Black_Q4.png
+ create mode 100644 pics/Wason_Selection_Red_Q3.png
+ create mode 100644 pics/Wason_Selection_Red_Q4.png
+ create mode 100644 pics/organ_donation_01.png
+ create mode 100644 pics/organ_donation_02.png
+ create mode 100644 "pics/\354\244\221\354\225\231\354\235\274\353\263\264_\354\204\244\353\254\270.png"
+ create mode 100644 "pics/\354\244\221\354\225\231\354\235\274\353\263\264_\354\247\221\352\263\204\355\221\234.png"
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git remote -v
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git remote add origin https://github.com/kwlee58/class201802.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git remote add origin https://github.com/kwlee58/class201802.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-v[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+origin	https://github.com/kwlee58/class201802.git (fetch)
+origin	https://github.com/kwlee58/class201802.git (push)
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git push -u origin master
+Counting objects: 1014, done.
+Delta compression using up to 4 threads.
+Compressing objects:   0% (1/804)   Compressing objects:   1% (9/804)   Compressing objects:   2% (17/804)   Compressing objects:   3% (25/804)   Compressing objects:   4% (33/804)   Compressing objects:   5% (41/804)   Compressing objects:   6% (49/804)   Compressing objects:   7% (57/804)   Compressing objects:   8% (65/804)   Compressing objects:   9% (73/804)   Compressing objects:  10% (81/804)   Compressing objects:  11% (89/804)   Compressing objects:  12% (97/804)   Compressing objects:  13% (105/804)   Compressing objects:  14% (113/804)   Compressing objects:  15% (121/804)   Compressing objects:  15% (124/804)   Compressing objects:  16% (129/804)   Compressing objects:  17% (137/804)   Compressing objects:  18% (145/804)   Compressing objects:  19% (153/804)   Compressing objects:  20% (161/804)   Compressing objects:  21% (169/804)   Compressing objects:  22% (177/804)   Compressing objects:  23% (185/804)   Compressing objects:  24% (193/804)   Compressing objects:  25% (201/804)   Compressing objects:  26% (210/804)   Compressing objects:  27% (218/804)   Compressing objects:  28% (226/804)   Compressing objects:  29% (234/804)   Compressing objects:  30% (242/804)   Compressing objects:  31% (250/804)   Compressing objects:  32% (258/804)   Compressing objects:  33% (266/804)   Compressing objects:  34% (274/804)   Compressing objects:  35% (282/804)   Compressing objects:  36% (290/804)   Compressing objects:  37% (298/804)   Compressing objects:  38% (306/804)   Compressing objects:  39% (314/804)   Compressing objects:  40% (322/804)   Compressing objects:  41% (330/804)   Compressing objects:  42% (338/804)   Compressing objects:  43% (346/804)   Compressing objects:  44% (354/804)   Compressing objects:  45% (362/804)   Compressing objects:  46% (370/804)   Compressing objects:  47% (378/804)   Compressing objects:  48% (386/804)   Compressing objects:  49% (394/804)   Compressing objects:  50% (402/804)   Compressing objects:  51% (411/804)   Compressing objects:  52% (419/804)   Compressing objects:  53% (427/804)   Compressing objects:  54% (435/804)   Compressing objects:  55% (443/804)   Compressing objects:  56% (451/804)   Compressing objects:  57% (459/804)   Compressing objects:  58% (467/804)   Compressing objects:  59% (475/804)   Compressing objects:  60% (483/804)   Compressing objects:  61% (491/804)   Compressing objects:  62% (499/804)   Compressing objects:  63% (507/804)   Compressing objects:  63% (509/804)   Compressing objects:  64% (515/804)   Compressing objects:  65% (523/804)   Compressing objects:  66% (531/804)   Compressing objects:  67% (539/804)   Compressing objects:  68% (547/804)   Compressing objects:  69% (555/804)   Compressing objects:  70% (563/804)   Compressing objects:  71% (571/804)   Compressing objects:  72% (579/804)   Compressing objects:  73% (587/804)   Compressing objects:  74% (595/804)   Compressing objects:  75% (603/804)   Compressing objects:  76% (612/804)   Compressing objects:  77% (620/804)   Compressing objects:  78% (628/804)   Compressing objects:  79% (636/804)   Compressing objects:  80% (644/804)   Compressing objects:  81% (652/804)   Compressing objects:  82% (660/804)   Compressing objects:  83% (668/804)   Compressing objects:  84% (676/804)   Compressing objects:  85% (684/804)   Compressing objects:  86% (692/804)   Compressing objects:  87% (700/804)   Compressing objects:  88% (708/804)   Compressing objects:  89% (716/804)   Compressing objects:  90% (724/804)   Compressing objects:  91% (732/804)   Compressing objects:  92% (740/804)   Compressing objects:  93% (748/804)   Compressing objects:  94% (756/804)   Compressing objects:  95% (764/804)   Compressing objects:  95% (765/804)   Compressing objects:  96% (772/804)   Compressing objects:  97% (780/804)   Compressing objects:  98% (788/804)   Compressing objects:  99% (796/804)   Compressing objects:  99% (802/804)   Compressing objects: 100% (804/804)   Compressing objects: 100% (804/804), done.
+Writing objects:   0% (1/1014)   Writing objects:   1% (11/1014)   Writing objects:   2% (21/1014)   Writing objects:   3% (31/1014)   Writing objects:   4% (43/1014)   Writing objects:   5% (51/1014)   Writing objects:   6% (61/1014)   Writing objects:   7% (71/1014)   Writing objects:   8% (82/1014)   Writing objects:   9% (92/1014)   Writing objects:  10% (102/1014)   Writing objects:  11% (112/1014)   Writing objects:  11% (121/1014), 1.10 MiB | 746.00 KiB/s   Writing objects:  12% (126/1014), 1.10 MiB | 746.00 KiB/s   Writing objects:  13% (133/1014), 1.10 MiB | 746.00 KiB/s   Writing objects:  14% (142/1014), 1.10 MiB | 746.00 KiB/s   Writing objects:  14% (151/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  15% (155/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  16% (163/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  17% (173/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  18% (183/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  19% (193/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  20% (204/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  21% (214/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  22% (224/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  23% (234/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  24% (244/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  25% (254/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  26% (264/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  27% (274/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  28% (284/1014), 3.34 MiB | 1.65 MiB/s   Writing objects:  29% (295/1014), 6.13 MiB | 2.42 MiB/s   Writing objects:  30% (305/1014), 6.13 MiB | 2.42 MiB/s   Writing objects:  31% (316/1014), 6.13 MiB | 2.42 MiB/s   Writing objects:  31% (316/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  32% (325/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  33% (335/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  34% (345/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  35% (355/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  36% (366/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  37% (376/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  38% (386/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  39% (396/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  40% (406/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  41% (416/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  42% (426/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  43% (437/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  44% (447/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  45% (457/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  46% (467/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  47% (477/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  48% (487/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  49% (497/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  50% (507/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  51% (518/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  52% (528/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  53% (538/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  54% (548/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  55% (558/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  56% (568/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  57% (578/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  58% (589/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  59% (599/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  60% (609/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  61% (619/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  62% (629/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  63% (639/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  64% (649/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  65% (660/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  66% (670/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  67% (680/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  68% (690/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  69% (700/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  70% (710/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  71% (720/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  72% (731/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  73% (741/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  74% (751/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  75% (761/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  76% (771/1014), 9.08 MiB | 2.96 MiB/s   Writing objects:  77% (781/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  78% (791/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  79% (802/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  80% (812/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  81% (822/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  82% (832/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  82% (833/1014), 12.99 MiB | 3.64 MiB/s   Writing objects:  82% (837/1014), 24.13 MiB | 4.68 MiB/s   Writing objects:  82% (840/1014), 26.60 MiB | 3.61 MiB/s   Writing objects:  82% (840/1014), 35.71 MiB | 5.06 MiB/s   Writing objects:  82% (840/1014), 44.71 MiB | 5.55 MiB/s   Writing objects:  82% (840/1014), 53.65 MiB | 5.67 MiB/s   Writing objects:  82% (840/1014), 58.29 MiB | 6.11 MiB/s   Writing objects:  82% (840/1014), 67.27 MiB | 8.59 MiB/s   Writing objects:  83% (842/1014), 71.58 MiB | 8.36 MiB/s   Writing objects:  83% (849/1014), 71.58 MiB | 8.36 MiB/s   Writing objects:  84% (853/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  85% (862/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  86% (873/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  87% (883/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  88% (893/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  89% (903/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  90% (913/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  91% (923/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  92% (933/1014), 75.88 MiB | 8.50 MiB/s   Writing objects:  93% (944/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  94% (954/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  95% (964/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  96% (974/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  97% (984/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  98% (994/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  98% (995/1014), 80.18 MiB | 8.41 MiB/s   Writing objects:  99% (1004/1014), 80.18 MiB | 8.41 MiB/s   Writing objects: 100% (1014/1014), 80.18 MiB | 8.41 MiB/s   Writing objects: 100% (1014/1014), 84.53 MiB | 5.98 MiB/s, done.
+Total 1014 (delta 273), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/273)   [Kremote: Resolving deltas:   1% (4/273)   [Kremote: Resolving deltas:   4% (11/273)   [Kremote: Resolving deltas:   5% (15/273)   [Kremote: Resolving deltas:   6% (17/273)   [Kremote: Resolving deltas:  15% (43/273)   [Kremote: Resolving deltas:  19% (54/273)   [Kremote: Resolving deltas:  21% (59/273)   [Kremote: Resolving deltas:  23% (65/273)   [Kremote: Resolving deltas:  25% (69/273)   [Kremote: Resolving deltas:  28% (79/273)   [Kremote: Resolving deltas:  30% (84/273)   [Kremote: Resolving deltas:  31% (85/273)   [Kremote: Resolving deltas:  37% (103/273)   [Kremote: Resolving deltas:  38% (104/273)   [Kremote: Resolving deltas:  39% (108/273)   [Kremote: Resolving deltas:  40% (110/273)   [Kremote: Resolving deltas:  41% (112/273)   [Kremote: Resolving deltas:  42% (115/273)   [Kremote: Resolving deltas:  43% (118/273)   [Kremote: Resolving deltas:  44% (122/273)   [Kremote: Resolving deltas:  45% (124/273)   [Kremote: Resolving deltas:  47% (131/273)   [Kremote: Resolving deltas:  49% (134/273)   [Kremote: Resolving deltas:  50% (137/273)   [Kremote: Resolving deltas:  51% (141/273)   [Kremote: Resolving deltas:  52% (142/273)   [Kremote: Resolving deltas:  73% (200/273)   [Kremote: Resolving deltas:  75% (206/273)   [Kremote: Resolving deltas:  79% (217/273)   [Kremote: Resolving deltas:  88% (241/273)   [Kremote: Resolving deltas:  89% (243/273)   [Kremote: Resolving deltas:  92% (253/273)   [Kremote: Resolving deltas:  93% (254/273)   [Kremote: Resolving deltas:  94% (257/273)   [Kremote: Resolving deltas:  95% (260/273)   [Kremote: Resolving deltas:  96% (264/273)   [Kremote: Resolving deltas:  98% (268/273)   [Kremote: Resolving deltas:  99% (271/273)   [Kremote: Resolving deltas: 100% (273/273)   [Kremote: Resolving deltas: 100% (273/273), done.[K
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.[K
+remote: warning: See http://git.io/iEPt8g for more information.[K
+remote: warning: File docs/대도시 근교 농촌 마을의 변화 실태 조사_2016 복사본.pdf is 52.09 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB[K
+To https://github.com/kwlee58/class201802.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+]0;~/Google 드라이브/Works/Class/Statistics/R.WD/Class_data/class201802Kee-Wonui-iMac-27:class201802 coop2711$ git push -u origin master[12Premote -vadd origin https://github.com/kwlee58/class201802.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-v[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m "First commit"[16Padd -A .
