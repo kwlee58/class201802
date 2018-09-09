@@ -1,0 +1,214 @@
+---
+title: "Quiz 180903"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+library(magrittr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+load("./red_and_black_180901_data.RData")
+quiz0903 <- read.xlsx("../data/quiz180903.xlsx", 
+                      sheetIndex = 1, 
+                      startRow = 2, 
+                      endRow = 164, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 11)), 
+                      stringsAsFactors = FALSE)
+wrong_gr <- which(class_roll$group != quiz0903$group)
+class_roll$name[wrong_gr]
+class_roll$group[wrong_gr]
+quiz0903$group[wrong_gr]
+str(quiz0903)
+names(quiz0903) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
+sapply(quiz0903[, c("Q1", "Q2", "Q3", "Q4")], table)
+which(quiz0903$Q2 == "가  ")
+which(quiz0903$Q3 == "나 ")
+quiz0903$dept <- factor(quiz0903$dept)
+quiz0903$year <- factor(quiz0903$year)
+quiz0903$group <- factor(quiz0903$group, 
+                         levels = c("Red", "Black"))
+quiz0903$Q1 <- factor(quiz0903$Q1, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("통계학", "통계", "자료", "통계청"))
+quiz0903$Q2 <- factor(quiz0903$Q2, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("통계학", "통계", "자료", "통계청"))
+quiz0903$Q3 <- factor(quiz0903$Q3, levels = c("가", "나", "다", "라"), 
+                      labels = c("통계학", "통계", "자료", "통계청"))
+quiz0903$Q4 <- factor(quiz0903$Q4, 
+                      levels = c("가", "나", "다", "라", "마", "무응답"), 
+                      labels = c("매우 공감(찬성)", 
+                                 "다소 공감(찬성)", 
+                                 "다소 비공감(찬성 않음)", 
+                                 "매우 비공감(찬성 않음)", 
+                                 "모름/무응답",
+                                 "불참"))
+quiz0903$Q4.2 <- quiz0903$Q4
+levels(quiz0903$Q4.2) <- c(rep("공감(찬성)", 2), 
+                           rep("비공감(찬성 않음)", 2), 
+                           rep("모름/무응답", 2))
+str(quiz0903)
+```
+
+```{r, randomization, echo = FALSE, results = 'hide'}
+pander(summary(quiz0903))
+```
+
+### Quiz 응답 비교
+
+#### Dewey as good as elected, statistics convince Roper
+
+`r knitr::include_graphics("../pics/Quiz160302_01.png", dpi = NA)`
+
+##### Roper(Counts) 
+
+```{r, Roper, echo = FALSE}
+tbl_q1_a <- quiz0903$Q1 %>% 
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q1_a)[5:6] %<>% `<-`(., c("결석", "계"))
+rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+tbl_q1_a %>% pander 
+tbl_q1_a[-3, -6] %>% 
+  chisq.test(simulate.p.value = TRUE) %>% 
+  pander
+tbl.q1 <- table(quiz0903$group, quiz0903$Q1, 
+                useNA = "ifany")
+```
+
+##### Roper(%)
+
+```{r, Roper in percentage, echo = FALSE}
+tbl_q1_a %>% 
+  `[`(3, -(5:7)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+#### Statistics is the science of learning from data, ...
+
+`r knitr::include_graphics("../pics/Quiz160302_02.png", dpi = NA)`
+
+##### ASA(Counts) 
+
+```{r, ASA, echo = FALSE}
+tbl_q2_a <- quiz0903$Q2 %>% 
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q2_a)[5:6] %<>% `<-`(., c("결석", "계"))
+rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+tbl_q2_a %>% pander 
+```
+
+##### ASA(%)
+
+```{r, ASA in percentage, echo = FALSE}
+tbl_q2_a %>% 
+  `[`(3, -(5:6)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
+```
+
+#### How to lie with statistics
+
+`r knitr::include_graphics("../pics/Quiz160302_03.png", dpi = NA)`
+
+##### D.Huff(Counts) 
+
+```{r, D.Huff, echo = FALSE}
+tbl_q3_a <- quiz0903$Q3 %>% 
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q3_a)[5:6] %<>% `<-`(., c("결석", "계"))
+rownames(tbl_q3_a)[3] %<>% `<-`(., "계")
+tbl_q3_a %>% pander 
+```
+
+##### D.Huff(%)
+
+```{r, D.Huff in percentage, echo = FALSE}
+tbl_q3_a %>% 
+  `[`(3, -(5:6)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
+```
+
+#### 일자리 늘리기 질문의 편향성
+
+##### Red
+
+`r knitr::include_graphics("../pics/Jobs_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Jobs_black.png", dpi = NA)`
+
+##### 2018년 1학기에는 "생각"과 "공감" 대신에 "평가"와 "찬성"이라는 표현을 사용하고 있는 "Red" 집단에서 긍정적인 응답이 다소 많이 나왔으나 지난 이슈인 지금 시점에서는 차이가 나지 않고 있음.
+
+```{r, Jobs(5 possible answers), echo = FALSE}
+tbl_q4_a <- quiz0903$Q4 %>%
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q4_a)[6:8] <- c("불참", "결석", "계")
+rownames(tbl_q4_a)[3] <- "계"
+tbl_q4_a %>% 
+  pander
+```
+
+##### {"매우 공감(찬성)", "다소 공감(찬성)" => "공감(찬성)"}, {"다소 비공감(찬성 않음)", "매우 비공감(찬성 않음)" => "비공감(찬성 않음)", "불참" => "모름/무응답"}
+
+```{r, Jobs(3 possible answers), echo = FALSE}
+tbl_q4_2_a <- quiz0903$Q4.2 %>%
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  addmargins
+colnames(tbl_q4_2_a)[4:5] <- c("결석", "계")
+rownames(tbl_q4_2_a)[3] <- "계"
+tbl_q4_2_a %>% 
+  pander
+```
+
+##### Jobs(%)
+
+```{r, Jobs(%), echo = FALSE}
+tbl_q4_a %>% 
+  `[`(-3, -(6:8)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+tbl_q4_2_a %>% 
+  `[`(-3, -(4:5)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz180903.RData")
+```

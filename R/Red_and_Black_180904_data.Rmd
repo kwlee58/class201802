@@ -29,90 +29,73 @@ nrow(class_roll0901)
 class_roll <- read.xlsx("../data/class_roll0904.xlsx", 
                         sheetIndex = 1, 
                         startRow = 2, 
-                        endRow = 181, 
+                        endRow = 164, 
                         colIndex = c(3:7, 9), 
                         colClasses = rep("character", 6), 
                         encoding = "UTF-8",
                         stringsAsFactors = FALSE)
 nrow(class_roll)
-class_roll0901 <- read.xlsx("../data/class_roll0901.xlsx", 
-                       sheetIndex = 1, 
-                       startRow = 2, 
-                        endRow = 181, 
-                        colIndex = c(3:7, 9), 
-                        colClasses = rep("character", 6), 
-                        encoding = "UTF-8",
-                        stringsAsFactors = FALSE)
 nrow(class_roll0901)
 names(class_roll) <- c("dept", "id", "name", "year", "e.mail", "cell.no")
-names(class_roll0901) <- c("dept", "id", "name", "year", "e.mail", "cell.no")
 class_roll0901$mark1 <- "0901"
-class_roll0901$mark2 <- "0901"
-class_roll$mark3 <- "0904"
-class_roll.merged.0901 <- merge(class_roll0901, class_roll0901, 
+class_roll$mark2 <- "0904"
+class_roll.merged <- merge(class_roll, class_roll0901, 
                                 by = "id", 
                                 all = TRUE)
 ```
 
-### 2월27일자 출석부와 3월2일자 출석부 통합 결과
+<!--
+### 9월 1일자 출석부와 9월 4일자 출석부 통합 결과
 
-```{r, echo = FALSE}
-nrow(class_roll.merged.0901)
-# str(class_roll.merged.0901)
-pander(class_roll.merged.0901[, c("group", "mark1", "mark2")])
-```
-
-### 통합 출석부와 3월4일자 출석부 통합 결과
-
-```{r, echo = FALSE}
-class_roll.merged <- merge(class_roll.merged.0901, class_roll, 
-                           by = "id",
-                           all = TRUE)
+```{r, echo = FALSE, results = "hide"}
 nrow(class_roll.merged)
-# str(class_roll.merged)
-pander(class_roll.merged[, c("group", "mark1", "mark2", "mark3")])
+pander(class_roll.merged[, c("group", "mark1", "mark2")])
 ```
+-->
 
-### 2월 27일자 출석부에만 나오는 사람들의 분포
+### 9월 1일자 출석부에만 나오는 사람들의 분포
 
 ```{r, echo = FALSE}
-pander(class_roll.merged[is.na(class_roll.merged$mark3), 
-                         c("group", "mark1", "mark2", "mark3")])
-table(class_roll.merged[is.na(class_roll.merged$mark3), ]$group)
+class_roll.out <- class_roll.merged[is.na(class_roll.merged$mark2), ]
+pander(class_roll.out[, c("group", "mark1", "mark2")])
+pander(table(class_roll.out$group))
+# pander(class_roll.merged[is.na(class_roll.merged$mark2), 
+#                          c("group", "mark1", "mark2")])
+# pander(table(class_roll.merged[is.na(class_roll.merged$mark2), ]$group))
 ```
 
 ```{r, echo = FALSE, results = "hide"}
 id0901 <- class_roll0901$id
-id0901 <- class_roll0901$id
 id0904 <- class_roll$id
-stay0901 <- intersect(id0901, id0901)
-length(stay0901)
 stay0904 <- intersect(id0901, id0904)
 length(stay0904)
-stay <- intersect(intersect(id0901, id0901), id0904)
-stay02 <- intersect(id0901, id0904)
-stay == stay02
-new_id <- setdiff(id0904, stay)
-class_roll.stay <- subset(class_roll0901, id %in% stay)
+new_id <- setdiff(id0904, id0901)
+class_roll.stay <- subset(class_roll0901, id %in% stay0904)
 class_roll.new <- subset(class_roll, id %in% new_id)
-# pander(class_roll.stay)
-# pander(class_roll.new)
+str(class_roll.stay)
+str(class_roll.out)
+str(class_roll.new)
 str(class_roll)
 ```
 
-<!--
-### Randomization New Kids Only 
--->
+### 새로 들어온 사람에게만 랜덤화 적용
 
 ```{r, sub randomization, echo = FALSE, eval = TRUE}
 set.seed(1)
 N <- nrow(class_roll.new) 
-class_roll.new$group <- sample(1:N) %% 2 + 1
+N_red <- table(class_roll.out$group)[1]
+id_red <- sample(1:N, size = 9)
+# id_red <- sample(1:N, size = 7)
+id_black <- setdiff(1:N, id_red)
+class_roll.new$group <- ifelse(1:N %in% id_red, "Red", "Black")
+# class_roll.new$group <- sample(1:N) %% 2 + 1
 class_roll.new$group <- factor(class_roll.new$group, 
                            labels = c("Red", "Black"))
+# class_roll.new$group <- factor(class_roll.new$group, 
+#                            levels = c("Red", "Black"))
 class_roll.new <- class_roll.new[, c(1:6, 8, 7)]
-names(class_roll.new)[8] <- "mark"
 names(class_roll.stay)[8] <- "mark"
+names(class_roll.new)[8] <- "mark"
 red.id <- which(class_roll.new$group == "Red")
 black.id <- which(class_roll.new$group == "Black")
 class_roll <- rbind(class_roll.stay, class_roll.new)
@@ -135,7 +118,13 @@ black.id <- which(class_roll$group == "Black")
 ### 학번
 
 ```{r, id, echo = FALSE}
-ID.17 <- factor(ifelse(substr(class_roll$id, 1, 4) >= 2017, "younger.17", "older.17"), levels = c("younger.17", "older.17"))
+ID.18 <- factor(ifelse(substr(class_roll$id, 1, 4) >= 2018, 
+                       "younger.18", "older.18"), 
+                levels = c("younger.18", "older.18"))
+pander(table("18학번 기준" = ID.18, "그룹" = class_roll$group))
+ID.17 <- factor(ifelse(substr(class_roll$id, 1, 4) >= 2017, 
+                       "younger.17", "older.17"), 
+                levels = c("younger.17", "older.17"))
 pander(table("17학번 기준" = ID.17, "그룹" = class_roll$group))
 ID.16 <- factor(ifelse(substr(class_roll$id, 1, 4) >= 2016, 
                        "younger.16", "older.16"), 
@@ -261,6 +250,6 @@ pander(black.names, caption = "Black")
 <!--
 ```{r, save}
 saveRDS(class_roll.order, file = "./class_roll.RDs")
-save.image("../R/red_and_black_180904_data.RData")
+save.image("../R/red_and_black_180907_data.RData")
 ```
 -->
