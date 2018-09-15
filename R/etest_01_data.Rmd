@@ -1,0 +1,60 @@
+---
+# title: "Quiz 180201"
+# author: "coop711"
+# date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+# install.packages("readr", repos = "https://cran/rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+library(readr)
+panderOptions('table.split.table', Inf)
+options(width = 180)
+```
+
+<!--
+### Data
+-->
+
+```{r, data, echo = FALSE, results = "hide"}
+load("./red_and_black_180907_data.RData")
+quiz01 <- read.xlsx("../data/etest01.xlsx", 
+                        sheetIndex = 1, 
+                        startRow = 3, 
+                        endRow = 159, 
+                        colIndex = 2:7, 
+#                        colClasses = rep("character", 6), 
+                        encoding = "UTF-8",
+                        stringsAsFactors = FALSE)
+names(quiz01) <- c("name", "id", "dept", "score1", "score2", "time")
+quiz01$group <- class_roll$group
+quiz01$submit <- ifelse(quiz01$score1 == 0, "No", "Yes")
+quiz01$hours <- as.numeric(difftime(Sys.time(), quiz01$time, units = 'days'))
+str(quiz01)
+```
+
+
+### 제출/미제출
+
+`group`, `mark1`이 NA인 사람은 새로 들어온 사람이고, `mark2`가 NA인 사람은 나간 사람임.
+
+```{r, echo = FALSE, results = "markup"}
+pander(table(quiz01$submit, quiz01$group))
+```
+
+### 제출 시간의 분포
+
+```{r, echo = FALSE}
+# quiz01$hours
+summary(quiz01$hours)
+stem(quiz01$hours)
+# max(quiz01$hours, na.rm = TRUE)
+# kable(table(cut(quiz01$hours, breaks = c(-1, 0, 1:10), include.lowest = TRUE)))
+```
+
