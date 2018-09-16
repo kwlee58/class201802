@@ -165,7 +165,7 @@ tbl_q4_a <- quiz0912$Q4 %>%
   table(quiz0912$group, ., useNA = "ifany") %>%
   addmargins
 colnames(tbl_q4_a)[4:5] <- c("결석", "계")
-rownames(tbl_q4_a)[3] <- "계"
+rownames(tbl_q4_a) <- c("Red(찬성에 부연 설명)", "Black(반대에 부연 설명)", "계")
 tbl_q4_a %>% 
   pander
 tbl_q2_a %>% 
