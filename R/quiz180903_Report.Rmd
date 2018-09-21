@@ -79,9 +79,9 @@ pander(summary(quiz0903))
 ```{r, Roper, echo = FALSE}
 tbl_q1_a <- quiz0903$Q1 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q1_a)[5:6] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q1_a)[5] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 tbl_q1_a[-3, -6] %>% 
   chisq.test(simulate.p.value = TRUE) %>% 
@@ -111,9 +111,9 @@ tbl_q1_a %>%
 ```{r, ASA, echo = FALSE}
 tbl_q2_a <- quiz0903$Q2 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q2_a)[5:6] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q2_a)[5] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 ```
 
@@ -138,9 +138,9 @@ tbl_q2_a %>%
 ```{r, D.Huff, echo = FALSE}
 tbl_q3_a <- quiz0903$Q3 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[5:6] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q3_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q3_a)[5] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 ```
 
@@ -171,9 +171,9 @@ tbl_q3_a %>%
 ```{r, Jobs(5 possible answers), echo = FALSE}
 tbl_q4_a <- quiz0903$Q4 %>%
   table(quiz0903$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[6:8] <- c("불참", "결석", "계")
-rownames(tbl_q4_a)[3] <- "계"
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[6:7] <- c("불참", "결석")
 tbl_q4_a %>% 
   pander
 ```
@@ -183,9 +183,9 @@ tbl_q4_a %>%
 ```{r, Jobs(3 possible answers), echo = FALSE}
 tbl_q4_2_a <- quiz0903$Q4.2 %>%
   table(quiz0903$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_2_a)[4:5] <- c("결석", "계")
-rownames(tbl_q4_2_a)[3] <- "계"
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_2_a)[4] <- "결석"
 tbl_q4_2_a %>% 
   pander
 ```

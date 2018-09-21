@@ -66,9 +66,9 @@ pander(summary(quiz0910))
 ```{r, Kwanzi, echo = FALSE}
 tbl_q1_a <- quiz0910$Q1 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q1_a)[6:7] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q1_a)[6] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 ```
 
@@ -93,9 +93,9 @@ tbl_q1_a %>%
 ```{r, state arithmetic, echo = FALSE}
 tbl_q2_a <- quiz0910$Q2 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q2_a)[6:7] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q2_a)[6] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 ```
 
@@ -120,9 +120,9 @@ tbl_q2_a %>%
 ```{r, labour force, echo = FALSE}
 tbl_q3_a <- quiz0910$Q3 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[5:6] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q3_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q3_a)[5] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 ```
 
@@ -152,14 +152,14 @@ tbl_q3_a %>%
 
 
 ##### 집계표. 
-부연설명 여부(Red는 부연설명, Black은 부연설명 없음)에 따라 응답에 영향. 당초 부연설명을 한 Red 집단에서 찬성 비율이 높을 것으로 기대하였으나 결과는 반대로 나옴. 통계적으로 유의한 수준임.
+부연설명 여부(Red는 부연설명, Black은 부연설명 없음)에 따라 응답에 영향. 당초 부연설명을 한 Red 집단에서 찬성 비율이 높을 것으로 기대하였으나 결과는 반대로 나옴. 통계적으로 유의한 수준은 아니나 상당히 가까움.
 
 ```{r, anti-terror law, echo = FALSE}
 tbl_q4_a <- quiz0910$Q4 %>%
   table(quiz0910$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[4:5] <- c("결석", "계")
-rownames(tbl_q4_a)[3] <- "계"
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[4] <- "결석"
 tbl_q4_a %>% 
   pander
 ```
@@ -169,9 +169,8 @@ tbl_q4_a %>%
 ```{r, Jobs(3 possible answers), echo = FALSE}
 tbl_q4_a <- quiz0910$Q4 %>%
   table(quiz0910$group, ., useNA = "no") %>%
-  addmargins
-colnames(tbl_q4_a)[4] <- c("계")
-rownames(tbl_q4_a)[3] <- "계"
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
 tbl_q4_a %>% 
   pander
 tbl_q4_a[-3, -4] %>% 
