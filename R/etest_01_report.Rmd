@@ -14,6 +14,7 @@ library(xlsx)
 library(pander)
 library(knitr)
 library(readr)
+library(magrittr)
 panderOptions('table.split.table', Inf)
 options(width = 180)
 ```
@@ -23,7 +24,13 @@ options(width = 180)
 -->
 
 ```{r, data, echo = FALSE, results = "hide"}
+load("./red_and_black_180901_data.RData")
+class_roll0901 <- class_roll
+id0901 <- class_roll0901$id
 load("./red_and_black_180907_data.RData")
+id0907 <- class_roll$id
+id_stay <- intersect(id0901, id0907)
+id_new <- setdiff(id0907, id0901)
 quiz01 <- read.xlsx("../data/etest01.xlsx", 
                         sheetIndex = 1, 
                         startRow = 3, 
@@ -41,6 +48,7 @@ quiz01$days <- as.numeric(difftime("2018-09-10 09:00:00", quiz01$time, units = '
 quiz01$hours <- as.numeric(difftime("2018-09-10 09:00:00", quiz01$time, units = 'hours'))
 quiz01$bird <- factor(ifelse(quiz01$hours >= 6, "Early", "Late"), 
                       labels = c("마감날 오후6시 이전 제출", "마감날 오후6시 이후 제출"))
+quiz01$new <- factor(ifelse(quiz01$id %in% id_new, "new", "stay"), labels = c("변경", "고수"))
 str(quiz01)
 ```
 ### 제출 시간
@@ -55,6 +63,28 @@ pander(head(quiz01[, c("score1", "time")], n = 10))
 
 ```{r, echo = FALSE, results = "markup"}
 pander(table(quiz01$group, quiz01$submit))
+```
+
+### 수강변경 여부와 제출/미제출
+
+ 수강변경으로 들어온 사람들의 미제출이 더 많은 것으로 관찰되나 통계적으로 유의한 수준은 아님.
+
+```{r, echo = FALSE}
+quiz01$new %>%
+  table(quiz01$submit) %>%
+  cbind(., "계" = rowSums(.)) %>%
+  pander
+quiz01$new %>%
+  table(quiz01$submit) %>%
+  chisq.test %>%
+  pander 
+quiz01$new %>%
+  table(quiz01$submit) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind(., "계" = rowSums(.)) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
 ```
 
 ## 제출 시간의 분포
