@@ -66,9 +66,9 @@ pander(summary(quiz0912))
 ```{r, National and Local tax, echo = FALSE}
 tbl_q1_a <- quiz0912$Q1 %>% 
   table(quiz0912$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q1_a)[6:7] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q1_a)[6] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 ```
 
@@ -93,9 +93,9 @@ tbl_q1_a %>%
 ```{r, tax law and cabinets, echo = FALSE}
 tbl_q2_a <- quiz0912$Q2 %>% 
   table(quiz0912$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q2_a)[6:7] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q2_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q2_a)[6] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 tbl_q2_a %>% 
   `[`(-3, -(6:7)) %>%
@@ -124,9 +124,9 @@ tbl_q2_a %>%
 ```{r, tax law and laymen, echo = FALSE}
 tbl_q3_a <- quiz0912$Q3 %>% 
   table(quiz0912$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[6:7] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q3_a)[3] %<>% `<-`(., "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q3_a)[6] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 tbl_q2_a %>% 
   `[`(-3, -(6:7)) %>%
@@ -163,12 +163,13 @@ tbl_q3_a %>%
 ```{r, investigation, echo = FALSE}
 tbl_q4_a <- quiz0912$Q4 %>%
   table(quiz0912$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[4:5] <- c("결석", "계")
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[4] <- "결석"
 rownames(tbl_q4_a) <- c("Red(찬성에 부연 설명)", "Black(반대에 부연 설명)", "계")
 tbl_q4_a %>% 
   pander
-tbl_q2_a %>% 
+tbl_q4_a %>% 
   `[`(-3, -(4:5)) %>%
   chisq.test(simulate.p.value = TRUE) %>%
   pander
@@ -178,7 +179,7 @@ tbl_q2_a %>%
 
 ```{r, investigation in percentage, echo = FALSE}
 tbl_q4_a %>% 
-  `[`(-3, -4) %>%
+  `[`(-3, -(4:5)) %>%
   prop.table(margin = 1) %>%
   `*`(100) %>%
   cbind("계" = rowSums(.)) %>%
