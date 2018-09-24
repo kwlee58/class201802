@@ -7,3 +7,4 @@ R/*.html
 R/rsconnect/**
 docs/*.pdf
 .Ruserdata
+.Rproj.user
