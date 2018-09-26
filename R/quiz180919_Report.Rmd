@@ -200,5 +200,6 @@ tbl_q4 %>%
 ```
 
 ```{r, save, echo = FALSE}
+saveRDS(quiz0919, file = "quiz180919.RDS")
 save.image("../R/quiz0919.RData")
 ```

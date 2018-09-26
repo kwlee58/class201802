@@ -1,5 +1,5 @@
 ---
-title: "Literacy 201702"
+title: "Literacy 201802"
 author: "coop711"
 date: "`r Sys.Date()`"
 output: html_document
@@ -30,28 +30,34 @@ options(width=180)
 
 
 ```{r, read data, echo = FALSE, results = 'hide'}
-literacy_roll <- read.xlsx("../data/literacy_1702.xlsx", 
+literacy_roll <- read.xlsx("../data/literacy_1802.xlsx", 
                            sheetIndex = 1, 
                            startRow = 3, 
-                           endRow  = 182, 
-                           colIndex = c(1:26), 
-                           colClasses = c(rep("character", 26)), 
+                           endRow  = 158, 
+                           colIndex = c(3:7, 9:35), 
+                           colClasses = c(rep("character", 31)), 
                            header = FALSE, 
-                           stringsAsFactors = FALSE,
-                           encoding = "UTF-8")
-names(literacy_roll) <- c("id", paste("Q", 1:25, sep = ""))
-head(literacy_roll$id)
-str(literacy_roll)
-class_roll <- readRDS("class_id_group.RDs")
-## match 함수를 공부하기 위해 학번 오름차 순으로 정리
-class_roll_o <- class_roll[order(class_roll$id), ]
-head(class_roll_o$id)
-str(class_roll_o)
-## literacy_roll 에 그룹을 짝지어 추가
-literacy_roll$group <- class_roll_o$group[match(literacy_roll$id, class_roll_o$id)]
-literacy_roll$id == class_roll$id
-kable(literacy_roll)
-literacy <- literacy_roll[, c(2:27)] #> 문해력 집계에 필요한 변수만 추출. 
+                           stringsAsFactors = FALSE)
+names(literacy_roll) <- c("dept", "id", "name", "year", "e.mail", "cell.no", 
+                          paste("Q", 1:25, sep = ""), "group")
+literacy_roll$group %<>% 
+  factor(levels = c("Red", "Black")) #> Boxplot 에서 `xlim` = finite 오류를 피하려면 `factor`변환 필요
+literacy_roll$group %>%
+  table
+## 수강신청 변경 기간에 Red and Black 부여가 Black 에 치우친 결과 보정
+## 문해력조사 이후 수강신청변경으로 출석부에서 빠진 사람들 파악. `Black`이 다소 많이 배정됨.
+## 9월19일자 퀴즈 자료를 비교 대상으로 추출
+quiz0919 <- readRDS("quiz180919.RDS")
+literacy_roll %>%
+#  `[`(.$id %in% setdiff(.$id, quiz0919$id), c("id", "name", "group"))
+#  `[`(`%in%`(.$id, setdiff(.$id, quiz0919$id)), c("id", "name", "group"))
+  `[`(`%in%`(.$id, .$id %>% setdiff(quiz0919$id)), c("id", "name", "group"))
+## 
+literacy_roll %<>%
+  `[<-`(.$id %in% c("20172840", "20183968"), "group", "Red") 
+## `[<-` 를 이용하여 값을 바꾸는 것은 다음 코드를 수행하는 것과 동등하다.
+# literacy_roll[literacy_roll$id %in% c("20172840", "20183968"), "group"]  <- "Red"
+literacy <- literacy_roll[, c(7:32)] #> 문해력 집계에 필요한 변수만 추출. 
 kable(literacy)
 ```
 
@@ -249,7 +255,7 @@ score %>%
 ```{r, qqplots, echo = FALSE, fig.width = 6, fig.height = 6}
 qqplot(x = score[Red], y = score[Black], 
        xlab = "Red", ylab = "Black", 
-       xlim = c(60, 100), ylim = c(60, 100))
+       xlim = c(70, 100), ylim = c(70, 100))
 ```
 
 <P style = "page-break-before:always">
@@ -425,15 +431,6 @@ rate_item %>%
 ```{r, hardest question below 60, echo = FALSE, eval = TRUE}
 rate_item %>%
   `[`(. <= 60, , drop = FALSE) %>%
-  t %>%
-  kable
-```
-
-##### 정답률 50% 이하
-
-```{r, hardest question below 50, echo = FALSE, eval = TRUE}
-rate_item %>%
-  `[`(. <= 50, , drop = FALSE) %>%
   t %>%
   kable
 ```
