@@ -435,4 +435,24 @@ rate_item %>%
   kable
 ```
 
+#### 정답률이 낮은 문제들
 
+##### 문6.
+
+`r include_graphics("../pics/Q06.png")`
+
+##### 문9.
+
+`r include_graphics("../pics/Q09.png")`
+
+##### 문12.
+
+`r include_graphics("../pics/Q12.png")`
+
+##### 문17.
+
+`r include_graphics("../pics/Q17.png")`
+
+##### 문22.
+
+`r include_graphics("../pics/Q22.png")`
