@@ -126,7 +126,7 @@ tbl_q3_a <- quiz0919$Q3 %>%
   rbind(., "계" = colSums(.))
 colnames(tbl_q3_a)[6] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
-tbl_q2_a %>% 
+tbl_q3_a %>% 
   `[`(-3, -(6:7)) %>%
   chisq.test(simulate.p.value = TRUE) %>%
   pander
