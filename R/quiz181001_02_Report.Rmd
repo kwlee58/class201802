@@ -154,6 +154,7 @@ tbl_q3_a %>%
 
 ```{r, investigation, echo = FALSE}
 levels(quiz1001_02$Q4.2) <- c("제조업구조조정", "최저임금인상", "경기부진", "정부대응능력부족", "인구구조변화", "모름/무응답", "모름/무응답")
+#levels(quiz1001_02$Q4.2)[levels(quiz1001_02$Q4.2) %in% c("모름/무응답", "불참")] <- "모름/무응답" 
 tbl_q4_a <- quiz1001_02$Q4.2 %>%
   table(quiz1001_02$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
