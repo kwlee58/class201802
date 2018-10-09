@@ -1,0 +1,234 @@
+---
+title: "Quiz 181008_02"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+library(magrittr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width=180)
+```
+
+```{r, data, echo = FALSE, results = 'hide'}
+quiz1008_02 <- read.xlsx("../data/quiz181008_02.xlsx", 
+                      sheetIndex = 1, 
+                      startRow = 2, 
+                      endRow = 155, 
+                      colIndex = c(3:7, 9:14), 
+                      colClasses = c(rep("character", 12)), 
+                      encoding = "UTF-8",
+                      stringsAsFactors = FALSE)
+str(quiz1008_02)
+names(quiz1008_02) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
+table(quiz1008_02$Q3)
+quiz1008_02$dept <- factor(quiz1008_02$dept)
+quiz1008_02$year <- factor(quiz1008_02$year)
+quiz1008_02$group <- factor(quiz1008_02$group, 
+                         levels = c("Red", "Black"))
+quiz1008_02$Q1 <- factor(quiz1008_02$Q1, 
+                      levels = c("가", "나", "다", "라"), 
+                      labels = c("월간 독서율", "월간 독서량", "월간 도서구입율", "월간 도서구입량"))
+quiz1008_02$Q2 <- factor(quiz1008_02$Q2, 
+                      levels = c("가", "나", "다", "라", "마"), 
+                      labels = c("90%", "80%",  "70%", "60%", "50%"))
+quiz1008_02$Q3 <- factor(quiz1008_02$Q3, 
+                      levels = c("가", "나", "다", "라", "마"), 
+                      labels = c("90%", "80%",  "70%", "60%", "50%"))
+quiz1008_02$Q4 <- factor(quiz1008_02$Q4, 
+                      levels = c("1번", "2번", "3번", "4번", "5번", "무응답"))
+quiz1008_02$Q4.2 <- quiz1008_02$Q4
+levels(quiz1008_02$Q4.2[quiz1008_02$group == "Black"]) <- c("4번", "3번", "2번", "1번", "5번", "무응답")
+levels(quiz1008_02$Q4.2) <- c("매우 높다", "높다", "낮은 편이다","매우 낮은 편이다",  "모름/기타", "불참")
+quiz1008_02$Q4.3 <- quiz1008_02$Q4.2
+levels(quiz1008_02$Q4.3) <- c("높다", "높다", "낮다","낮다",  "모름/기타", "모름/기타")
+str(quiz1008_02)
+```
+
+### 응답 집계
+
+#### 월간 독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_01.png", dpi = NA)`
+
+##### 집계
+
+```{r, National and Local tax, echo = FALSE}
+tbl_q1_a <- quiz1008_02$Q1 %>% 
+  table(quiz1008_02$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q1_a)[5] %<>% `<-`(., "결석")
+tbl_q1_a %>% pander 
+```
+
+##### %
+
+```{r, National and Local tax in percentage, echo = FALSE}
+tbl_q1_a %>% 
+  `[`(3, -(5:6)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 1, nsmall = 1) %>%
+  pander
+```
+
+#### 20대의 연간독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_02.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and cabinets, echo = FALSE}
+tbl_q2_a <- quiz1008_02$Q2 %>% 
+  table(quiz1008_02$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q2_a)[6] %<>% `<-`(., "결석")
+tbl_q2_a %>% pander 
+tbl_q2_a %>% 
+  `[`(-3, -(5:6)) %>%
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+```
+
+##### %
+
+```{r, tax law and cabinets in percentage, echo = FALSE}
+tbl_q2_a %>% 
+  `[`(3, -(6:7)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+#### 50대의 연간독서율
+
+`r knitr::include_graphics("../pics/Quiz170925_03.png", dpi = NA)`
+
+##### 집계
+
+```{r, tax law and laymen, echo = FALSE}
+tbl_q3_a <- quiz1008_02$Q3 %>% 
+  table(quiz1008_02$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q3_a)[6] %<>% `<-`(., "결석")
+tbl_q3_a %>% pander 
+```
+
+##### %
+
+```{r, tax law and laymen in percentage, echo = FALSE}
+tbl_q3_a %>% 
+  `[`(3, -(6:7)) %>%
+  prop.table %>% 
+  c(., "계" = sum(.)) %>%
+  `*`(100) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+### 한반도 평화체제 정착과 완전한 비핵화 
+
+#### 응답 문항의 순서
+
+##### Red 
+
+`r knitr::include_graphics("../pics/Quiz181008_02_04_red.png", dpi = NA)`
+
+##### Black
+
+`r knitr::include_graphics("../pics/Quiz181008_02_04_black.png", dpi = NA)`
+
+가능성이 높다는 의견을 앞에 놓을 때(Red)와 가능성이 낮다는 의견을 앞에 놓을 때(Black) 응답이 달라질 것으로 기대하였는데 숫자 상으로는 기대한 것처럼 Red에는 가능성이 높다는 응답이, BLack에는 가능성이 낮다는 응답이 나왔지만 통계적으로 유의한 수준은 아닙니다.
+
+#### 집계
+
+```{r, investigation, echo = FALSE}
+tbl_q4_a <- quiz1008_02$Q4.2 %>%
+  table(quiz1008_02$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[7] <- "결석"
+rownames(tbl_q4_a)[1:2] <- c("Red(높다 먼저)", "Black(낮다 먼저)")
+tbl_q4_a %>% 
+  pander
+tbl_q4_a %>% 
+  `[`(-3, -(7:8)) %>%
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+```
+
+##### % 비교.  
+
+```{r, investigation in percentage, echo = FALSE}
+tbl_q4_a %>% 
+  `[`(-3, -(7:8)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+#### 매우 높다, 높은 편이다 => 높다. 낮은 편이다, 매우 낮은 편이다 => 낮다, 불참 => 모름/무응답
+
+```{r, echo = FALSE}
+tbl_q4_a_3 <- quiz1008_02$Q4.3 %>%
+  table(quiz1008_02$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a_3)[4] <- "결석"
+rownames(tbl_q4_a_3)[1:2] <- c("Red(높다 먼저)", "Black(낮다 먼저)")
+tbl_q4_a_3 %>% 
+  pander
+tbl_q4_a_3 %>% 
+  `[`(-3, -(4:5)) %>%
+  chisq.test(simulate.p.value = TRUE) %>%
+  pander
+```
+
+##### % 비교.  
+
+```{r, in percentage, echo = FALSE}
+tbl_q4_a_3 %>% 
+  `[`(-3, -(4:5)) %>%
+  prop.table(margin = 1) %>%
+  `*`(100) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
+  pander
+```
+
+
+##### % 합계
+
+```{r, overall percentage, echo = FALSE}
+tbl_q4 <- quiz1008_02$Q4.3 %>%
+  table(useNA = "no") %>%
+  prop.table %>%
+  `*`(100) %>%
+  c(., sum(.)) %>%
+  format(digits = 2, nsmall = 1)
+names(tbl_q4)[4] <- "계"
+tbl_q4 %>%
+  pander
+```
+
+
+```{r, save, echo = FALSE}
+save.image("../R/quiz1008_02.RData")
+```
