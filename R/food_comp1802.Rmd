@@ -1,0 +1,109 @@
+---
+title: "Food Habits Comparison 181015"
+author: "coop711"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.alignment.rownames', 'left')
+panderOptions('table.alignment.default', 'right')
+options(width = 180)
+```
+
+<!--
+### Data 
+-->
+
+```{r, data, echo = FALSE, results = 'hide'}
+food_b <- readRDS("./food_before1802.rds")
+food_a <- readRDS("./food_after1802.rds")
+diff <- food_a$score - food_b$score
+food <- data.frame(food_b[c("id", "group")], score_b = food_b$score, score_a = food_a$score, diff = diff, grade_b = food_b$grade, grade_a = food_a$grade)
+```
+
+### Descriptive Statistics
+
+#### Grades
+
+```{r, grades, echo = FALSE}
+# pander(food[c("id", "name", "score", "grade")])
+pander(food)
+```
+
+#### Cross Tables
+
+```{r, cross table, echo = FALSE}
+grade_tbl_b <- table(food$grade_b, useNA = "ifany")
+grade_tbl_a <- table(food$grade_a, useNA = "ifany")
+grade_tbl <- rbind(grade_tbl_b, grade_tbl_a)
+grade_tbl_am <- addmargins(grade_tbl, margin = 2)
+rownames(grade_tbl_am) <- c("시청 전", "시청 후")
+colnames(grade_tbl_am)[4:5] <- c("결석", "계")
+pander(grade_tbl_am)
+```
+
+#### Percentages
+
+```{r, echo = FALSE}
+grade_ptbl <- prop.table(grade_tbl_am[, 1:3], margin = 1) * 100
+grade_ptbl_am <- round(cbind(grade_ptbl, rowSums(grade_ptbl)), digits = 1)
+colnames(grade_ptbl_am)[4] <- "계"
+pander(grade_ptbl_am)
+```
+
+#### Summary Statistics
+
+```{r, summary, echo = FALSE}
+pander(tapply(food$diff, food$group, summary))
+```
+
+#### Standard Deviation
+
+```{r, SD, echo = FALSE}
+pander(tapply(food$diff, food$group, sd, na.rm = TRUE), caption = "Standard Deviation")
+```
+
+#### t test (Welch's)
+
+```{r, t test, echo = FALSE}
+pander(t.test(diff, alternative = "greater"))
+pander(t.test(diff ~ group, data = food))
+```
+
+### Plots
+
+#### Stem and Leaf
+
+```{r, stem and leaf, echo = FALSE}
+tapply(food$diff, food$group, stem)
+```
+
+#### Box plot
+
+```{r, Box plot, echo = FALSE, fig.width = 7, fig.height = 7}
+plot(diff ~ group, data = food)
+```
+
+#### QQplot
+
+```{r, qqplot, echo = FALSE, fig.width = 7, fig.height = 7}
+Black <- food$group == "Black"
+Red <- food$group == "Red"
+qqplot(food$diff[Black], food$diff[Red], xlab = "Black", ylab = "Red")
+```
+
+<!--
+### save
+-->
+
+```{r, echo = FALSE}
+save.image("./food1802.RData")
+```
