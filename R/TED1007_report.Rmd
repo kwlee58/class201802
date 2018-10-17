@@ -1,5 +1,5 @@
 ---
-title: "TED Submission Time : 180930"
+title: "TED Submission Time : 181007"
 # author: "coop711"
 # date: "`r Sys.Date()`"
 output: html_document
@@ -24,7 +24,7 @@ options(width = 180)
 
 ```{r, data, echo = FALSE, results = "hide"}
 load("./red_and_black_180907_data.RData")
-TED01 <- read.xlsx("../data/TED01.xlsx", 
+TED02 <- read.xlsx("../data/TED02.xlsx", 
                    sheetIndex = 1, 
                    startRow = 1, 
                    endRow = 154, 
@@ -32,19 +32,19 @@ TED01 <- read.xlsx("../data/TED01.xlsx",
                    colClasses = c("character", "numeric", "Date", "POSIXct"),
                    encoding = "UTF-8",
                    stringsAsFactors = FALSE)
-names(TED01) <- c("id", "score", "date", "time")
-TED01$group <- class_roll$group[match(TED01$id, class_roll$id)]
-TED01$date_time <- as.POSIXct(paste(TED01$date, strftime(TED01$time, format = "%H:%M:%S", tz = "GMT")), 
+names(TED02) <- c("id", "score", "date", "time")
+TED02$group <- class_roll$group[match(TED02$id, class_roll$id)]
+TED02$date_time <- as.POSIXct(paste(TED02$date, strftime(TED02$time, format = "%H:%M:%S", tz = "GMT")), 
                               format = "%Y-%m-%d %H:%M:%S")
-TED01$submit <- ifelse(is.na(TED01$date_time), "미제출", "제출")
+TED02$submit <- ifelse(is.na(TED02$date_time), "미제출", "제출")
 ## 학교 정보시스템이 GMT로 표기되어 있어서 9시간의 타임갭을 감안하여야 함.
-TED01$days <- as.numeric(difftime("2018-10-01 00:00:00", TED01$date_time, units = 'days'))
-TED01$bird <- factor(ifelse(TED01$days >= 1, "Early", "Late"), 
-                     labels = c("일찍 작성", "마감날 이후 작성"))
-str(TED01)
-TED01 <- TED01[c("id","score", "date_time", "group", "submit", "days", "bird")]
-str(TED01)
-write.table(TED01[c("id", "score", "date_time")], file = "../data/TE01.txt", row.names = FALSE)
+TED02$days <- as.numeric(difftime("2018-10-08 00:00:00", TED02$date_time, units = 'days'))
+TED02$bird <- factor(ifelse(TED02$days >= 1, "Early", "Late"), 
+                     labels = c("마감날 이전 작성", "마감날 작성"))
+str(TED02)
+TED02 <- TED02[c("id","score", "date_time", "group", "submit", "days", "bird")]
+str(TED02)
+write.table(TED02[c("id", "score", "date_time")], file = "../data/TED02.txt", row.names = FALSE)
 ```
 
 
@@ -53,8 +53,8 @@ write.table(TED01[c("id", "score", "date_time")], file = "../data/TE01.txt", row
 제출시간이 기록되지 않은 사람은 미제출.
 
 ```{r, echo = FALSE, results = "markup"}
-pander(table(TED01$group, TED01$submit))
-pander(chisq.test(table(TED01$group, TED01$submit)))
+pander(table(TED02$group, TED02$submit))
+pander(chisq.test(table(TED02$group, TED02$submit)))
 ```
 
 ## 제출 시간의 분포
@@ -64,18 +64,18 @@ pander(chisq.test(table(TED01$group, TED01$submit)))
 ### 기초통계량
 
 ```{r, echo = FALSE}
-summary(TED01$days)
-stem(TED01$days, scale = 2)
-max(TED01$days, na.rm = TRUE)
+summary(TED02$days)
+stem(TED02$days, scale = 2)
+max(TED02$days, na.rm = TRUE)
 ```
 
 ### 마감일로부터 제출일까지 기간의 분포
 
 ```{r, echo = FALSE}
 par(family = "HCR Dotum LVT")
-pander(table(cut(TED01$days, breaks = c(-1:7, 14, 21, 28), 
+pander(table(cut(TED02$days, breaks = c(-1:7, 14, 21, 28), 
                  include.lowest = TRUE, right = FALSE)), caption = "일 단위")
-barplot(rev(table(cut(TED01$days, breaks = c(-1:28), 
+barplot(rev(table(cut(TED02$days, breaks = c(-1:28), 
                       include.lowest = TRUE, right = FALSE))), 
         space = 0,
         names.arg = paste0(c(27:-1), "일"),
@@ -86,9 +86,9 @@ title(main = "일별 토론 등록 횟수")
 ### 마감일로부터 일주일 단위 제출율의 분포
 
 ```{r, echo = FALSE}
-breaks <- c(-1, 0, 1, 2, 7, 14, 21, 28)
+breaks <- c(-1, 0, 1, 7, 14, 21, 28)
 # breaks <- c(0, 24, 25:34, seq(48, 192, by = 24))
-pander(table(cut(TED01$days, breaks = breaks, 
+pander(table(cut(TED02$days, breaks = breaks, 
                  include.lowest = TRUE, right = FALSE)), caption = "시간 단위")
 ```
 
@@ -96,10 +96,10 @@ pander(table(cut(TED01$days, breaks = breaks,
 
 ```{r, echo = FALSE, fig.width = 12}
 par(family = "HCR Dotum LVT")
-widths <- c(rep(7, 3), 4, 1, 1, 1)
-freqs <- table(cut(TED01$days, breaks = breaks, include.lowest = TRUE, right = FALSE))
+widths <- c(rep(7, 3), 5, 1, 1)
+freqs <- table(cut(TED02$days, breaks = breaks, include.lowest = TRUE, right = FALSE))
 heights <- freqs / diff(breaks)
-names_args <- c("Week 1", "Week 2", "Week 3", "Week 4 -2", "-1", "0", "+1")
+names_args <- c("Week 1", "Week 2", "Week 3", "Week 4 -1", "0", "+1")
 barplot(height = rev(heights), width = widths, 
         space = 0,
         names.arg = names_args)
@@ -115,16 +115,19 @@ title(main = "일 평균 토론 등록 건수 분포")
 #### 랜덤화 효과
 
 ```{r, echo = FALSE}
-pander(table(TED01$group, TED01$bird, useNA = "ifany"))
-pander(chisq.test(table(TED01$group, TED01$bird)))
+pander(table(TED02$group, TED02$bird, useNA = "ifany"))
+pander(chisq.test(table(TED02$group, TED02$bird)))
 ```
 
 #### 점수 비교
 
 ```{r, echo = FALSE}
-pander(table(TED01$score, TED01$bird, useNA = "ifany"))
+pander(table(TED02$score, TED02$bird, useNA = "ifany"))
 ```
 
+#### TED01과 비교
+
 ```{r, echo = FALSE}
-saveRDS(TED01, file = "TED01.RDS")
+TED01 <- readRDS("./TED01.RDS")
+pander(table("TED01" = TED01$bird, "TED02" = TED02$bird, dnn = list("TED01", "TED02"), useNA = "ifany"))
 ```

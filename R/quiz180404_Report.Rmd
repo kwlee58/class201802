@@ -154,15 +154,17 @@ pander(round(tbl.q3.a.p.sum * 100,
 빠른 시기(지방선거와 동시 실시)가 먼저 나오는지(Red), 늦은 시기 (내년이후 실시)가 먼저 나오는지(Black)에 따라 응답이 달라질 것으로, Red 집단의 찬성비율이 높게 나올 것으로 기대하였으나, 유의한 차이는 아님. 
 
 ```{r, vote attitude, echo = FALSE}
+levels(quiz0404$Q4.2)[levels(quiz0404$Q4.2) %in% c("모름/응답거절", "불참")] <- 
+ "모름/응답거절"
 tbl.q4 <- table(quiz0404$group, 
                 quiz0404$Q4.2, 
                 useNA = "always")
 tbl.q4.a <- addmargins(tbl.q4)
-colnames(tbl.q4.a)[6:8] <- c("불참", "결석", "계")
+colnames(tbl.q4.a)[6:7] <- c("결석", "계")
 rownames(tbl.q4.a)[4] <- "계"
 pander(tbl.q4.a[-3, ],
        caption = "")
-pander(chisq.test(tbl.q4[-3, -c(4:6)]))
+pander(chisq.test(tbl.q4[-3, -c(4:7)]))
 #                  simulate.p.value = TRUE))
 ```
 
