@@ -131,3 +131,9 @@ plot(score1 ~ bird, data = quiz09,
 ```{r, echo = FALSE}
 pander(t.test(score1 ~ bird, data = quiz09))
 ```
+
+## Save
+
+```{r, echo = FALSE}
+saveRDS(quiz09, file = "quiz09.RDs")
+```
