@@ -14,6 +14,7 @@ library(xlsx)
 library(pander)
 library(knitr)
 library(readr)
+library(magrittr)
 panderOptions('table.split.table', Inf)
 options(width = 180)
 ```
@@ -130,4 +131,38 @@ plot(score1 ~ bird, data = quiz08,
 
 ```{r, echo = FALSE}
 pander(t.test(score1 ~ bird, data = quiz08))
+```
+
+### Quiz07 와 Quiz08
+
+```{r, echo = FALSE}
+quiz07 <- readRDS("quiz07.RDs")
+```
+
+#### 일요일에 제출한 사람들
+
+##### Quiz07
+
+```{r, echo = FALSE}
+quiz07$id[quiz07$days >= 0 & quiz07$days <= 1] %>%
+  is.na %>%
+  `!` %>%
+  sum 
+```
+##### Quiz08
+
+```{r, echo = FALSE}
+quiz08$id[quiz08$days >= 2 & quiz08$days <= 3] %>%
+  is.na %>%
+  `!` %>%
+  sum 
+```
+
+#### 두 퀴즈를 일요일에 제출한 사람들
+
+```{r, echo = FALSE}
+intersect(quiz07$id[quiz07$days >= 0 & quiz07$days <= 1], quiz08$id[quiz08$days >= 2 & quiz08$days <= 3]) %>% 
+  is.na %>%
+  `!` %>%
+  sum
 ```
