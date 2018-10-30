@@ -1,5 +1,5 @@
 ---
-title: "Class_BFI_MI"
+title: "Class_BFI_MI : 1802"
 author: "coop711"
 date: "`r Sys.Date()`"
 output: html_document
@@ -20,7 +20,7 @@ panderOptions("table.split.table", Inf)
 필수 자료 읽어들이기
 
 ```{r, data}
-load("./BFI_MI_1702.RData")
+load("./BFI_MI_1802.RData")
 # ls()
 str(BFI)
 str(MI)
@@ -197,6 +197,15 @@ BFI_MI_full <- data.frame(BFI_full_kr[-7], MI_sort_full_kr[c(2:4, 10)])
 kable(head(BFI_MI_full))
 ```
 
+### MI 3대 강점지능 요약
+
+```{r, MI table}
+BFI_MI_full %>%
+  .[c("제1순위", "제2순위", "제3순위")] %>%
+  sapply(FUN = table) %>%
+  t %>%
+  kable
+```
 
 #### 결석생 확인
 

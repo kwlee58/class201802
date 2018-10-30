@@ -43,6 +43,7 @@ class_roll$mark2 <- "0907"
 class_roll.merged <- merge(class_roll, class_roll0904, 
                                 by = "id", 
                                 all = TRUE)
+
 ```
 
 

@@ -11,7 +11,7 @@
 
 <meta name="author" content="coop711" />
 
-<meta name="date" content="2018-05-02" />
+<meta name="date" content="2018-10-30" />
 
 <title>Big Five Personality and Multiple Intelligence : 201801</title>
 
@@ -92,6 +92,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -121,7 +124,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Big Five Personality and Multiple Intelligence : 201801</h1>
 <h4 class="author"><em>coop711</em></h4>
-<h4 class="date"><em>2018-05-02</em></h4>
+<h4 class="date"><em>2018-10-30</em></h4>
 
 </div>
 
@@ -146,7 +149,7 @@ ls()
 ```
 
 ```
-## [1] "BFI"        "class.roll" "MI"
+## [1] "BFI"        "class_roll" "MI"
 ```
 
 ```r
@@ -178,66 +181,66 @@ str(MI)
 ```
 ## 'data.frame':    180 obs. of  57 variables:
 ##  $ ID : num  20175101 20162502 20182102 20183802 20174103 ...
-##  $ X8 : num  NA NA 5 3 4 3 1 5 5 5 ...
-##  $ X9 : num  NA NA 3 3 4 3 2 5 5 2 ...
-##  $ X10: num  NA NA 3 4 3 4 2 5 4 3 ...
-##  $ X11: num  NA NA 5 4 2 2 3 5 5 4 ...
-##  $ X12: num  NA NA 2 3 2 2 2 5 3 3 ...
-##  $ X13: num  NA NA 4 3 4 4 4 3 4 4 ...
-##  $ X14: num  NA NA 3 4 4 3 2 5 5 5 ...
-##  $ X15: num  NA NA 1 3 4 1 1 3 2 3 ...
-##  $ X16: num  NA NA 4 4 3 1 2 5 3 5 ...
-##  $ X17: num  NA NA 4 4 4 5 4 5 5 5 ...
-##  $ X18: num  NA NA 1 3 4 5 3 3 5 3 ...
-##  $ X19: num  NA NA 3 4 4 4 3 3 4 4 ...
-##  $ X20: num  NA NA 3 3 2 3 3 5 4 3 ...
-##  $ X21: num  NA NA 3 4 4 2 2 2 3 4 ...
-##  $ X22: num  NA NA 4 3 4 4 2 5 4 4 ...
-##  $ X23: num  NA NA 4 4 2 2 1 1 3 3 ...
-##  $ X24: num  NA NA 2 3 3 3 1 5 2 4 ...
-##  $ X25: num  NA NA 4 4 5 4 3 2 3 5 ...
-##  $ X26: num  NA NA 3 3 2 2 4 5 4 3 ...
-##  $ X27: num  NA NA 2 4 2 2 1 2 4 3 ...
-##  $ X28: num  NA NA 5 3 2 1 1 3 3 1 ...
-##  $ X29: num  NA NA 3 4 3 4 4 2 5 4 ...
-##  $ X30: num  NA NA 3 4 3 4 5 3 5 3 ...
-##  $ X31: num  NA NA 2 4 2 2 4 2 5 1 ...
-##  $ X32: num  NA NA 3 3 2 1 1 4 1 2 ...
-##  $ X33: num  NA NA 4 3 5 5 2 2 3 5 ...
-##  $ X34: num  NA NA 3 4 4 3 1 2 4 3 ...
-##  $ X35: num  NA NA 4 4 3 3 3 5 5 2 ...
-##  $ X36: num  NA NA 2 3 3 1 2 4 3 2 ...
-##  $ X37: num  NA NA 3 5 3 4 4 2 5 3 ...
-##  $ X38: num  NA NA 3 4 4 2 3 4 5 5 ...
-##  $ X39: num  NA NA 3 3 2 2 3 2 5 2 ...
-##  $ X40: num  NA NA 4 4 3 2 1 2 1 5 ...
-##  $ X41: num  NA NA 3 2 4 2 1 3 3 4 ...
-##  $ X42: num  NA NA 2 4 4 3 3 3 3 3 ...
-##  $ X43: num  NA NA 5 3 2 1 1 5 4 4 ...
-##  $ X44: num  NA NA 4 3 3 2 4 5 3 3 ...
-##  $ X45: num  NA NA 4 4 4 4 5 2 5 4 ...
-##  $ X46: num  NA NA 3 4 4 1 2 2 5 3 ...
-##  $ X47: num  NA NA 1 3 2 1 3 1 5 1 ...
-##  $ X48: num  NA NA 4 3 3 2 3 1 2 5 ...
-##  $ X49: num  NA NA 1 3 2 3 1 1 1 2 ...
-##  $ X50: num  NA NA 2 4 3 4 3 3 5 5 ...
-##  $ X51: num  NA NA 2 3 2 3 1 3 4 4 ...
-##  $ X52: num  NA NA 2 3 2 1 3 5 5 1 ...
-##  $ X53: num  NA NA 3 3 4 4 5 2 4 5 ...
-##  $ X54: num  NA NA 3 4 4 5 5 3 4 4 ...
-##  $ X55: num  NA NA 2 3 2 2 2 2 5 1 ...
-##  $ X56: num  NA NA 2 4 3 1 1 4 1 3 ...
-##  $ X57: num  NA NA 1 3 2 2 1 3 1 4 ...
-##  $ X58: num  NA NA 2 4 4 2 5 3 5 4 ...
-##  $ X59: num  NA NA 1 3 3 3 3 3 3 3 ...
-##  $ X60: num  NA NA 3 4 3 3 3 3 4 3 ...
-##  $ X61: num  NA NA 2 4 3 5 4 4 5 3 ...
-##  $ X62: num  NA NA 3 4 5 3 2 1 5 5 ...
-##  $ X63: num  NA NA 2 4 3 2 4 1 5 3 ...
+##  $ Q1 : num  NA NA 5 3 4 3 1 5 5 5 ...
+##  $ Q2 : num  NA NA 3 3 4 3 2 5 5 2 ...
+##  $ Q3 : num  NA NA 3 4 3 4 2 5 4 3 ...
+##  $ Q4 : num  NA NA 5 4 2 2 3 5 5 4 ...
+##  $ Q5 : num  NA NA 2 3 2 2 2 5 3 3 ...
+##  $ Q6 : num  NA NA 4 3 4 4 4 3 4 4 ...
+##  $ Q7 : num  NA NA 3 4 4 3 2 5 5 5 ...
+##  $ Q8 : num  NA NA 1 3 4 1 1 3 2 3 ...
+##  $ Q9 : num  NA NA 4 4 3 1 2 5 3 5 ...
+##  $ Q10: num  NA NA 4 4 4 5 4 5 5 5 ...
+##  $ Q11: num  NA NA 1 3 4 5 3 3 5 3 ...
+##  $ Q12: num  NA NA 3 4 4 4 3 3 4 4 ...
+##  $ Q13: num  NA NA 3 3 2 3 3 5 4 3 ...
+##  $ Q14: num  NA NA 3 4 4 2 2 2 3 4 ...
+##  $ Q15: num  NA NA 4 3 4 4 2 5 4 4 ...
+##  $ Q16: num  NA NA 4 4 2 2 1 1 3 3 ...
+##  $ Q17: num  NA NA 2 3 3 3 1 5 2 4 ...
+##  $ Q18: num  NA NA 4 4 5 4 3 2 3 5 ...
+##  $ Q19: num  NA NA 3 3 2 2 4 5 4 3 ...
+##  $ Q20: num  NA NA 2 4 2 2 1 2 4 3 ...
+##  $ Q21: num  NA NA 5 3 2 1 1 3 3 1 ...
+##  $ Q22: num  NA NA 3 4 3 4 4 2 5 4 ...
+##  $ Q23: num  NA NA 3 4 3 4 5 3 5 3 ...
+##  $ Q24: num  NA NA 2 4 2 2 4 2 5 1 ...
+##  $ Q25: num  NA NA 3 3 2 1 1 4 1 2 ...
+##  $ Q26: num  NA NA 4 3 5 5 2 2 3 5 ...
+##  $ Q27: num  NA NA 3 4 4 3 1 2 4 3 ...
+##  $ Q28: num  NA NA 4 4 3 3 3 5 5 2 ...
+##  $ Q29: num  NA NA 2 3 3 1 2 4 3 2 ...
+##  $ Q30: num  NA NA 3 5 3 4 4 2 5 3 ...
+##  $ Q31: num  NA NA 3 4 4 2 3 4 5 5 ...
+##  $ Q32: num  NA NA 3 3 2 2 3 2 5 2 ...
+##  $ Q33: num  NA NA 4 4 3 2 1 2 1 5 ...
+##  $ Q34: num  NA NA 3 2 4 2 1 3 3 4 ...
+##  $ Q35: num  NA NA 2 4 4 3 3 3 3 3 ...
+##  $ Q36: num  NA NA 5 3 2 1 1 5 4 4 ...
+##  $ Q37: num  NA NA 4 3 3 2 4 5 3 3 ...
+##  $ Q38: num  NA NA 4 4 4 4 5 2 5 4 ...
+##  $ Q39: num  NA NA 3 4 4 1 2 2 5 3 ...
+##  $ Q40: num  NA NA 1 3 2 1 3 1 5 1 ...
+##  $ Q41: num  NA NA 4 3 3 2 3 1 2 5 ...
+##  $ Q42: num  NA NA 1 3 2 3 1 1 1 2 ...
+##  $ Q43: num  NA NA 2 4 3 4 3 3 5 5 ...
+##  $ Q44: num  NA NA 2 3 2 3 1 3 4 4 ...
+##  $ Q45: num  NA NA 2 3 2 1 3 5 5 1 ...
+##  $ Q46: num  NA NA 3 3 4 4 5 2 4 5 ...
+##  $ Q47: num  NA NA 3 4 4 5 5 3 4 4 ...
+##  $ Q48: num  NA NA 2 3 2 2 2 2 5 1 ...
+##  $ Q49: num  NA NA 2 4 3 1 1 4 1 3 ...
+##  $ Q50: num  NA NA 1 3 2 2 1 3 1 4 ...
+##  $ Q51: num  NA NA 2 4 4 2 5 3 5 4 ...
+##  $ Q52: num  NA NA 1 3 3 3 3 3 3 3 ...
+##  $ Q53: num  NA NA 3 4 3 3 3 3 4 3 ...
+##  $ Q54: num  NA NA 2 4 3 5 4 4 5 3 ...
+##  $ Q55: num  NA NA 3 4 5 3 2 1 5 5 ...
+##  $ Q56: num  NA NA 2 4 3 2 4 1 5 3 ...
 ```
 
 ```r
-str(class.roll)
+str(class_roll)
 ```
 
 ```
@@ -1854,7 +1857,7 @@ pander(BFI.level.kr.2)
 
 
 ```r
-BFI.full.kr<-join(class.roll, BFI.level.kr.2, by="ID")
+BFI.full.kr<-join(class_roll, BFI.level.kr.2, by="ID")
 pander(BFI.full.kr[, -2])
 ```
 
@@ -2628,7 +2631,7 @@ pander(MI.score.kr)
 ```
 
 ```r
-(MI.ok.id <- setdiff(1:nrow(class.roll), MI.na.id))
+(MI.ok.id <- setdiff(1:nrow(class_roll), MI.na.id))
 ```
 
 ```
@@ -3601,7 +3604,7 @@ pander(MI.sort.kr.2)
 
 
 ```r
-MI.sort.full.kr<-join(class.roll, MI.sort.kr.2, by="ID")
+MI.sort.full.kr<-join(class_roll, MI.sort.kr.2, by="ID")
 pander(MI.sort.full.kr[, -2])
 ```
 
@@ -4347,2198 +4350,374 @@ pander(BFI.MI.full[, -2])
 ----------------------------------------------------------------------------------------
 
 이름을 빼고 학번만 표시
--->
-<table style="width:100%;">
-<colgroup>
-<col width="10%"></col>
-<col width="11%"></col>
-<col width="9%"></col>
-<col width="9%"></col>
-<col width="9%"></col>
-<col width="9%"></col>
-<col width="9%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-<col width="11%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center"> </th>
-<th align="center">ID</th>
-<th align="center">외향성</th>
-<th align="center">신경성</th>
-<th align="center">성실성</th>
-<th align="center">친화성</th>
-<th align="center">개방성</th>
-<th align="center">제1순위</th>
-<th align="center">제2순위</th>
-<th align="center">제3순위</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><strong>42</strong></td>
-<td align="center">20103117</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>106</strong></td>
-<td align="center">20113228</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>28</strong></td>
-<td align="center">20121307</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>66</strong></td>
-<td align="center">20121613</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>22</strong></td>
-<td align="center">20122822</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>157</strong></td>
-<td align="center">20122928</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>96</strong></td>
-<td align="center">20123140</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>14</strong></td>
-<td align="center">20124308</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>39</strong></td>
-<td align="center">20125119</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>89</strong></td>
-<td align="center">20125144</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>140</strong></td>
-<td align="center">20125255</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>46</strong></td>
-<td align="center">20125310</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>171</strong></td>
-<td align="center">20131138</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>95</strong></td>
-<td align="center">20131318</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">공간</td>
-<td align="center">언어</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>23</strong></td>
-<td align="center">20131606</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>47</strong></td>
-<td align="center">20132404</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>65</strong></td>
-<td align="center">20132549</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>115</strong></td>
-<td align="center">20133516</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>19</strong></td>
-<td align="center">20133707</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>67</strong></td>
-<td align="center">20134333</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>103</strong></td>
-<td align="center">20134343</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>177</strong></td>
-<td align="center">20134373</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>11</strong></td>
-<td align="center">20135106</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>50</strong></td>
-<td align="center">20135118</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>94</strong></td>
-<td align="center">20135140</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">신체운동</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>13</strong></td>
-<td align="center">20135204</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>63</strong></td>
-<td align="center">20135218</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>68</strong></td>
-<td align="center">20135220</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>162</strong></td>
-<td align="center">20135259</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>15</strong></td>
-<td align="center">20135306</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>57</strong></td>
-<td align="center">20135316</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>144</strong></td>
-<td align="center">20135346</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>90</strong></td>
-<td align="center">20137122</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>81</strong></td>
-<td align="center">20143511</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>43</strong></td>
-<td align="center">20144212</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>56</strong></td>
-<td align="center">20144216</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>108</strong></td>
-<td align="center">20144234</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>123</strong></td>
-<td align="center">20144245</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>79</strong></td>
-<td align="center">20144322</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>18</strong></td>
-<td align="center">20145209</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>75</strong></td>
-<td align="center">20145317</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>76</strong></td>
-<td align="center">20145318</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>131</strong></td>
-<td align="center">20145336</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>148</strong></td>
-<td align="center">20145340</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>34</strong></td>
-<td align="center">20151108</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>20</strong></td>
-<td align="center">20152710</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>88</strong></td>
-<td align="center">20153518</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>134</strong></td>
-<td align="center">20153525</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">음악</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>37</strong></td>
-<td align="center">20153909</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>147</strong></td>
-<td align="center">20153928</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>25</strong></td>
-<td align="center">20154209</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>128</strong></td>
-<td align="center">20154247</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">언어</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>32</strong></td>
-<td align="center">20154316</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>53</strong></td>
-<td align="center">20155213</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>92</strong></td>
-<td align="center">20155233</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>100</strong></td>
-<td align="center">20155235</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>118</strong></td>
-<td align="center">20155241</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>77</strong></td>
-<td align="center">20155267</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>12</strong></td>
-<td align="center">20157031</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>48</strong></td>
-<td align="center">20161020</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>167</strong></td>
-<td align="center">20161102</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>168</strong></td>
-<td align="center">20161104</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">언어</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>74</strong></td>
-<td align="center">20161711</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>101</strong></td>
-<td align="center">20162120</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>2</strong></td>
-<td align="center">20162502</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>78</strong></td>
-<td align="center">20162851</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>130</strong></td>
-<td align="center">20162887</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>164</strong></td>
-<td align="center">20162912</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>26</strong></td>
-<td align="center">20163307</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>145</strong></td>
-<td align="center">20163326</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>150</strong></td>
-<td align="center">20163428</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>71</strong></td>
-<td align="center">20163709</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>112</strong></td>
-<td align="center">20164134</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">공간</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>38</strong></td>
-<td align="center">20165118</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>125</strong></td>
-<td align="center">20165326</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>179</strong></td>
-<td align="center">20171240</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>132</strong></td>
-<td align="center">20171630</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>10</strong></td>
-<td align="center">20172101</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">음악</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>72</strong></td>
-<td align="center">20172114</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>84</strong></td>
-<td align="center">20172119</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>69</strong></td>
-<td align="center">20172613</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">언어</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>40</strong></td>
-<td align="center">20172712</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>149</strong></td>
-<td align="center">20172747</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>35</strong></td>
-<td align="center">20172821</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-<td align="center">자연친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>105</strong></td>
-<td align="center">20172869</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>126</strong></td>
-<td align="center">20172886</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>133</strong></td>
-<td align="center">20172893</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>169</strong></td>
-<td align="center">20172912</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>173</strong></td>
-<td align="center">20172915</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>16</strong></td>
-<td align="center">20173004</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>60</strong></td>
-<td align="center">20173017</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>82</strong></td>
-<td align="center">20173316</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>109</strong></td>
-<td align="center">20173527</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자연친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>180</strong></td>
-<td align="center">20173549</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>51</strong></td>
-<td align="center">20173911</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>86</strong></td>
-<td align="center">20173925</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>98</strong></td>
-<td align="center">20173934</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>107</strong></td>
-<td align="center">20173936</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>117</strong></td>
-<td align="center">20173939</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>119</strong></td>
-<td align="center">20173944</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>122</strong></td>
-<td align="center">20173948</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>124</strong></td>
-<td align="center">20173950</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>136</strong></td>
-<td align="center">20173957</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>154</strong></td>
-<td align="center">20173960</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>5</strong></td>
-<td align="center">20174103</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>129</strong></td>
-<td align="center">20174142</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">논리수학</td>
-<td align="center">신체운동</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>1</strong></td>
-<td align="center">20175101</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>113</strong></td>
-<td align="center">20175153</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>138</strong></td>
-<td align="center">20175250</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>153</strong></td>
-<td align="center">20175426</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">음악</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>93</strong></td>
-<td align="center">20176134</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>29</strong></td>
-<td align="center">20176228</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>55</strong></td>
-<td align="center">20176234</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>97</strong></td>
-<td align="center">20181056</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">음악</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>116</strong></td>
-<td align="center">20181064</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>120</strong></td>
-<td align="center">20181073</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">공간</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>142</strong></td>
-<td align="center">20181230</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>3</strong></td>
-<td align="center">20182102</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">음악</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>61</strong></td>
-<td align="center">20182112</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>99</strong></td>
-<td align="center">20182124</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">언어</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>155</strong></td>
-<td align="center">20182138</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자연친화</td>
-<td align="center">음악</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>175</strong></td>
-<td align="center">20182238</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>114</strong></td>
-<td align="center">20182549</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>111</strong></td>
-<td align="center">20182929</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">신체운동</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>170</strong></td>
-<td align="center">20182995</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>141</strong></td>
-<td align="center">20183321</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>7</strong></td>
-<td align="center">20183605</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>9</strong></td>
-<td align="center">20183606</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>17</strong></td>
-<td align="center">20183610</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>33</strong></td>
-<td align="center">20183616</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>44</strong></td>
-<td align="center">20183618</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>52</strong></td>
-<td align="center">20183619</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>4</strong></td>
-<td align="center">20183802</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>24</strong></td>
-<td align="center">20183806</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>27</strong></td>
-<td align="center">20183808</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>41</strong></td>
-<td align="center">20183813</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>73</strong></td>
-<td align="center">20183821</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>91</strong></td>
-<td align="center">20183825</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>102</strong></td>
-<td align="center">20183828</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">공간</td>
-<td align="center">음악</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>121</strong></td>
-<td align="center">20183832</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>176</strong></td>
-<td align="center">20183851</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>161</strong></td>
-<td align="center">20183957</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>127</strong></td>
-<td align="center">20184138</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>152</strong></td>
-<td align="center">20184144</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>156</strong></td>
-<td align="center">20184149</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>6</strong></td>
-<td align="center">20185103</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>8</strong></td>
-<td align="center">20185107</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">언어</td>
-<td align="center">음악</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>36</strong></td>
-<td align="center">20185119</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>58</strong></td>
-<td align="center">20185124</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>70</strong></td>
-<td align="center">20185129</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>80</strong></td>
-<td align="center">20185132</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>83</strong></td>
-<td align="center">20185134</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>85</strong></td>
-<td align="center">20185137</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>104</strong></td>
-<td align="center">20185141</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">음악</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>110</strong></td>
-<td align="center">20185145</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">언어</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>143</strong></td>
-<td align="center">20185160</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>146</strong></td>
-<td align="center">20185161</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>174</strong></td>
-<td align="center">20185169</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>45</strong></td>
-<td align="center">20185230</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">음악</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>49</strong></td>
-<td align="center">20185231</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">공간</td>
-<td align="center">신체운동</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>54</strong></td>
-<td align="center">20185233</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">신체운동</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>59</strong></td>
-<td align="center">20185235</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">신체운동</td>
-<td align="center">인간친화</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>62</strong></td>
-<td align="center">20185238</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>64</strong></td>
-<td align="center">20185240</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>87</strong></td>
-<td align="center">20185251</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">음악</td>
-<td align="center">공간</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>135</strong></td>
-<td align="center">20185285</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>158</strong></td>
-<td align="center">20185292</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>159</strong></td>
-<td align="center">20185293</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>160</strong></td>
-<td align="center">20185294</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>165</strong></td>
-<td align="center">20185298</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">신체운동</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>172</strong></td>
-<td align="center">20185303</td>
-<td align="center">상</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">공간</td>
-<td align="center">인간친화</td>
-<td align="center">자연친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>178</strong></td>
-<td align="center">20185304</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">논리수학</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>21</strong></td>
-<td align="center">20186213</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>30</strong></td>
-<td align="center">20186221</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">공간</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>31</strong></td>
-<td align="center">20186222</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-<td align="center">공간</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>137</strong></td>
-<td align="center">20186276</td>
-<td align="center">중하</td>
-<td align="center">상</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">중하</td>
-<td align="center">자기성찰</td>
-<td align="center">언어</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>139</strong></td>
-<td align="center">20186277</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">논리수학</td>
-<td align="center">언어</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>151</strong></td>
-<td align="center">20186285</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">논리수학</td>
-<td align="center">자기성찰</td>
-<td align="center">인간친화</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>163</strong></td>
-<td align="center">20186295</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">중하</td>
-<td align="center">하</td>
-<td align="center">인간친화</td>
-<td align="center">언어</td>
-<td align="center">논리수학</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>166</strong></td>
-<td align="center">20186297</td>
-<td align="center">상</td>
-<td align="center">중상</td>
-<td align="center">중하</td>
-<td align="center">중상</td>
-<td align="center">중상</td>
-<td align="center">음악</td>
-<td align="center">인간친화</td>
-<td align="center">자기성찰</td>
-</tr>
-</tbody>
-</table>
-<!--결석생 확인
+
+
+
+--------------------------------------------------------------------------------------------------
+ &nbsp;       ID      외향성   신경성   성실성   친화성   개방성   제1순위    제2순위    제3순위  
+--------- ---------- -------- -------- -------- -------- -------- ---------- ---------- ----------
+ **42**    20103117     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **106**   20113228    중상     중하     중하     중하      하     신체운동     언어     인간친화 
+
+ **28**    20121307    중하      하      중하      하       하       음악     인간친화   자기성찰 
+
+ **66**    20121613     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **22**    20122822     하      중하     중상      하       하     인간친화   자기성찰   신체운동 
+
+ **157**   20122928     하      중상     중하      하       하     논리수학   자기성찰   신체운동 
+
+ **96**    20123140     상      중상     중상     중하      하     논리수학   인간친화   신체운동 
+
+ **14**    20124308     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **39**    20125119    중하     중하     중하      하       하     인간친화   논리수학     음악   
+
+ **89**    20125144    중하      상      중상     중하      하     논리수학   인간친화     음악   
+
+ **140**   20125255    중하     중하     중상      하       하     자기성찰   논리수학   인간친화 
+
+ **46**    20125310    중하     중하     중하     중하     중하    인간친화   논리수학   자기성찰 
+
+ **171**   20131138    중상      하      중상     중상     중하      언어     인간친화   자기성찰 
+
+ **95**    20131318    중상     중하     중상      하      중하      공간       언어     자기성찰 
+
+ **23**    20131606    중상     중하     중하     중하     중하    자기성찰   인간친화     공간   
+
+ **47**    20132404    중상     중하      상      중상      하     인간친화   자기성찰     언어   
+
+ **65**    20132549     하      중하      하      중하      하       언어     인간친화   논리수학 
+
+ **115**   20133516    중하     중상     중상      하      중상      공간     인간친화   논리수학 
+
+ **19**    20133707     상      중하     중하     중하      하     논리수학   인간친화   자기성찰 
+
+ **67**    20134333    중하     중하     중하     중하      하     인간친화   신체운동   논리수학 
+
+ **103**   20134343     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **177**   20134373     상      중하     중상      상      중하    인간친화   자기성찰   신체운동 
+
+ **11**    20135106     하      중하     중상     중하      하     논리수학     공간       언어   
+
+ **50**    20135118     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **94**    20135140    중상     중상     중상      하       하       공간     신체운동     언어   
+
+ **13**    20135204     하      중하     중상      하       하     논리수학   신체운동   자기성찰 
+
+ **63**    20135218     하       상      중하      하       하     논리수학     공간     자기성찰 
+
+ **68**    20135220    중상      하      중상     중하     중하    인간친화   자기성찰   논리수학 
+
+ **162**   20135259     하      중하     중하      하       하     논리수학     공간     인간친화 
+
+ **15**    20135306     하      중상      하       하       하     논리수학   자기성찰     언어   
+
+ **57**    20135316     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **144**   20135346    중상     중하      상       하      중하    인간친화   자기성찰   논리수학 
+
+ **90**    20137122    중하     중하     중하     중상      하     인간친화   신체운동     공간   
+
+ **81**    20143511    중하      하      중하      하       하     신체운동   논리수학     공간   
+
+ **43**    20144212    중하      하      중상      상       하     인간친화   자기성찰   신체운동 
+
+ **56**    20144216    중상     중하      상       상       하     인간친화   논리수학   자기성찰 
+
+ **108**   20144234    중상      하      중상      상       하     자기성찰   인간친화     언어   
+
+ **123**   20144245     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **79**    20144322     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **18**    20145209    중하      상      중하      하       하     논리수학     공간       음악   
+
+ **75**    20145317    중상      하      중상      상       하     자기성찰   인간친화   논리수학 
+
+ **76**    20145318     하      중하     중상      하       하       공간     자기성찰   논리수학 
+
+ **131**   20145336    중상     중상     중상     중하     중하    인간친화   자기성찰     음악   
+
+ **148**   20145340    중하     중하     중하     중하      하     논리수학   자기성찰     공간   
+
+ **34**    20151108    중하     중상     중상     중상      하       언어     인간친화   자기성찰 
+
+ **20**    20152710    중상      하      중상      상      중하    인간친화   신체운동   논리수학 
+
+ **88**    20153518    중상      하      중하     중하      하     자기성찰   인간친화   논리수학 
+
+ **134**   20153525     하      중상      하      중하      하     논리수학     음악     자기성찰 
+
+ **37**    20153909     하       하      중상     중하     중상    자기성찰   논리수학     공간   
+
+ **147**   20153928    중상     중하     중상     중하      하     인간친화     공간     자기성찰 
+
+ **25**    20154209    중하     중하     중상     중하      하     자기성찰   인간친화     음악   
+
+ **128**   20154247     상      중하     중하      상      중상      언어     자기성찰   인간친화 
+
+ **32**    20154316     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **53**    20155213    중하     중하     중상      상       하     논리수학     공간     인간친화 
+
+ **92**    20155233    중하     중상      하      중상      하     논리수학   인간친화   자기성찰 
+
+ **100**   20155235    중상     중상     중하      상       하        NA         NA         NA    
+
+ **118**   20155241     상       하      중상     중하      하     논리수학     공간     자기성찰 
+
+ **77**    20155267    중하     중하      상      중하      하     논리수학   자기성찰     공간   
+
+ **12**    20157031    중하      하       상      중상      하     인간친화   자기성찰   논리수학 
+
+ **48**    20161020     상      중하     중상     중상     중하    인간친화   논리수학     언어   
+
+ **167**   20161102    중상     중하      상       상      중하      음악     인간친화     언어   
+
+ **168**   20161104    중하     중상     중하      하      중하      언어     자기성찰   인간친화 
+
+ **74**    20161711    중하     중하     중상     중하      하       음악     인간친화     언어   
+
+ **101**   20162120     하      중하     중상     중상      하     인간친화   자기성찰   논리수학 
+
+  **2**    20162502     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **78**    20162851     하      중상     중하     중하     중하    인간친화     언어     신체운동 
+
+ **130**   20162887    중상     중하     중하     중하     중하    자기성찰   인간친화     음악   
+
+ **164**   20162912     상      중하     중하      상      중하      음악     인간친화   논리수학 
+
+ **26**    20163307    중상     중상     중하     중하     중하    인간친화   논리수학   자기성찰 
+
+ **145**   20163326     상      중상     중하      상       하     인간친화   논리수학   자기성찰 
+
+ **150**   20163428    중하      하       하       하       하     인간친화     음악     논리수학 
+
+ **71**    20163709    중상     중상     중하      상      중하    인간친화     음악       언어   
+
+ **112**   20164134     하      중하     중상      하       하     신체운동     공간       음악   
+
+ **38**    20165118     하      중상      하       하       하     논리수학   인간친화   자기성찰 
+
+ **125**   20165326    중하      하      중상     중하      하       공간     자기성찰   인간친화 
+
+ **179**   20171240     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **132**   20171630     하      중하      상      중하      하     인간친화     언어     논리수학 
+
+ **10**    20172101    중하      상      중하     중상      하       음악     자기성찰   신체운동 
+
+ **72**    20172114    중상      하      중상     중하      하     인간친화     음악     자기성찰 
+
+ **84**    20172119    중하     중하     중상     중하     중하    자기성찰   인간친화   논리수학 
+
+ **69**    20172613    중하     중상      상      중하      하       언어     자기성찰   인간친화 
+
+ **40**    20172712    중하     중하     중상     중상      하     자기성찰   인간친화     음악   
+
+ **149**   20172747     하      중하      상       하       하     인간친화   자기성찰     공간   
+
+ **35**    20172821    중하      하      중하     중하     중하    인간친화     공간     자연친화 
+
+ **105**   20172869    중하     중하     중하     중하      하     인간친화     언어     논리수학 
+
+ **126**   20172886     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **133**   20172893     하      중하     중상      하       하     논리수학   자기성찰     언어   
+
+ **169**   20172912     하      중하      상       상       하     인간친화   자기성찰   논리수학 
+
+ **173**   20172915     하      중하      하       상      중하      공간     인간친화   신체운동 
+
+ **16**    20173004    중하      상      중하      하       하       공간     논리수학   인간친화 
+
+ **60**    20173017    중하      하      중상     중하     중하    인간친화   자기성찰   논리수학 
+
+ **82**    20173316     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **109**   20173527    중하     중하     중상     중하      하     논리수학   자연친화     공간   
+
+ **180**   20173549     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **51**    20173911    중상     중상      상       상      중하    자기성찰   인간친화   논리수학 
+
+ **86**    20173925    중상     중하     중상      하      중하    인간친화     언어     신체운동 
+
+ **98**    20173934     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **107**   20173936    중상     중하     중상     중하      하     인간친화   자기성찰   논리수학 
+
+ **117**   20173939     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **119**   20173944     하      중하     중하     중하     중하      언어     인간친화   자기성찰 
+
+ **122**   20173948    중하     중하      하      중하      하     인간친화   자기성찰   논리수학 
+
+ **124**   20173950     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **136**   20173957    중하     중하      상       상      중하    인간친화   자기성찰     공간   
+
+ **154**   20173960     하      중상     중상     중하     중하    신체운동   자기성찰     음악   
+
+  **5**    20174103    중상     중상     중하     중하      하     자기성찰   신체운동   인간친화 
+
+ **129**   20174142     하      중하     중하     중상     중하    논리수학   신체운동     공간   
+
+  **1**    20175101     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **113**   20175153    중하      상       하      중하      하     인간친화     음악       언어   
+
+ **138**   20175250     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **153**   20175426    중하     중상     중상     중하      하       음악     자기성찰   인간친화 
+
+ **93**    20176134    중상      하      중하     중하      하     신체운동   자기성찰   인간친화 
+
+ **29**    20176228    중하     중하     중상      상       하     인간친화   자기성찰     언어   
+
+ **55**    20176234     하      중하     중상     중하      하     논리수학   인간친화   자기성찰 
+
+ **97**    20181056     하      중상     중하     중하      하       공간       음악     논리수학 
+
+ **116**   20181064    중하     중상     중상      상       하     신체운동     언어     인간친화 
+
+ **120**   20181073    중상     중하     중하     중하     중상      공간       언어     인간친화 
+
+ **142**   20181230     하       상       하       상       하       언어     인간친화     공간   
+
+  **3**    20182102    중상     중상     중하     중하     중상      음악       공간     인간친화 
+
+ **61**    20182112    중하      상      중상      상       하     자기성찰   인간친화     언어   
+
+ **99**    20182124    중상      상       하      중상     중하      언어     자기성찰     공간   
+
+ **155**   20182138    중하     중상     중하     중하      하     인간친화   자연친화     음악   
+
+ **175**   20182238    중하     중하      하      중하     중하    자기성찰     언어     인간친화 
+
+ **114**   20182549    중상     중하      하       상       하     인간친화   자기성찰     공간   
+
+ **111**   20182929    중상      하      중상      상      중하    신체운동   논리수학   인간친화 
+
+ **170**   20182995    중하      하       하       하      중하    인간친화   논리수학   신체운동 
+
+ **141**   20183321    중하     중하     중상     중하     중하    자기성찰   인간친화   논리수학 
+
+  **7**    20183605     하      중하     중하      하      중하    인간친화   논리수학   자기성찰 
+
+  **9**    20183606    중상     중하     중상      상      중하    자기성찰   인간친화   논리수학 
+
+ **17**    20183610    중상     중하     중상     중하     중하      음악     인간친화   자기성찰 
+
+ **33**    20183616    중하      상      중상      상       하       공간     논리수학   인간친화 
+
+ **44**    20183618    중하      하      중하     중하      하     논리수학     음악     인간친화 
+
+ **52**    20183619    중상     중상      하       상      중하    논리수학   자기성찰   인간친화 
+
+  **4**    20183802    중상     중하     중하     중하     중하    인간친화   자기성찰   논리수학 
+
+ **24**    20183806     하      중하     중상      하      중하    인간친화     공간     자기성찰 
+
+ **27**    20183808     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **41**    20183813     하      중상     중하      상      중하    신체운동   자기성찰     공간   
+
+ **73**    20183821    중상     중하     중상     중하      하     자기성찰   인간친화     공간   
+
+ **91**    20183825    중상      하      중하      하      중하    인간친화     음악     논리수학 
+
+ **102**   20183828     하      중하     중하     중하     중하      공간       음악     논리수학 
+
+ **121**   20183832    중상      하      중하     중하      하     인간친화   신체운동     음악   
+
+ **176**   20183851     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **161**   20183957     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **127**   20184138    중하      하      중상     중하      하     자기성찰   인간친화   신체운동 
+
+ **152**   20184144    중하      하      중상     중하      하     자기성찰   신체운동   인간친화 
+
+ **156**   20184149    중상      하       상      중하     중하    신체운동   자기성찰   인간친화 
+
+  **6**    20185103    중상      하       하      중하      하     인간친화   신체운동   논리수학 
+
+  **8**    20185107    중하     중상     중하      상      중하      언어       음악       공간   
+
+ **36**    20185119     하       상       상       상       하     자기성찰   인간친화     공간   
+
+ **58**    20185124    중하     중하     중상      하       하     신체운동   인간친화   논리수학 
+
+ **70**    20185129    중하      하       상       하       하     논리수학   인간친화     공간   
+
+ **80**    20185132     하      중하     중하     중하      하     논리수학   자기성찰     공간   
+
+ **83**    20185134    중하      하       하       하       하     논리수학   신체운동   자기성찰 
+
+ **85**    20185137    중하     중하     중상     중하      하     논리수학   자기성찰   신체운동 
+
+ **104**   20185141    중하     중상     중하      하       하     인간친화     언어       음악   
+
+ **110**   20185145    중하     중하      하       상       하       언어       공간     인간친화 
+
+ **143**   20185160     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **146**   20185161    중상      하       상       하       하     자기성찰   논리수학   인간친화 
+
+ **174**   20185169     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **45**    20185230     상       상      중상     중하     중하    인간친화     음악     신체운동 
+
+ **49**    20185231    중상      하      중상     중하      하       공간     신체운동   인간친화 
+
+ **54**    20185233     하      중하     중하     중하     중하    논리수학   자기성찰   신체운동 
+
+ **59**    20185235    중상     중하     중상      하       하     신체운동   인간친화   논리수학 
+
+ **62**    20185238    중상      하      중하      상       하     인간친화   자기성찰     공간   
+
+ **64**    20185240    중상     중하     중상     중상      하     자기성찰     음악     인간친화 
+
+ **87**    20185251    중상      하      중상      상      중하      음악       공간     자기성찰 
+
+ **135**   20185285    중하     중하     중상     중하      하     자기성찰     공간     인간친화 
+
+ **158**   20185292    중하      하      중하      상       하     인간친화   신체운동   자기성찰 
+
+ **159**   20185293     NA       NA       NA       NA       NA        NA         NA         NA    
+
+ **160**   20185294    중하      하       상       상       하     인간친화   자기성찰   논리수학 
+
+ **165**   20185298     상      중하     중상     중하     중하    신체운동   자기성찰   논리수학 
+
+ **172**   20185303     상       상      중하      상      중상      공간     인간친화   자연친화 
+
+ **178**   20185304    중상      하       하      중상     중상    논리수학   인간친화   자기성찰 
+
+ **21**    20186213    중상     중상     중상      하      중하    인간친화   자기성찰   논리수학 
+
+ **30**    20186221    중하     중하     중하      상       하     인간친화     공간     논리수학 
+
+ **31**    20186222     상      중하     중하      하      중하    인간친화   자기성찰     공간   
+
+ **137**   20186276    중하      상      중하      하      중하    자기성찰     언어     논리수학 
+
+ **139**   20186277    중하     중하     중하     중하     중하    논리수학     언어     인간친화 
+
+ **151**   20186285     상      중상     중하     중하      하     논리수학   자기성찰   인간친화 
+
+ **163**   20186295    중상     중하     중하     중하      하     인간친화     언어     논리수학 
+
+ **166**   20186297     상      중상     중하     중상     중상      음악     인간친화   자기성찰 
+--------------------------------------------------------------------------------------------------
+
+결석생 확인
 -----------
 
 BFI결석생

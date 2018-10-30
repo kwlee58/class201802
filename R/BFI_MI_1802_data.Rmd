@@ -1,5 +1,5 @@
 ---
-title: "BFI MI data"
+title: "BFI MI data : 1802"
 author: "coop711"
 date: "`r Sys.Date()`"
 output: html_document
@@ -18,13 +18,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, xlsx}
 library(xlsx)
 options(width = 180)
-class_roll <- readRDS("class_id_group.RDS")
+class_roll <- readRDS("class_roll.RDS")
+class_roll <- class_roll[c("id", "group")]
 class_roll %<>%
   `names<-`(c("ID", "Group"))
-BFI <- "../data/BFI.xlsx" %>% 
+BFI <- "../data/BFI181010.xlsx" %>% 
   read.xlsx(sheetIndex = 1, 
-            startRow = 2, endRow = 182, 
-            colIndex = 1:13, 
+            startRow = 2, endRow = 155, 
+            colIndex = c(4, 10:21), 
             header = TRUE, 
             encoding = "UTF-8",
             stringsAsFactors = FALSE)
@@ -40,10 +41,10 @@ BFI %>%
   head %>%
   kable
 # pander(head(BFI))
-MI <- "../data/MI.xlsx" %>%
+MI <- "../data/MI181010.xlsx" %>%
   read.xlsx(sheetIndex = 1, 
-            startRow = 2, endRow = 182, 
-            colIndex = 1:57, 
+            startRow = 2, endRow = 155, 
+            colIndex = c(4, 8:63), 
             header = TRUE, 
             encoding = "UTF-8",
             stringsAsFactors = FALSE)
@@ -63,11 +64,13 @@ kable(head(MI[c(1, 44:57)]))
 #   lapply(function(x) MI %>% `[`(x) %>% head %>% kable)
 # list(1:15, c(1, 16:29), c(1, 30:43), c(1, 44:57)) %>%
 #   lapply(. %>% {kable(head(MI[.]))})
+class_roll <- class_roll %>%
+  subset(class_roll$ID %in% BFI$ID)
 ```
 
 ### Save Data
 
 ```{r, save.image}
-save.image("./BFI_MI_1702.RData")
+save.image("./BFI_MI_1802.RData")
 ```
 

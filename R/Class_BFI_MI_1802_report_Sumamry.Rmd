@@ -1,10 +1,11 @@
 ---
-title: "Class_BFI_MI"
+title: "Big Five Personality and Multiple Intelligence : 201802"
 author: "coop711"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
+<!--
 ### Data Reading
 
 `join()`을 사용하기 위하여 `plyr` 패키지는 사전에 등록
@@ -20,7 +21,7 @@ panderOptions("table.split.table", Inf)
 필수 자료 읽어들이기
 
 ```{r, data}
-load("./BFI_MI_1702.RData")
+load("./BFI_MI_1802.RData")
 # ls()
 str(BFI)
 str(MI)
@@ -112,12 +113,16 @@ kable(head(BFI_level_kr_2))
 ```
 
 각 성질의 분포를 `table`로 요약
+-->
 
-```{r, table}
+### 성격유형 분포
+
+```{r, table, echo = FALSE}
 BFI_level_tbl <- sapply(BFI_level_kr, table)
 kable(BFI_level_tbl)
 ```
 
+<!--
 #### 출석부에 합치기
 
 `rownames`으로 되어 있는 학번(`ID`)을 `ID`로 돌리고, `row.names`는 일련번호로 정리
@@ -129,7 +134,8 @@ kable(head(BFI_level_kr_2))
 
 전체 출석부로 통합하고, 실험에 참여하지 않은 사람들은 `<NA>`로 표시.
 
-```{r, join with class roll}
+
+```{r, join with class roll, echo = FALSE}
 BFI_full_kr <- join(class_roll, BFI_level_kr_2, by = "ID")
 BFI_full_kr <- BFI_full_kr[c(1, 3:7, 2)]
 kable(head(BFI_full_kr))
@@ -192,12 +198,29 @@ kable(head(MI_sort_full_kr))
 
 Merge 2 data frames into one
 
-```{r, one data frame}
+```{r, one data frame, echo = FALSE}
 BFI_MI_full <- data.frame(BFI_full_kr[-7], MI_sort_full_kr[c(2:4, 10)])
-kable(head(BFI_MI_full))
+# kable(head(BFI_MI_full))
+```
+-->
+
+### 3대 강점지능 요약
+
+```{r, MI table, echo = FALSE}
+BFI_MI_full %>%
+  .[c("제1순위", "제2순위", "제3순위")] %>%
+  sapply(FUN = table) %>%
+  t %>%
+  kable
 ```
 
+### 개별 검사 결과
 
+```{r, rolls, echo = FALSE}
+kable(BFI_MI_full, row.names = FALSE)
+```
+
+<!--
 #### 결석생 확인
 
 BFI결석생
@@ -217,3 +240,4 @@ MI_absent <- (1:nrow(class_roll))[-MI_present]
 MI_absent
 class_roll$ID[MI_absent]
 ```
+-->
