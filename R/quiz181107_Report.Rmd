@@ -41,9 +41,9 @@ quiz1107$Q2 %<>% factor(levels = c("가", "나", "다", "라"),
                                      "소득, 양의 상관", 
                                      "소득불평등, 인과관계", 
                                      "소득, 인과관계"))
-quiz1107$Q3 %<>% factor(levels = c("가", "나", "다", "라"), 
-                          labels = c("7.0%", "35%", "70%", "94%"))
-quiz1107$Q4 %<>% factor(levels = c("A", "B"))
+quiz1107$Q3 %<>% factor(levels = c("가", "나", "다", "라", "무응답"), 
+                          labels = c("7.0%", "35%", "70%", "94%", "불참"))
+quiz1107$Q4 %<>% factor(levels = c("A", "B", "무응답"))
 # quiz1107$Q4.2 <- quiz1107$Q4
 # quiz1107$Q4.2[quiz1107$group == "Black"] <- factor(quiz1107$Q4.2[quiz1107$group == "Black"], levels = c("A", "B"), labels = c("100%확률로 잃기", "90%확률로 잃기"))
 # quiz1107$Q4.2[quiz1107$group == "Red"] <- factor(quiz1107$Q4.2[quiz1107$group == "Red"], levels = c("A", "B"), labels = c("100%확률로 따기", "90%확률로 따기"))
@@ -128,9 +128,12 @@ tbl_q2_a %>%
 tbl_q3_a <- quiz1107$Q3 %>%
   table(quiz1107$group, ., useNA = "ifany") %>%
   addmargins
-colnames(tbl_q3_a)[5:6] <- c("결석", "계")
+colnames(tbl_q3_a)[5:7] <- c("불참", "결석", "계")
 rownames(tbl_q3_a)[3] <- "계"
 tbl_q3_a %>% 
+  pander
+tbl_q3_a[-3, -c(5, 7)] %>%
+  chisq.test(simulate.p.value = TRUE, B = 10000) %>%
   pander
 ```
 
@@ -138,7 +141,7 @@ tbl_q3_a %>%
 
 ```{r, MTRE in percentage, echo = FALSE}
 tbl_q3_a %>%
-  `[`(3, -(5:6)) %>%
+  `[`(3, -(5:7)) %>%
   prop.table %>%
   c(., "계" = sum(.)) %>%
   `*`(100) %>%
@@ -164,7 +167,7 @@ tbl_q3_a %>%
 tbl_q4_a <- quiz1107$Q4 %>%
   table(quiz1107$group, ., useNA = "ifany") %>%
   addmargins
-colnames(tbl_q4_a) <- c("확률 100%", "확률 90%","결석", "계")
+colnames(tbl_q4_a) <- c("확률 100%", "확률 90%", "불참", "결석", "계")
 rownames(tbl_q4_a) <- c("이득 게임", "손실 게임", "계")
 tbl_q4_a %>% 
   pander
@@ -178,7 +181,7 @@ tbl_q4_a %>%
 
 ```{r, prospect theory  in percentage, echo = FALSE}
 tbl_q4_a %>% 
-  `[`(-3, -(3:4)) %>%
+  `[`(-3, -(3:5)) %>%
   prop.table(margin = 1) %>%
   `*`(100) %>%
   cbind("계" = rowSums(.)) %>%
