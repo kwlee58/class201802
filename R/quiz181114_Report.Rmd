@@ -60,12 +60,16 @@ pander(summary(quiz1114))
 ##### 집계
 
 ```{r, echo = FALSE}
-tbl_q1_a <- quiz1114$Q1 %>% 
-  table(quiz1114$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q1_a)[5:6] %<>% `<-`(., c("결석", "계"))
-rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
-tbl_q1_a %>% pander 
+tbl_q1_a <- quiz1114 %$%
+  table(.$group, .$Q1, useNA = "ifany") %>%
+# tbl_q1_a <- quiz1114$Q1 %>% 
+#   table(quiz1114$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q1_a)[5] %<>% 
+  `<-`(., "결석")
+tbl_q1_a %>% 
+  pander 
 tbl_q1_a[-3, -(5:6)] %>% 
   chisq.test(simulate.p.value = TRUE) %>% 
   pander
@@ -90,18 +94,20 @@ tbl_q1_a %>%
 ##### 집계
 
 ```{r, LM3, echo = FALSE}
-tbl_q2_a <- quiz1114$Q2 %>%
-  table(quiz1114$group, .,
-        useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q2_a)[5:6] <- c("결석", "계")
-rownames(tbl_q2_a)[3] <- "계"
-tbl_q2_a %>% pander 
+tbl_q2_a <- quiz1114 %$%
+  table(.$group, .$Q2, useNA = "ifany") %>%
+# tbl_q2_a <- quiz1114$Q2 %>%
+#   table(quiz1114$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q2_a)[5] %<>% 
+  `<-`(., "결석")
+tbl_q2_a %>% 
+  pander 
 tbl_q2_a %>%
   `[`(-3, -(5:6)) %>% 
   chisq.test(simulate.p.value = TRUE) %>%
   pander
-tbl.q2 <- table(quiz1114$group, quiz1114$Q2, useNA = "always")
 ```
 
 ##### %
@@ -123,11 +129,14 @@ tbl_q2_a %>%
 ##### 집계
 
 ```{r, echo = FALSE}
-tbl_q3_a <- quiz1114$Q3 %>%
-  table(quiz1114$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[5:6] <- c("결석", "계")
-rownames(tbl_q3_a)[3] <- "계"
+tbl_q3_a <- quiz1114 %$%
+  table(.$group, .$Q3, useNA = "ifany") %>%
+# tbl_q3_a <- quiz1114$Q3 %>%
+#   table(quiz1114$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q3_a)[5] %<>% 
+  `<-`(., "결석")
 tbl_q3_a %>% 
   pander
 tbl_q3_a %>%
@@ -163,10 +172,14 @@ tbl_q3_a %>%
 ##### 국공립대 등록금의 적정 수준
 
 ```{r, college tuition, echo = FALSE}
-tbl_q4_a <- quiz1114$Q4 %>%
-  table(quiz1114$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[6:7] <- c("결석", "계")
+tbl_q4_a <- quiz1114 %$%
+  table(.$group, .$Q4, useNA = "ifany") %>%
+# tbl_q4_a <- quiz1114$Q4 %>%
+#   table(quiz1114$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[6] %<>% 
+  `<-`(., "결석")
 rownames(tbl_q4_a) <- c("Red(등록금무상국가 소개)", "Black(등록금고액국가 소개)", "계")
 tbl_q4_a %>% 
   pander
