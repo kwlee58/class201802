@@ -68,7 +68,7 @@ tbl_q1_a <- quiz0917$Q1 %>%
   table(quiz0917$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
-colnames(tbl_q1_a)[6:7] %<>% `<-`(., c("불참", "결석"))
+colnames(tbl_q1_a)[7] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 ```
 

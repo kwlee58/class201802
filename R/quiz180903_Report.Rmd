@@ -1,7 +1,7 @@
 ---
 title: "Quiz 180903"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-09-03"
 output: html_document
 ---
 
@@ -57,10 +57,6 @@ quiz0903$Q4 <- factor(quiz0903$Q4,
                                  "매우 비공감(찬성 않음)", 
                                  "모름/무응답",
                                  "불참"))
-quiz0903$Q4.2 <- quiz0903$Q4
-levels(quiz0903$Q4.2) <- c(rep("공감(찬성)", 2), 
-                           rep("비공감(찬성 않음)", 2), 
-                           rep("모름/무응답", 2))
 str(quiz0903)
 ```
 
@@ -68,13 +64,13 @@ str(quiz0903)
 pander(summary(quiz0903))
 ```
 
-### Quiz 응답 비교
+## Quiz 응답 비교
 
-#### Dewey as good as elected, statistics convince Roper
+### Dewey as good as elected, statistics convince Roper
 
 `r knitr::include_graphics("../pics/Quiz160302_01.png", dpi = NA)`
 
-##### Roper(Counts) 
+#### Roper(Counts) 
 
 ```{r, Roper, echo = FALSE}
 tbl_q1_a <- quiz0903$Q1 %>% 
@@ -90,7 +86,7 @@ tbl.q1 <- table(quiz0903$group, quiz0903$Q1,
                 useNA = "ifany")
 ```
 
-##### Roper(%)
+#### Roper(%)
 
 ```{r, Roper in percentage, echo = FALSE}
 tbl_q1_a %>% 
@@ -102,11 +98,11 @@ tbl_q1_a %>%
   pander
 ```
 
-#### Statistics is the science of learning from data, ...
+### Statistics is the science of learning from data, ...
 
 `r knitr::include_graphics("../pics/Quiz160302_02.png", dpi = NA)`
 
-##### ASA(Counts) 
+#### ASA(Counts) 
 
 ```{r, ASA, echo = FALSE}
 tbl_q2_a <- quiz0903$Q2 %>% 
@@ -117,7 +113,7 @@ colnames(tbl_q2_a)[5] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 ```
 
-##### ASA(%)
+#### ASA(%)
 
 ```{r, ASA in percentage, echo = FALSE}
 tbl_q2_a %>% 
@@ -129,11 +125,11 @@ tbl_q2_a %>%
   pander
 ```
 
-#### How to lie with statistics
+### How to lie with statistics
 
 `r knitr::include_graphics("../pics/Quiz160302_03.png", dpi = NA)`
 
-##### D.Huff(Counts) 
+#### D.Huff(Counts) 
 
 ```{r, D.Huff, echo = FALSE}
 tbl_q3_a <- quiz0903$Q3 %>% 
@@ -144,7 +140,7 @@ colnames(tbl_q3_a)[5] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 ```
 
-##### D.Huff(%)
+#### D.Huff(%)
 
 ```{r, D.Huff in percentage, echo = FALSE}
 tbl_q3_a %>% 
@@ -156,41 +152,31 @@ tbl_q3_a %>%
   pander
 ```
 
-#### 일자리 늘리기 질문의 편향성
+### 일자리 늘리기 질문의 편향성
 
-##### Red
+#### Red
 
 `r knitr::include_graphics("../pics/Jobs_red.png", dpi = NA)`
 
-##### Black
+#### Black
 
 `r knitr::include_graphics("../pics/Jobs_black.png", dpi = NA)`
 
-##### 2018년 1학기에는 "생각"과 "공감" 대신에 "평가"와 "찬성"이라는 표현을 사용하고 있는 "Red" 집단에서 긍정적인 응답이 다소 많이 나왔으나 지난 이슈인 지금 시점에서는 차이가 나지 않고 있음.
+2018년 1학기에는 "생각"과 "공감" 대신에 "평가"와 "찬성"이라는 표현을 사용하고 있는 "Red" 집단에서 긍정적인 응답이 다소 많이 나왔으나 지난 이슈인 지금 시점에서는 차이가 나지 않고 있음.
+
+#### Jobs(집계)
 
 ```{r, Jobs(5 possible answers), echo = FALSE}
 tbl_q4_a <- quiz0903$Q4 %>%
   table(quiz0903$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
-colnames(tbl_q4_a)[6:7] <- c("불참", "결석")
+colnames(tbl_q4_a)[7] <- "결석"
 tbl_q4_a %>% 
   pander
 ```
 
-##### {"매우 공감(찬성)", "다소 공감(찬성)" => "공감(찬성)"}, {"다소 비공감(찬성 않음)", "매우 비공감(찬성 않음)" => "비공감(찬성 않음)", "불참" => "모름/무응답"}
-
-```{r, Jobs(3 possible answers), echo = FALSE}
-tbl_q4_2_a <- quiz0903$Q4.2 %>%
-  table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
-colnames(tbl_q4_2_a)[4] <- "결석"
-tbl_q4_2_a %>% 
-  pander
-```
-
-##### Jobs(%)
+#### Jobs(%)
 
 ```{r, Jobs(%), echo = FALSE}
 tbl_q4_a %>% 
@@ -200,7 +186,31 @@ tbl_q4_a %>%
   cbind("계" = rowSums(.)) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
-tbl_q4_2_a %>% 
+```
+
+### 재분류
+
+{"매우 공감(찬성)", "다소 공감(찬성)" => "공감(찬성)"}, {"다소 비공감(찬성 않음)", "매우 비공감(찬성 않음)" => "비공감(찬성 않음)", "불참" => "모름/무응답"}
+
+#### Jobs_2(집계)
+
+```{r, Jobs(3 possible answers), echo = FALSE}
+levels(quiz0903$Q4) <- c(rep("공감(찬성)", 2), 
+                           rep("비공감(찬성 않음)", 2), 
+                           rep("모름/무응답", 2))
+tbl_q4_a <- quiz0903$Q4 %>%
+  table(quiz0903$group, ., useNA = "ifany") %>%
+  cbind(., "계" = rowSums(.)) %>%
+  rbind(., "계" = colSums(.))
+colnames(tbl_q4_a)[4] <- "결석"
+tbl_q4_a %>% 
+  pander
+```
+
+#### Jobs_2(%)
+
+```{r, Jobs_2(%), echo = FALSE}
+tbl_q4_a %>% 
   `[`(-3, -(4:5)) %>%
   prop.table(margin = 1) %>%
   `*`(100) %>%

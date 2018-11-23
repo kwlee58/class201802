@@ -1,7 +1,7 @@
 ---
 title: "Quiz 181017_02"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-10-17_02"
 output: html_document
 ---
 
@@ -47,9 +47,8 @@ quiz1017_02$Q3 %<>%
          labels = c("국민전체", "18세 이상 전체", "등록유권자 전체", "선거 당일 투표 유권자 전체"))
 quiz1017_02$Q4 %<>% 
   factor(levels = c("가", "나", "다", "라", "마", "무응답"))
-quiz1017_02$Q4.2 <- quiz1017_02$Q4
-levels(quiz1017_02$Q4.2[quiz1017_02$group == "Black"]) <- c("다", "나", "가", "라", "마", "무응답")
-levels(quiz1017_02$Q4.2) <- c("지방선거와 동시에", "지방선거 이후 올해에", "내년이후", "기타", "모름/응답거절", "불참")
+levels(quiz1017_02$Q4[quiz1017_02$group == "Black"]) <- c("다", "나", "가", "라", "마", "무응답")
+levels(quiz1017_02$Q4) <- c("지방선거와 동시에", "지방선거 이후 올해에", "내년이후", "기타", "모름/응답거절", "불참")
 str(quiz1017_02)
 ```
 
@@ -140,7 +139,7 @@ tbl_q3_a %>%
   prop.table %>% 
   c(., "계" = sum(.)) %>%
   `*`(100) %>%
-  format(digits = 2, nsmall = 1) %>%
+  format(digits = 1, nsmall = 1) %>%
   pander
 ```
 
@@ -159,9 +158,9 @@ tbl_q3_a %>%
 빠른 시기(지방선거와 동시 실시)가 먼저 나오는지(Red), 늦은 시기 (내년이후 실시)가 먼저 나오는지(Black)에 따라 응답이 달라질 것으로, Red 집단의 빠른 시기 선호비율이 높게, Black 집단의 늦은 시기 선호 비율이 높게 나올 것으로 기대하였고 표면적으로 그렇게 나왔으며, 통계적으로 유의한 수준임. "불참" => "모름/응답거절" 으로 재분류.
 
 ```{r, vote attitude, echo = FALSE}
-levels(quiz1017_02$Q4.2)[levels(quiz1017_02$Q4.2) %in% c("모름/응답거절", "불참")] <- 
+levels(quiz1017_02$Q4)[levels(quiz1017_02$Q4) %in% c("모름/응답거절", "불참")] <- 
  "모름/응답거절"
-tbl_q4_a <- quiz1017_02$Q4.2 %>%
+tbl_q4_a <- quiz1017_02$Q4 %>%
   table(quiz1017_02$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
@@ -190,14 +189,12 @@ tbl_q4_a %>%
 ##### % 합계
 
 ```{r, overall percentage, echo = FALSE}
-tbl_q4 <- quiz1017_02$Q4.2 %>%
+quiz1017_02$Q4 %>%
   table(useNA = "no") %>%
   prop.table %>%
   `*`(100) %>%
-  c(., sum(.)) %>%
-  format(digits = 2, nsmall = 1)
-names(tbl_q4)[6] <- "계"
-tbl_q4 %>%
+  c(., "계" = sum(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
   pander
 ```
 

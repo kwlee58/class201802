@@ -64,11 +64,8 @@ quiz1008_01$Q3 <- factor(quiz1008_01$Q3,
                       labels = c("최근", "1개월간",  "독서율", "읽지 않았다", "56.2%"))
 quiz1008_01$Q4 <- factor(quiz1008_01$Q4, 
                       levels = c("1번", "2번", "3번", "무응답"))
-quiz1008_01$Q4.2 <- quiz1008_01$Q4
-levels(quiz1008_01$Q4.2[quiz1008_01$group == "Black"]) <- c("2번", "1번", "3번", "무응답")
-levels(quiz1008_01$Q4.2) <- c("찬성", "반대", "모름/무응답", "불참")
-quiz1008_01$Q4.3 <- quiz1008_01$Q4.2
-levels(quiz1008_01$Q4.3) <- c("찬성", "반대", "모름/무응답", "모름/무응답")
+levels(quiz1008_01$Q4[quiz1008_01$group == "Black"]) <- c("2번", "1번", "3번", "무응답")
+levels(quiz1008_01$Q4) <- c("찬성", "반대", "모름/무응답", "불참")
 str(quiz1008_01)
 ```
 
@@ -182,7 +179,7 @@ tbl_q3_a %>%
 찬성부터(Red), 또는 반대부터(Black) 문항을 주느냐에 따라 응답이 달라질 것으로 기대하였으나 거의 랜덤화 효과에 가까운 결과가 나왔습니다. 모름/무응답이 너무 많네요.
 
 ```{r, investigation, echo = FALSE}
-tbl_q4_a <- quiz1008_01$Q4.2 %>%
+tbl_q4_a <- quiz1008_01$Q4 %>%
   table(quiz1008_01$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
@@ -199,7 +196,8 @@ tbl_q4_a %>%
 ##### % 비교.  (불참 => 모름/무응답)
 
 ```{r, investigation in percentage, echo = FALSE}
-tbl_q4_a_3 <- quiz1008_01$Q4.3 %>%
+levels(quiz1008_01$Q4) <- c("찬성", "반대", "모름/무응답", "모름/무응답")
+tbl_q4_a_3 <- quiz1008_01$Q4 %>%
   table(quiz1008_01$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
@@ -209,7 +207,7 @@ tbl_q4_a_3 %>%
   `[`(-3, -(4:5)) %>%
   prop.table(margin = 1) %>%
   `*`(100) %>%
-  cbind("계" = rowSums(.)) %>%
+  cbind(., "계" = rowSums(.)) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
 ```
@@ -217,14 +215,12 @@ tbl_q4_a_3 %>%
 ##### % 합계
 
 ```{r, overall percentage, echo = FALSE}
-tbl_q4 <- quiz1008_01$Q4.3 %>%
+quiz1008_01$Q4 %>%
   table(useNA = "no") %>%
   prop.table %>%
   `*`(100) %>%
-  c(., sum(.)) %>%
-  format(digits = 2, nsmall = 1)
-names(tbl_q4)[4] <- "계"
-tbl_q4 %>%
+  c(., "계" = sum(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
   pander
 ```
 

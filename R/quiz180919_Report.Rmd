@@ -1,7 +1,7 @@
 ---
 title: "Quiz 180919"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-09-19"
 output: html_document
 ---
 
@@ -66,7 +66,7 @@ tbl_q1_a <- quiz0919$Q1 %>%
   table(quiz0919$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
-colnames(tbl_q1_a)[5:6] %<>% `<-`(., c("불참", "결석"))
+colnames(tbl_q1_a)[6] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 ```
 

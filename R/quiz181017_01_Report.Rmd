@@ -47,11 +47,13 @@ quiz1017_01$Q3 %<>%
          labels = c("다단계집락추출법", "할당법", "단순랜덤추출법", "RDD"))
 quiz1017_01$Q4 %<>%
   factor(levels = c("1", "2", "3", "무응답"))
-quiz1017_01$Q4.2 <- quiz1017_01$Q4
-levels(quiz1017_01$Q4.2[quiz1017_01$group == "Black"]) <- c("2", "1", "3", "무응답")
-levels(quiz1017_01$Q4.2) <- c("찬성한다", "반대한다", "모름/기타", "불참")
-quiz1017_01$Q4.3 <- quiz1017_01$Q4.2
-levels(quiz1017_01$Q4.3) <- c("찬성", "반대", "모름/무응답", "모름/무응답")
+levels(quiz1017_01$Q4[quiz1017_01$group == "Black"]) <- c("2", "1", "3", "무응답")
+levels(quiz1017_01$Q4) <- c("찬성한다", "반대한다", "모름/기타", "불참")
+# quiz1017_01$Q4.2 <- quiz1017_01$Q4
+# levels(quiz1017_01$Q4.2[quiz1017_01$group == "Black"]) <- c("2", "1", "3", "무응답")
+# levels(quiz1017_01$Q4.2) <- c("찬성한다", "반대한다", "모름/기타", "불참")
+# quiz1017_01$Q4.3 <- quiz1017_01$Q4.2
+# levels(quiz1017_01$Q4.3) <- c("찬성", "반대", "모름/무응답", "모름/무응답")
 str(quiz1017_01)
 ```
 
@@ -161,11 +163,11 @@ tbl_q3_a %>%
 긍정 답안(찬성한다)가 먼저 나오는지(Red), 부정 답안(반대한다)가 먼저 나오는지(Black)에 따라 응답이 달라질 것으로, Red 집단의 찬성비율이 높게 나올 것으로 기대하였으나, 오히려 엄청난 랜덤화 효과를 확인하였음.
 
 ```{r, vote attitude, echo = FALSE}
-tbl_q4_a <- quiz1017_01$Q4.2 %>%
+tbl_q4_a <- quiz1017_01$Q4 %>%
   table(quiz1017_01$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
-colnames(tbl_q4_a)[4:5] <- c("불참", "결석")
+colnames(tbl_q4_a)[5] <- "결석"
 rownames(tbl_q4_a)[1:2] <- c("Red(찬성 먼저)", "Black(반대 먼저)")
 tbl_q4_a %>% 
   pander
@@ -174,7 +176,8 @@ tbl_q4_a %>%
 ##### % 비교.  (불참 => 모름/무응답)
 
 ```{r, investigation in percentage, echo = FALSE}
-tbl_q4_a_3 <- quiz1017_01$Q4.3 %>%
+levels(quiz1017_01$Q4) <- c("찬성", "반대", "모름/무응답", "모름/무응답")
+tbl_q4_a_3 <- quiz1017_01$Q4 %>%
   table(quiz1017_01$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%
   rbind(., "계" = colSums(.))
@@ -192,14 +195,12 @@ tbl_q4_a_3 %>%
 ##### % 합계
 
 ```{r, overall percentage, echo = FALSE}
-tbl_q4 <- quiz1017_01$Q4.3 %>%
+quiz1017_01$Q4 %>%
   table(useNA = "no") %>%
   prop.table %>%
   `*`(100) %>%
-  c(., sum(.)) %>%
-  format(digits = 2, nsmall = 1)
-names(tbl_q4)[4] <- "계"
-tbl_q4 %>%
+  c(., "계" = sum(.)) %>%
+  format(digits = 2, nsmall = 1) %>%
   pander
 ```
 
