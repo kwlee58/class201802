@@ -1,7 +1,7 @@
 ---
 title: "Wason Selection"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-10-29"
 output: html_document
 ---
 
@@ -42,7 +42,7 @@ quiz1029[c("Q3", "Q4", "group")]
 quiz1029$Q3.2 <- quiz1029$Q3
 Black <- quiz1029$group == "Black"
 Red <- quiz1029$group == "Red"
-#> 무응답은 오답으로 간주
+#> 무응답을 포함하여 정답 이외의 응답은 오답으로 간주
 quiz1029$Q3.2[Black] <- ifelse(quiz1029$Q3[Black] == "Beer,17", "Right", "Wrong")
 quiz1029$Q3.2[Red] <- ifelse(quiz1029$Q3[Red] == "A,3", "Right", "Wrong")
 # quiz1029$Q3.2[quiz1029$group == "Black" & quiz1029$Q3 == "Beer,17"] <- "Right"
