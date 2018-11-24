@@ -1,7 +1,7 @@
 ---
-title: "Quiz 181114"
+title: "Quiz 181114 : Anchor Effects"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-11-14"
 output: html_document
 ---
 
@@ -22,42 +22,49 @@ panderOptions('table.alignment.default', 'right')
 ```{r, data, echo = FALSE, results = 'hide'}
 quiz1114 <- "../data/quiz181114.xlsx" %>% 
   read.xlsx(sheetIndex = 1, 
-            startRow = 2, 
-            endRow = 155, 
-            colIndex = c(3:7, 9:14), 
-            colClasses = c(rep("character", 11)), 
+            startRow = 2, endRow = 155, 
+            colIndex = c(3:7, 9:14), colClasses = c(rep("character", 11)), 
             stringsAsFactors = FALSE)
-quiz1114 %>% str
+quiz1114 %>% 
+  str
 names(quiz1114) <- c("dept", "id", "name", "year", "e.mail", "cell.no", 
                      "Q1", "Q2", "Q3", "Q4", "group")
-quiz1114$dept %<>% factor
-quiz1114$year %<>% factor
-quiz1114$group %<>% factor(levels = c("Red", "Black"))
-quiz1114$Q1 %<>% factor(levels = c("가", "나", "다", "라"), 
-                        labels = c("황금기 최대증가 1분위", 
-                                 "황금기 최대증가율 1분위", 
-                                 "신자유주의기 최대증가 1분위", 
-                                 "신자유주의기 최대증가율 1분위"))
-quiz1114$Q2 %<>% factor(levels = c("가", "나", "다", "라"), 
-                        labels = c("10억", "20억", "25억", "30억"))
-quiz1114$Q3 %<>% factor(levels = c("가", "나", "다", "라"), 
-                        labels = c("100%", "75%", "50%", "25%"))
-quiz1114$Q4 %<>% factor(levels = c("가", "나", "다", "라", "마"), 
-                        labels = c("무상", "100만원", "200만원", "500만원", "1,000만원"))
-quiz1114 %>% str
+quiz1114$dept %<>% 
+  factor
+quiz1114$year %<>% 
+  factor
+quiz1114$group %<>% 
+  factor(levels = c("Red", "Black"))
+quiz1114$Q1 %<>% 
+  factor(levels = c("가", "나", "다", "라"), 
+         labels = c("황금기 최대증가 1분위", 
+                    "황금기 최대증가율 1분위", 
+                    "신자유주의기 최대증가 1분위", 
+                    "신자유주의기 최대증가율 1분위"))
+quiz1114$Q2 %<>% 
+  factor(levels = c("가", "나", "다", "라"), 
+         labels = c("10억", "20억", "25억", "30억"))
+quiz1114$Q3 %<>% 
+  factor(levels = c("가", "나", "다", "라"), 
+         labels = c("100%", "75%", "50%", "25%"))
+quiz1114$Q4 %<>% 
+  factor(levels = c("가", "나", "다", "라", "마"), 
+         labels = c("무상", "100만원", "200만원", "500만원", "1,000만원"))
+quiz1114 %>% 
+  str
 ```
 
 ```{r, randomization, echo = FALSE, results = 'hide'}
-pander(summary(quiz1114))
+quiz1114 %>% str
 ```
 
-### 퀴즈 응답 비교
+## 퀴즈 응답 비교
 
-#### 활금기와 신자유주의 시기 소득5분위별 소득증가율
+### 활금기와 신자유주의 시기 소득5분위별 소득증가율
 
 `r knitr::include_graphics("../pics/Quiz171108_Q1.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, echo = FALSE}
 tbl_q1_a <- quiz1114 %$%
@@ -75,7 +82,7 @@ tbl_q1_a[-3, -(5:6)] %>%
   pander
 ```
 
-##### %
+#### %
 
 ```{r, productivity vs wage in percentage, echo = FALSE}
 tbl_q1_a %>% 
@@ -87,11 +94,11 @@ tbl_q1_a %>%
   pander
 ```
 
-#### LM3
+### LM3
 
 `r knitr::include_graphics("../pics/Quiz171108_Q2.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, LM3, echo = FALSE}
 tbl_q2_a <- quiz1114 %$%
@@ -110,7 +117,7 @@ tbl_q2_a %>%
   pander
 ```
 
-##### %
+#### %
 
 ```{r, LM3 in percentage, echo = FALSE}
 tbl_q2_a %>%
@@ -122,11 +129,11 @@ tbl_q2_a %>%
   pander
 ```
 
-#### 식량자급률
+### 식량자급률
 
 `r knitr::include_graphics("../pics/Quiz171108_Q3.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, echo = FALSE}
 tbl_q3_a <- quiz1114 %$%
@@ -145,7 +152,7 @@ tbl_q3_a %>%
   pander
 ```
 
-##### %
+#### %
 
 ```{r, echo = FALSE}
 tbl_q3_a %>%
@@ -157,19 +164,19 @@ tbl_q3_a %>%
   pander
 ```
 
-#### 국공립대 등록금 국제 비교
+### 국공립대 등록금 국제 비교
 
-##### Red
+#### Red
 
 `r knitr::include_graphics("../pics/Quiz171108_Q4_Red.png", dpi = NA)`
 
-##### Black
+#### Black
 
 `r knitr::include_graphics("../pics/Quiz171108_Q4_Black.png", dpi = NA)`
 
 이 질문은 기준점이 어디에 있느냐에 따라서 응답이 달라진다는 것을 보여줍니다. 국공립대학의 등록금이 무상인 나라들을 소개한 Red군에서는 적정 수준이 "무상" 또는 100만원 이라고 이라고 응답한 비율이 63.1%로 국공립대학의 등록금이 우리나라보다 높거나 대등한 나라들의 예를 먼저 들고 적정 수준을 물어본 경우(Black)에 "무상" 또는 100만원이라고 응답한 비율인 26.2%보다 월등히 높은 것을 알 수 있습니다. 500만원 이상을 적정하다고 응답한 비율이 Red 집단에는 아예 없지만 Black 집단에는 7.7% 정도 관찰되는 점도 마찬가지 이유에서입니다.
 
-##### 국공립대 등록금의 적정 수준
+#### 국공립대 등록금의 적정 수준
 
 ```{r, college tuition, echo = FALSE}
 tbl_q4_a <- quiz1114 %$%
@@ -189,7 +196,7 @@ tbl_q4_a %>%
   pander
 ```
 
-##### 국공립대 등록금의 적정 수준 (%)
+#### 국공립대 등록금의 적정 수준 (%)
 
 ```{r, college tuition in percentage, echo = FALSE}
 tbl_q4_a %>% 
@@ -201,10 +208,11 @@ tbl_q4_a %>%
   pander
 ```
 
-##### 국공립대 등록금의 적정 수준 (%) 무상, 100만원 => 100만원 이하, 200만원, 500만원, 1,000만원 => 200만원 이상
+#### 국공립대 등록금의 적정 수준 (%) 무상, 100만원 => 100만원 이하, 200만원, 500만원, 1,000만원 => 200만원 이상
 
 ```{r, college tuition in percentage 2, echo = FALSE}
-levels(quiz1114$Q4) <- list("100만원 이하" = c("무상", "100만원"), "200만원 이상" = c("200만원", "500만원", "1,000만원"))
+levels(quiz1114$Q4) <- list("100만원 이하" = c("무상", "100만원"), 
+                            "200만원 이상" = c("200만원", "500만원", "1,000만원"))
 quiz1114$Q4 %>%
   table(quiz1114$group, ., useNA = "ifany") %>%
   cbind(., "계" = rowSums(.)) %>%

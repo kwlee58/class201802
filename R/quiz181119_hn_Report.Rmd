@@ -29,22 +29,29 @@ quiz1119 <- "../data/quiz181119_hn.xlsx" %>%
 # quiz1119 <- read.xlsx("../data/quiz1119_hn.xlsx", 1, startRow = 2, endRow = 161, colIndex = c(3:7, 9:14), colClasses = c(rep("character", 11)), stringsAsFactors = FALSE)
 str(quiz1119)
 names(quiz1119) <- c("dept", "id", "name", "year", "e.mail", "cell.no", "Q1", "Q2", "Q3", "Q4", "group")
-quiz1119$dept %<>% factor
-quiz1119$year %<>% factor
-quiz1119$group %<>% factor(levels = c("Red", "Black"))
-quiz1119$Q1 %<>% factor(levels = c("가", "나"))
+quiz1119$dept %<>% 
+  factor
+quiz1119$year %<>% 
+  factor
+quiz1119$group %<>% 
+  factor(levels = c("Red", "Black"))
+quiz1119$Q1 %<>% 
+  factor(levels = c("가", "나"))
 quiz1119$Q1_2 <- quiz1119$Q1
 levels(quiz1119$Q1_2[quiz1119$group == "Black"]) <- c("나", "가") 
 levels(quiz1119$Q1_2) <- c("천사", "악마")
-quiz1119$Q2 %<>% factor(levels = c("가", "나"))
+quiz1119$Q2 %<>% 
+  factor(levels = c("가", "나"))
 quiz1119$Q2_2 <- quiz1119$Q2
 levels(quiz1119$Q2_2[quiz1119$group == "Black"]) <- c("나", "가") 
 levels(quiz1119$Q2_2) <- c("동조", "거부")
-quiz1119$Q3 %<>% factor(levels = c("가", "나", "무응답"))
+quiz1119$Q3 %<>% 
+  factor(levels = c("가", "나", "무응답"))
 quiz1119$Q3_2 <- quiz1119$Q3
 levels(quiz1119$Q3_2[quiz1119$group == "Black"]) <- c("나", "가", "무응답") 
 levels(quiz1119$Q3_2) <- c("누를 것이다", "누르지 않을 것이다", "불참")
-quiz1119$Q4 %<>% factor(levels = c("가", "나", "무응답"))
+quiz1119$Q4 %<>% 
+  factor(levels = c("가", "나", "무응답"))
 quiz1119$Q4_2 <- quiz1119$Q4
 levels(quiz1119$Q4_2[quiz1119$group == "Black"]) <- c("나", "가", "무응답") 
 levels(quiz1119$Q4_2) <- c("그들과 같이", "그들과 달리", "불참")
@@ -66,9 +73,10 @@ pander(summary(quiz1119))
 ```{r, bystander, echo = FALSE}
 tbl_q1_a <- quiz1119$Q1_2 %>% 
   table(quiz1119$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
-colnames(tbl_q1_a)[3] %<>% `<-`(., "결석")
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q1_a)[3] %<>% 
+  `<-`(., "결석")
 tbl_q1_a %>% 
   pander 
 tbl_q1_a[-3, -4] %>% 
@@ -97,10 +105,12 @@ tbl_q1_a %>%
 ```{r, obedience, echo = FALSE}
 tbl_q2_a <- quiz1119$Q2_2 %>% 
   table(quiz1119$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
-colnames(tbl_q2_a)[3] %<>% `<-`(., "결석")
-tbl_q2_a %>% pander 
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q2_a)[3] %<>% 
+  `<-`(., "결석")
+tbl_q2_a %>% 
+  pander 
 tbl_q2_a[-3, -(3:4)] %>% 
   chisq.test(simulate.p.value = TRUE) %>% 
   pander
@@ -127,9 +137,10 @@ tbl_q2_a %>%
 ```{r, Power of 3, echo = FALSE}
 tbl_q3_a <- quiz1119$Q3_2 %>% 
   table(quiz1119$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
-colnames(tbl_q3_a)[3:4] %<>% `<-`(., c("불참", "결석"))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q3_a)[3:4] %<>% 
+  `<-`(., c("불참", "결석"))
 tbl_q3_a %>% 
   pander 
 tbl_q3_a[-3, -(3:5)] %>% 
@@ -158,9 +169,10 @@ tbl_q3_a %>%
 ```{r, Framing Effect, echo = FALSE}
 tbl_q4_a <- quiz1119$Q4_2 %>% 
   table(quiz1119$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
-colnames(tbl_q4_a)[3:4] %<>% `<-`(., c("불참", "결석"))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q4_a)[4] %<>% 
+  `<-`(., "결석")
 tbl_q4_a %>% 
   pander 
 tbl_q4_a[-3, -(3:5)] %>% 
