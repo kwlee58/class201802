@@ -1,7 +1,7 @@
 ---
-title: "Quiz 181105_1"
+title: "Quiz 181105_1 : Default Effects"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "`2018-11-05"
 output: html_document
 ---
 
@@ -75,26 +75,25 @@ quiz1105_1 %>% summary %>% pander
 # pander(summary(quiz1105_1))
 ```
 
-### 퀴즈 응답 비교
+## 퀴즈 응답 비교
 
-#### 평균과 중위값
+### 평균과 중위값
 
 `r knitr::include_graphics("../pics/Quiz171025_01.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, echo = FALSE}
 tbl_q1_a <- quiz1105_1$Q1 %>% 
   table(quiz1105_1$group, ., useNA = "ifany") %>%
-  addmargins
-# colnames(tbl_q1_a)[5:6] <- c("결석", "계")
-colnames(tbl_q1_a)[5:6] %<>% `<-`(., c("결석", "계"))
-# rownames(tbl_q1_a)[3] <- "계"
-rownames(tbl_q1_a)[3] %<>% `<-`(., "계")
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+# colnames(tbl_q1_a)[5] <- "결석"
+colnames(tbl_q1_a)[5] %<>% `<-` ("결석")
 tbl_q1_a %>% pander 
 ```
 
-##### %
+#### %
 
 ```{r, echo = FALSE}
 tbl_q1_a %>% 
@@ -106,23 +105,22 @@ tbl_q1_a %>%
   pander
 ```
 
-#### 평균과 중위값
+### 평균과 중위값
 
 `r knitr::include_graphics("../pics/Quiz171025_02.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, self-employed, echo = FALSE}
 tbl_q2_a <- quiz1105_1$Q2 %>%
-  table(quiz1105_1$group, .,
-        useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q2_a)[5:6] <- c("결석", "계")
-rownames(tbl_q2_a)[3] <- "계"
+  table(quiz1105_1$group, ., useNA = "ifany") %>%
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q2_a)[5] <- "결석"
 tbl_q2_a %>% pander 
 ```
 
-##### %
+#### %
 
 ```{r, self-employed in percentage, echo = FALSE}
 tbl_q2_a %>%
@@ -130,27 +128,27 @@ tbl_q2_a %>%
   prop.table %>%
   c(., "계" = sum(.)) %>%
   `*`(100) %>%
-  format(., digits = 2, nsmall = 1) %>%
+  format(., digits = 1, nsmall = 1) %>%
   pander
 ```
 
-#### 연 500만원 이하 근로소득자의 비율
+### 연 500만원 이하 근로소득자의 비율
 
 `r knitr::include_graphics("../pics/Quiz171025_03.png", dpi = NA)`
 
-##### 집계
+#### 집계
 
 ```{r, public expenditure, echo = FALSE}
 tbl_q3_a <- quiz1105_1$Q3 %>%
   table(quiz1105_1$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[6:8] <- c("불참", "결석", "계")
-rownames(tbl_q3_a)[3] <- "계"
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q3_a)[7] <- "결석"
 tbl_q3_a %>% 
   pander
 ```
 
-##### %
+#### %
 
 ```{r, public expenditure in percentage, echo = FALSE}
 tbl_q3_a %>%
@@ -162,26 +160,28 @@ tbl_q3_a %>%
   pander
 ```
 
-### 디폴트 효과
+## 디폴트 효과
 
-#### 표시하지 않으면 ... 으로 간주합니다의 효과
+### 표시하지 않으면 ... 으로 간주합니다의 효과
 
-##### Red 
+#### Red 
 
 `r knitr::include_graphics("../pics/Quiz171025_04_red.png", dpi = NA)`
 
-##### Black
+#### Black
 
 `r knitr::include_graphics("../pics/Quiz171025_04_black.png", dpi = NA)`
 
 표시하지 않으면 헌혈 의사가 있는 것으로 간주하는 경우(Red)와 표시하면 헌혈 의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 헌혈 의사가 있다고 보는 질문지에 헌혈 의사 비율이 더 높게 나오는 것으로 관찰되기는 하나,통계적으로도 유의한 수준은 아니다. 
 
+#### 집계
+
 ```{r, echo = FALSE}
 tbl_q4_a <- quiz1105_1$Q4 %>%
-  table(quiz1105_1$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[3:4] <- c("결석", "계")
-rownames(tbl_q4_a)[3] <- "계"
+  table(quiz1105_1$group, ., useNA = "ifany")%>%
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
+colnames(tbl_q4_a)[3] <- "결석"
 tbl_q4_a %>% 
   pander
 tbl_q4_a %>%
@@ -190,7 +190,7 @@ tbl_q4_a %>%
   pander
 ```
 
-##### % 비교 
+#### % 비교 
 
 ```{r, vote attitude in percentage, echo = FALSE}
 tbl_q4_a %>% 
