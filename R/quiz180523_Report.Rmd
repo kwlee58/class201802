@@ -1,7 +1,7 @@
 ---
 title: "Quiz 180523 : Birthday Problem, Matching Problem, Money Illusion"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-05-23"
 output: html_document
 ---
 
@@ -130,18 +130,18 @@ quiz0523$Q3 %<>% factor(levels = c("가", "나", "무응답"),
 quiz0523$Q4 %<>% factor(levels = c("가", "나", "무응답"),
                         labels = c("수용가능", "불공정", "불참"))
 # str(quiz0523)
-pander(quiz0523[c("Q3", "Q3.2", "Q4", "Q4.2", "group")])
+pander(quiz0523[c("Q3", "Q4", "group")])
 ```
 
 ```{r, randomization, echo = FALSE, results = 'hide'}
 summary(quiz0523)
 ```
 
-### 퀴즈 응답
+## 퀴즈 응답
 
-#### Birthday Problem
+### Birthday Problem
 
-##### 생일이 같은 사람
+#### 생일이 같은 사람
 
 ```{r, echo = FALSE}
 quiz0523_2 %>%
@@ -149,7 +149,7 @@ quiz0523_2 %>%
   kable(col.names = c("학번", "생일", "그룹"), align = "c")
 ```
 
-##### 어느 날에 몇 명씩 생일이 같은가?
+#### 어느 날에 몇 명씩 생일이 같은가?
 
 ```{r, echo = FALSE}
 quiz0523_2$Q1_2 %>%
@@ -157,11 +157,11 @@ quiz0523_2$Q1_2 %>%
   table %>%
   as.matrix %>%
   t %>%
-  cbind(., "계" = rowSums(.)) %>%
+  cbind("계" = rowSums(.)) %>%
   kable(row.names = NA)
 ```
 
-##### 생일이 같은 사람은 몇 명 정도 기대되는가?
+#### 생일이 같은 사람은 몇 명 정도 기대되는가?
 
 $N$을 전체 인원이라 할 때, 기대 인원은 $N\times\{1- (\frac{364}{365})^{N-1}\}$로 계산된다.
 무응답이거나 결석한 학생을 제외한 응답 인원 $N = 148$명에 대하여 기대인원을 계산하면
@@ -182,15 +182,15 @@ sqrt(V_N(148))
 
 이므로 이론적으로 계산한 값은 관찰된 값과 잘 부합한다.
 
-##### 태어난 달의 분포는?
+#### 태어난 달의 분포는?
 
 ```{r, month of the birthdates, echo = FALSE}
 quiz0523$month <- quiz0523$month %>%
   factor(levels = unique(quiz0523$month), labels = paste0(1:12, "월"))
 quiz0523$month %>%
   table(quiz0523$group, .) %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.)) %>%
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.)) %>%
   kable(align = "r")
 ```
 
@@ -212,21 +212,21 @@ quiz0523$month %>%
   pander
 ```
 
-#### Matching Problem
+### Matching Problem
 
 `r knitr::include_graphics("../pics/Quiz171115_Q2.png", dpi = NA)`
 
-##### 정답갯수의 분포
+#### 정답갯수의 분포
 
 ```{r, matching, echo = FALSE}
 quiz0523$Q2_2 %>%
   table(quiz0523$group, .) %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.)) %>%
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.)) %>%
   pander
 ```
 
-##### 카이제곱 적합도 테스트
+#### 카이제곱 적합도 테스트
 
 랜덤하게 골랐다면, 각각의 확률은 9/24, 8/24, 6/24, 1/24임. 응답인원 144명을 각 확률에 곱해보면,
 
@@ -237,34 +237,34 @@ names(Expected) <- c("0", "1", "2", "4")
 Expected %>%
   as.matrix %>%
   t %>%
-  cbind(., "계" = rowSums(.)) %>%
-   format(digits = 3, nsmall = 1) %>%
+  cbind("계" = rowSums(.)) %>%
+  format(digits = 3, nsmall = 1) %>%
   pander
-pander(t(as.matrix(round(Expected))))
+# pander(t(as.matrix(round(Expected))))
 ```
 
 ```{r, echo = FALSE}
 quiz0523$Q2_2 %>%
   table %>%
-  chisq.test(, p = c(9, 8, 6, 1)/24, simulate.p.value = TRUE) %>%
+  chisq.test(p = c(9, 8, 6, 1)/24, simulate.p.value = TRUE) %>%
   pander
-pander(chisq.test(table(matching_score), p = c(9, 8, 6, 1)/24, simulate.p.value = TRUE, B = 2000))
+# pander(chisq.test(table(matching_score), p = c(9, 8, 6, 1)/24, simulate.p.value = TRUE, B = 2000))
 ```
 
-#### 직관과 어긋나는 용어
+### 직관과 어긋나는 용어
 
-##### 연비
+#### 연비
 
 `r knitr::include_graphics("../pics/Quiz180523_Q3.png", dpi = NA)`
 
-1,200 킬로미터룰 주행한다고 해 보자. '가'는 120리터에서 100리터로 20리터를 절감하고, '나'는 40리터에서 30리터 10리터를 절감하게 된다. 따라서 '가'운전자가 이전보다 더 절감하게 된다.
+1,200 킬로미터룰 주행한다고 해 보자. '가'는 120리터에서 100리터로 20리터를 절감하고, '나'는 40리터에서 30리터로 10리터를 절감하게 된다. 따라서 '가'운전자가 이전보다 더 절감하게 된다.
 
 ```{r, Framing Effect, echo = FALSE}
 tbl_q3_a <- quiz0523$Q3 %>%
   table(quiz0523$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q3_a)[3:5] <- c("불참", "결석", "계")
-rownames(tbl_q3_a)[3] <- "계"
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.)) 
+colnames(tbl_q3_a)[4] <- "결석"
 tbl_q3_a %>% 
   pander
 tbl_q3_a %>%
@@ -273,7 +273,7 @@ tbl_q3_a %>%
   pander
 ```
 
-##### % 비교.  
+#### % 비교.  
 
 ```{r, Framing effects in percentage, echo = FALSE}
 tbl_q3_a %>%
@@ -285,15 +285,15 @@ tbl_q3_a %>%
   pander
 ```
 
-#### 화폐 착각
+### 화폐 착각
 
-##### 인플레이션과 임금인상
+#### 인플레이션과 임금인상
 
-##### Red
+#### Red
 
 `r knitr::include_graphics("../pics/Quiz171115_Q4_Red.png", dpi = NA)`
 
-##### Black
+#### Black
 
 `r knitr::include_graphics("../pics/Quiz171115_Q4_Black.png", dpi = NA)`
 
@@ -302,8 +302,9 @@ tbl_q3_a %>%
 ```{r, Money illusion, echo = FALSE}
 tbl_q4_a <- quiz0523$Q4 %>%
   table(quiz0523$group, ., useNA = "ifany") %>%
-  addmargins
-colnames(tbl_q4_a)[3:5] <- c("불참", "결석", "계")
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.)) 
+colnames(tbl_q4_a)[4] <- "결석"
 rownames(tbl_q4_a) <- c("실업+인플레0%, 임금삭감7%", "실업+인플레12%, 임금인상5%", "계")
 tbl_q4_a %>% 
   pander
@@ -313,7 +314,7 @@ tbl_q4_a %>%
   pander
 ```
 
-##### % 비교.  
+#### % 비교.  
 
 ```{r, Money illusion in percentage, echo = FALSE}
 tbl_q4_a %>% 
