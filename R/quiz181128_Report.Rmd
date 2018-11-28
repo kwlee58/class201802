@@ -153,7 +153,7 @@ summary(quiz1128)
 ```{r, echo = FALSE}
 quiz1128_2 %>%
   `[`(index_dup_b, c("id", "Q1_2", "group")) %>%
-  kable(col.names = c("학번", "생일", "그룹"), align = "c")
+  kable(col.names = c("학번", "생일", "그룹"), align = "c", row.names = FALSE)
 ```
 
 #### 어느 날에 몇 명씩 생일이 같은가?
