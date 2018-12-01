@@ -1,7 +1,7 @@
 ---
 title: "Quiz 180910"
 author: "coop711"
-date: "`r Sys.Date()`"
+date: "2018-09-10"
 output: html_document
 ---
 
@@ -21,7 +21,7 @@ options(width=180)
 
 ```{r, data, echo = FALSE, results = 'hide'}
 quiz0910 <- read.xlsx("../data/quiz180910v2.xlsx", 
-                      1, 
+                      sheetIndex = 1, 
                       startRow = 2, 
                       endRow = 158, 
                       colIndex = c(3:7, 9:14), 
@@ -55,122 +55,122 @@ str(quiz0910)
 pander(summary(quiz0910))
 ```
 
-### 퀴즈 응답 비교
+## 퀴즈 응답 비교
 
-#### 춘추전국시대에 국가통계관리의 중요성 강조
+### 춘추전국시대에 국가통계관리의 중요성 강조
 
 `r knitr::include_graphics("../pics/Quiz170830_01.png", dpi = NA)`
 
-##### 관자(집계표)
+#### 관자(집계표)
 
 ```{r, Kwanzi, echo = FALSE}
 tbl_q1_a <- quiz0910$Q1 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q1_a)[6] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 ```
 
-##### 관자(%)
+#### 관자(%)
 
 ```{r, Kwanzi in percentage, echo = FALSE}
 tbl_q1_a %>% 
   `[`(3, -(6:7)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
 ```
 
-#### 국가정책을 수립하는 데 통계의 역할
+### 국가정책을 수립하는 데 통계의 역할
 
 `r knitr::include_graphics("../pics/Quiz170830_02.png", dpi = NA)`
 
-##### 통계의 중요성(집계표)
+#### 통계의 중요성(집계표)
 
 ```{r, state arithmetic, echo = FALSE}
 tbl_q2_a <- quiz0910$Q2 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q2_a)[6] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 ```
 
-##### 통계의 중요성(%)
+#### 통계의 중요성(%)
 
 ```{r, state arithmetic in percentage, echo = FALSE}
 tbl_q2_a %>% 
   `[`(3, -(6:7)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
 ```
 
-#### 우리나라 생산가능인구 감소 시기
+### 우리나라 생산가능인구 감소 시기
 
 `r knitr::include_graphics("../pics/Quiz170830_03.png", dpi = NA)`
 
-##### 생산가능인구 감소 시기(집계표)
+#### 생산가능인구 감소 시기(집계표)
 
 ```{r, labour force, echo = FALSE}
 tbl_q3_a <- quiz0910$Q3 %>% 
   table(quiz0910$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q3_a)[5] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 ```
 
-##### 생산가능인구 감소 시기(%)
+#### 생산가능인구 감소 시기(%)
 
 ```{r, labour force in percentage, echo = FALSE}
 tbl_q3_a %>% 
   `[`(3, -(5:6)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
 ```
 
-### 소득주도성장
+## 소득주도성장
 
-#### 부연설명 여부에 따른 응답의 변화
+### 부연설명 여부에 따른 응답의 변화
 
-##### Red
+#### Red
 
 `r knitr::include_graphics("../pics/Growth_by_income_red.png", dpi = NA)`
 
-##### Black
+#### Black
 
 `r knitr::include_graphics("../pics/Growth_by_income_black.png", dpi = NA)`
 
 
-##### 집계표. 
+#### 집계표. 
 부연설명 여부(Red는 부연설명, Black은 부연설명 없음)에 따라 응답에 영향. 당초 부연설명을 한 Red 집단에서 찬성 비율이 높을 것으로 기대하였으나 결과는 반대로 나옴. 통계적으로 유의한 수준은 아니나 상당히 가까움.
 
 ```{r, anti-terror law, echo = FALSE}
 tbl_q4_a <- quiz0910$Q4 %>%
   table(quiz0910$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q4_a)[4] <- "결석"
 tbl_q4_a %>% 
   pander
 ```
 
-##### {결석 제외}
+#### {결석 제외}
 
 ```{r, Jobs(3 possible answers), echo = FALSE}
 tbl_q4_a <- quiz0910$Q4 %>%
   table(quiz0910$group, ., useNA = "no") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 tbl_q4_a %>% 
   pander
 tbl_q4_a[-3, -4] %>% 
@@ -178,7 +178,7 @@ tbl_q4_a[-3, -4] %>%
   pander
 ```
 
-##### % 비교.  
+#### % 비교.  
 
 ```{r, anti-terror law in percentage, echo = FALSE}
 tbl_q4_a %>% 

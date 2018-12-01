@@ -75,15 +75,13 @@ pander(summary(quiz0903))
 ```{r, Roper, echo = FALSE}
 tbl_q1_a <- quiz0903$Q1 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q1_a)[5] %<>% `<-`(., "결석")
 tbl_q1_a %>% pander 
 tbl_q1_a[-3, -6] %>% 
   chisq.test(simulate.p.value = TRUE) %>% 
   pander
-tbl.q1 <- table(quiz0903$group, quiz0903$Q1, 
-                useNA = "ifany")
 ```
 
 #### Roper(%)
@@ -92,7 +90,7 @@ tbl.q1 <- table(quiz0903$group, quiz0903$Q1,
 tbl_q1_a %>% 
   `[`(3, -(5:7)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 2, nsmall = 1) %>%
   pander
@@ -107,8 +105,8 @@ tbl_q1_a %>%
 ```{r, ASA, echo = FALSE}
 tbl_q2_a <- quiz0903$Q2 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q2_a)[5] %<>% `<-`(., "결석")
 tbl_q2_a %>% pander 
 ```
@@ -119,7 +117,7 @@ tbl_q2_a %>% pander
 tbl_q2_a %>% 
   `[`(3, -(5:6)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 1, nsmall = 1) %>%
   pander
@@ -134,8 +132,8 @@ tbl_q2_a %>%
 ```{r, D.Huff, echo = FALSE}
 tbl_q3_a <- quiz0903$Q3 %>% 
   table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q3_a)[5] %<>% `<-`(., "결석")
 tbl_q3_a %>% pander 
 ```
@@ -146,7 +144,7 @@ tbl_q3_a %>% pander
 tbl_q3_a %>% 
   `[`(3, -(5:6)) %>%
   prop.table %>% 
-  c(., "계" = sum(.)) %>%
+  c("계" = sum(.)) %>%
   `*`(100) %>%
   format(digits = 1, nsmall = 1) %>%
   pander
@@ -169,8 +167,8 @@ tbl_q3_a %>%
 ```{r, Jobs(5 possible answers), echo = FALSE}
 tbl_q4_a <- quiz0903$Q4 %>%
   table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q4_a)[7] <- "결석"
 tbl_q4_a %>% 
   pander
@@ -200,8 +198,8 @@ levels(quiz0903$Q4) <- c(rep("공감(찬성)", 2),
                            rep("모름/무응답", 2))
 tbl_q4_a <- quiz0903$Q4 %>%
   table(quiz0903$group, ., useNA = "ifany") %>%
-  cbind(., "계" = rowSums(.)) %>%
-  rbind(., "계" = colSums(.))
+  cbind("계" = rowSums(.)) %>%
+  rbind("계" = colSums(.))
 colnames(tbl_q4_a)[4] <- "결석"
 tbl_q4_a %>% 
   pander
