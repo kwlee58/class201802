@@ -37,6 +37,7 @@ quiz1128$group %<>% factor(levels = c("Red", "Black"))
 birth_month_date <- quiz1128 %>%
   select("Q1") %>%
   .[[1]]
+#> quiz1128$Q1
 #> `[[`(1) 바로 윗 식을 고쳐 쓴 방법
 #> .[, "Q1"] 두 줄을 한 줄로 
 #> 월, 일을 날짜 순으로 정리하기 위하여 글자를 떼어내고 숫자로 변화. 1 => 01 등.
@@ -56,14 +57,22 @@ quiz1128$date %<>%
   nchar %>% 
   `==`(1) %>% 
   ifelse(paste0(0, quiz1128$date), quiz1128$date)
-
 # quiz1128$month <- sapply(strsplit(birth_month_date, split = ","), function(x) x[1])
 # quiz1128$month <- ifelse(nchar(quiz1128$month) == 1, paste0(0, quiz1128$month), quiz1128$month)
 # quiz1128$date <- sapply(strsplit(birth_month_date, split = ","), function(x) x[2])
 # quiz1128$date <- ifelse(nchar(quiz1128$date) == 1, paste0(0, quiz1128$date), quiz1128$date)
-quiz1128$Q1_2 <- paste0(quiz1128$month, "월", quiz1128$date, "일")
-quiz1128$Q1_2[quiz1128$Q1_2 == "NA월NA일"] <- NA
+
+quiz1128$Q1_2 <- quiz1128 %$%
+  paste0(.$month, "월", .$date, "일")
+# quiz1128$Q1_2 <- quiz1128$month %>%
+#   paste0("월", quiz1128$date, "일")
+# quiz1128$Q1_2 <- paste0(quiz1128$month, "월", quiz1128$date, "일")
 # quiz1128$Q1_2 <- str_c(quiz1128$month, "월", quiz1128$date, "일")
+
+quiz1128$Q1_2 %<>%
+  `[<-`(. == "NA월NA일", NA)
+# quiz1128$Q1_2[quiz1128$Q1_2 == "NA월NA일"] <- NA
+
 #> 생일을 날짜 순서대로 정리한 복제본 생성
 quiz1128_2 <- quiz1128 %>%
   `[`(order(.$month, .$date), )
@@ -90,7 +99,7 @@ b_dup_b <- birthdate %>%
   `[`(. %in% (birthdate %>%
   `[`(duplicated(.)) %>% unique))
 # b_dup_b <- birthdate[birthdate %in% unique(birthdate[duplicated(birthdate)])]
-# b_dup_b <- birthdate[birthdate %in% unique(b_dup_b)]
+# b_dup_b <- birthdate[birthdate %in% unique(b_dup)]
 #> Where the duplicates appear in Q1_2
 index_dup_b <- quiz1128_2$Q1_2 %>%
   `%in%`(b_dup_b %>% unique) %>%
@@ -99,7 +108,7 @@ index_dup_b <- quiz1128_2$Q1_2 %>%
 #> List Duplicated birthdates with id and group
 quiz1128_2 %>%
   `[`(index_dup_b, c("id", "Q1_2", "group"))
-# quiz1128_2[idex_dup_b, c("id", "Q1_2", group)]
+# quiz1128_2[index_dup_b, c("id", "Q1_2", group)]
 #> To remove 0 counts cells, use `droplevels`. 
 quiz1128_2$Q1_2 %>%
   `[`(index_dup_b) %>%
@@ -116,7 +125,7 @@ quiz1128_2$Q1_2 %>%
 #> Matching Data
 #> 데이터 오류 점검
 quiz1128$Q2 %>% table
-quiz1128$Q2[quiz1128$Q2 %>% `%in%`(c("RCFL", "RDGL")) %>% which] <- "RCGL"
+quiz1128$Q2[quiz1128$Q2 %>% `%in%`(c("RCFL", "RDGL", "RCRL")) %>% which] <- "RCGL"
 # quiz1128$Q2[which(quiz1128$Q2 %in% c("RCFL", "RDGL"))] <- "RCGL"
 #> 정답 분해
 ans <- "RCGL" %>% strsplit(split = "")
@@ -140,8 +149,8 @@ quiz1128$Q2_2 <- matching_score
 quiz1128$Q3 %<>% factor(levels = c("가", "나", "무응답"), 
                         labels = c("연비 10 => 12", "연비 30 => 40", "불참"))
 #> Q4
-quiz1128$Q4 %<>% factor(levels = c("가", "나", "무응답"),
-                        labels = c("수용가능", "불공정", "불참"))
+quiz1128$Q4 %<>% factor(levels = c("가", "나"),
+                        labels = c("수용가능", "불공정"))
 # str(quiz1128)
 pander(quiz1128[c("Q3", "Q4", "group")])
 ```
@@ -244,7 +253,8 @@ quiz1128$month %>%
 
 ```{r, matching, echo = FALSE}
 quiz1128$Q2_2 %>%
-  factor(levels = c(0, 1, 2, 4)) %>%
+  factor(levels = c(0, 1, 2, 4),
+         labels = paste0(c(0, 1, 2, 4), "개")) %>%
   table(quiz1128$group, .) %>%
   cbind("계" = rowSums(.)) %>%
   rbind("계" = colSums(.)) %>%
@@ -329,12 +339,12 @@ tbl_q4_a <- quiz1128$Q4 %>%
   table(quiz1128$group, ., useNA = "ifany") %>%
   cbind("계" = rowSums(.)) %>%
   rbind("계" = colSums(.))
-colnames(tbl_q4_a)[4] <- "결석"
+colnames(tbl_q4_a)[3] <- "결석"
 rownames(tbl_q4_a) <- c("실업+인플레0%, 임금삭감7%", "실업+인플레12%, 임금인상5%", "계")
 tbl_q4_a %>% 
   kable
 tbl_q4_a %>%
-  `[`(-3, -(3:5)) %>%
+  `[`(-3, -(3:4)) %>%
   chisq.test(simulate.p.value = FALSE) %>%
   pander
 ```
@@ -343,7 +353,7 @@ tbl_q4_a %>%
 
 ```{r, Money illusion in percentage, echo = FALSE}
 tbl_q4_a %>% 
-  `[`(-3, -(3:5)) %>%
+  `[`(-3, -(3:4)) %>%
   prop.table(margin = 1) %>%
   `*`(100) %>%
   cbind("계" = rowSums(.)) %>%
