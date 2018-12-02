@@ -322,6 +322,10 @@ quiz1128$Q2_2 %>%
 # pander(chisq.test(table(matching_score), p = c(9, 8, 6, 1)/24, simulate.p.value = TRUE, B = 2000))
 ```
 
+#### 스마트폰이 없던 시절
+
+`r knitr::include_graphics("../pics/matching_1996.png", dpi = NA)`
+
 ### 직관과 어긋나는 용어
 
 #### 연비

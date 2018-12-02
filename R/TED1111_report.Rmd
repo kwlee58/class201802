@@ -1,0 +1,149 @@
+---
+title: "TED Submission Time : 181111"
+# author: "coop711"
+# date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("pander", repos = "https://cran.rstudio.com")
+# install.packages("xlsx", repos = "https://cran.rstudio.com")
+# install.packages("readr", repos = "https://cran/rstudio.com")
+library(xlsx)
+library(pander)
+library(knitr)
+library(magrittr)
+library(printr)
+panderOptions('table.split.table', Inf)
+options(width = 180)
+```
+
+<!--
+### Data
+-->
+
+```{r, data, echo = FALSE, results = "hide"}
+load("./red_and_black_180907_data.RData")
+TED08 <- read.xlsx("../data/TED08.xlsx", 
+                   sheetIndex = 1, 
+                   startRow = 1, 
+                   endRow = 154, 
+                   colIndex = 1:4,
+                   colClasses = c("character", "numeric", "Date", "POSIXct"),
+                   encoding = "UTF-8",
+                   stringsAsFactors = FALSE)
+names(TED08) <- c("id", "score", "date", "time")
+TED08$group <- class_roll$group[match(TED08$id, class_roll$id)]
+TED08$date_time <- as.POSIXct(paste(TED08$date, strftime(TED08$time, format = "%H:%M:%S", tz = "GMT")), 
+                              format = "%Y-%m-%d %H:%M:%S")
+TED08$submit <- ifelse(is.na(TED08$date_time), "미제출", "제출")
+## 학교 정보시스템이 GMT로 표기되어 있어서 9시간의 타임갭을 감안하여야 함.
+TED08$days <- as.numeric(difftime("2018-11-12 00:00:00", TED08$date_time, units = 'days'))
+TED08$bird <- factor(ifelse(TED08$days >= 1, "Early", "Late"), 
+                     labels = c("마감날 이전 작성", "마감날 작성"))
+str(TED08)
+TED08 <- TED08[c("id","score", "date_time", "group", "submit", "days", "bird")]
+str(TED08)
+write.table(TED08[c("id", "score", "date_time")], file = "../data/TED08.txt", row.names = FALSE)
+```
+
+
+### 제출/미제출
+
+제출시간이 기록되지 않은 사람은 미제출.
+
+```{r, echo = FALSE, results = "markup"}
+pander(table(TED08$group, TED08$submit))
+pander(chisq.test(table(TED08$group, TED08$submit)))
+```
+
+## 제출 시간의 분포
+
+마감일로부터 얼마나 일찍 제출하는지 측정된 단위인 일 단위로 살펴보았다. 
+
+### 기초통계량
+
+```{r, echo = FALSE}
+summary(TED08$days)
+stem(TED08$days, scale = 2)
+max(TED08$days, na.rm = TRUE)
+```
+
+### 마감일로부터 제출일까지 기간의 분포
+
+```{r, echo = FALSE}
+par(family = "HCR Dotum LVT")
+pander(table(cut(TED08$days, breaks = c(-1:7, 14, 21, 28), 
+                 include.lowest = TRUE, right = FALSE)), caption = "일 단위")
+barplot(rev(table(cut(TED08$days, breaks = c(-1:28), 
+                      include.lowest = TRUE, right = FALSE))), 
+        space = 0,
+        names.arg = paste0(c(28:0), "일"),
+        las = 1)
+title(main = "일별 토론 등록 횟수")
+```
+
+### 마감일로부터 일주일 단위 제출율의 분포
+
+```{r, echo = FALSE}
+breaks <- c(-1, 0, 1, 7, 14, 21, 28)
+# breaks <- c(0, 24, 25:34, seq(48, 192, by = 24))
+pander(table(cut(TED08$days, breaks = breaks, 
+                 include.lowest = TRUE, right = FALSE)), caption = "하루 단위")
+```
+
+### 하루하루 제출 건수의 분포
+
+```{r, echo = FALSE, fig.width = 12}
+par(family = "HCR Dotum LVT")
+widths <- c(rep(7, 3), 6, 1, 1)
+freqs <- table(cut(TED08$days, breaks = breaks, include.lowest = TRUE, right = FALSE))
+heights <- freqs / diff(breaks)
+names_args <- c("Week 1", "Week 2", "Week 3", "Week 4 -1", "0", "-1")
+barplot(height = rev(heights), width = widths, 
+        space = 0,
+        names.arg = names_args)
+title(main = "일 평균 토론 등록 건수 분포")
+# arrows(x0 = 144, y0 = 3, x1 = 156, y1 = 0.75, length = 0.15, code = 2, col = "red", lwd = 1.5)
+# text(x = 141, y = 3.2, labels = "오후 2시", srt = 15, col = "red")
+```
+
+### 급히 제출한 사람과 일찍 낸 사람 비교
+
+마감일 이후에 올린 사람과 그 이전에 올린 사람들의 특성 비교
+
+#### 랜덤화 효과
+
+```{r, echo = FALSE}
+bird_group <- table(TED08$group, TED08$bird, useNA = "ifany")
+colnames(bird_group)[3] <- "미제출"
+pander(bird_group)
+pander(chisq.test(table(TED08$group, TED08$bird)))
+```
+
+#### 점수 비교
+
+```{r, echo = FALSE}
+score_bird_tbl <- table(TED08$score, TED08$bird, useNA = "ifany")
+colnames(score_bird_tbl)[3] <- "미제출"
+pander(score_bird_tbl)
+```
+
+#### TED07와 비교
+
+```{r, echo = FALSE, eval = TRUE}
+TED07 <- readRDS("./TED07.RDS")
+bird_07 <- TED07$bird[match(TED08$id, TED07$id)]
+tbl_0708 <- table("TED07" = bird_07, "TED08" = TED08$bird, dnn = list("TED07", "TED08"), useNA = "ifany")
+colnames(tbl_0708)[3] <- "미제출"
+rownames(tbl_0708)[3] <- "미제출"
+tbl_0708
+```
+
+#### Save
+
+```{r, echo = FALSE}
+saveRDS(TED08, file = "TED08.RDS")
+```
+
