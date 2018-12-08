@@ -23,7 +23,7 @@ options(width = 132)
 quiz1128 <- "../data/quiz181128.xlsx" %>% 
   read.xlsx(sheetIndex = 1, 
             startRow = 2, endRow = 155, 
-            colIndex = c(3:7, 9:14), colClasses = rep("character", 12),
+            colIndex = c(3:7, 9:14), colClasses = rep("character", 11),
             encoding = "UTF-8",
             stringsAsFactors = FALSE)
 quiz1128 %>% str
