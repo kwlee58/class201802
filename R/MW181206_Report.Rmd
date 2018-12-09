@@ -22,7 +22,7 @@ options(width = 180)
 
 ```{r, data, echo = FALSE, results = 'hide'}
 #> 엑셀 자료 읽어들이기
-quiz1206 <- read.xlsx("../data/MW181206.xlsx", 
+quiz1206 <- read.xlsx("../data/MW181206_v2.xlsx", 
                       sheetIndex = 1, 
                       startRow = 2, 
                       endRow = 155, 
