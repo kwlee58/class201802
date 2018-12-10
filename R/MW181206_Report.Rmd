@@ -18,6 +18,12 @@ panderOptions('table.alignment.default', 'right')
 options(width = 180)
 ```
 
+### 게임 규칙과 기록표
+
+`r include_graphics("../pics/MW_rule.png", dpi = NA)`
+
+`r include_graphics("../pics/MW_score_board.png", dpi = NA)`
+
 ### 개별 기록
 
 ```{r, data, echo = FALSE, results = 'hide'}
