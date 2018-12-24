@@ -193,3 +193,9 @@ quiz14$id[quiz14$days >= 6 & quiz14$days <= 7] %>%
 ```{r, echo = FALSE}
 intersect(quiz13$id[quiz13$days >= 4 & quiz13$days <= 5], quiz14$id[quiz14$days >= 6 & quiz14$days <= 7]) %>% length
 ```
+
+## Save
+
+```{r, echo = FALSE}
+saveRDS(quiz14, file = "quiz14.RDs")
+```

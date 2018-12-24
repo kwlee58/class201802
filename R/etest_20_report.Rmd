@@ -181,6 +181,7 @@ quiz19$id[quiz19$days >= 4 & quiz19$days <= 5] %>%
   `!` %>%
   sum 
 ```
+
 ##### quiz20
 
 ```{r, echo = FALSE}
@@ -194,4 +195,10 @@ quiz20$id[quiz20$days >= 6 & quiz20$days <= 7] %>%
 
 ```{r, echo = FALSE}
 intersect(quiz19$id[quiz19$days >= 4 & quiz19$days <= 5], quiz20$id[quiz20$days >= 6 & quiz20$days <= 7]) %>% length
+```
+
+## Save
+
+```{r, echo = FALSE}
+saveRDS(quiz20, file = "quiz20.RDs")
 ```

@@ -166,3 +166,9 @@ intersect(quiz07$id[quiz07$days >= 0 & quiz07$days <= 1], quiz08$id[quiz08$days 
   `!` %>%
   sum
 ```
+
+## Save
+
+```{r, echo = FALSE}
+saveRDS(quiz08, file = "quiz08.RDs")
+```
