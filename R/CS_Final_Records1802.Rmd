@@ -41,7 +41,7 @@ o.names <- order(total$Name)
 v.names.kr <- c("학번", "이름", "교실출석(20)", "중간고사(20)", "과제(40)", "팀 프로젝트(20)", "총점(100)", "순위(31명중)", "학점")
 total.kr <- total
 names(total.kr) <- v.names.kr
-kable(total.kr[o.names, ], row.names = FALSE)
+kable(total.kr[o.names, ], align = c(rep("c", 2), rep("r", 6), "c"), row.names = FALSE)
 # kable(total)
 ```
 

@@ -39,8 +39,10 @@ total$Class <- factor(c(rep("class_01", nrow(total_01)), rep("class_02", nrow(to
 ## 대체 이수자
 
 ```{r, echo = FALSE}
-(Repl_names <- c("신호영"))
+Repl_names <- c("신호영")
 Repl <- total$Name %in% Repl_names
+total[total$Name == "신호영", ] %>%
+  kable(align = c(rep("c", 2), rep("r", 6), "c"), row.names = FALSE)
 ```
 
 ## 성적 등급 분포
@@ -59,14 +61,18 @@ total$Grades <- ifelse(total$Total >= 90,
 # total$Grades[D.idx] <- "D0"
 total[Repl & total$Grades == "A+", "Grades"] <- "A0"
 counts <- total$Grades %>%
-  table
-perc <- counts %>%
+  table %>%
+  c(Sum = sum(.))
+perc <- total$Grades %>%
+  table %>%
   prop.table %>%
+  c(Sum = sum(.)) %>%
   `*`(100) %>%
   round(digits = 2) 
 rbind("Counts" = format(counts, digits = 0, nsmall = 0), 
-      "Percentage" = format(perc, digits = 1, nsmall = 1), 
-      "Cumulative" = format(cumsum(perc), digits = 1, nsmall = 1)) %>%
+      "Percentage(%)" = format(perc, digits = 1, nsmall = 1), 
+      "Cumulative(%)" = format(cumsum(perc), digits = 1, nsmall = 1)) %>%
+  `[<-`(3, 4, "") %>%
   kable(align = "r")
 ```
 
@@ -79,7 +85,7 @@ total.kr <- total
 names(total.kr) <- v.names.kr
 total.old.kr <- total.old 
 names(total.old.kr) <- c(v.names.kr[1:7], "순위(분반)", "학점(분반)")
-kable(total.kr[o.names, ], row.names = FALSE)
+kable(total.kr[o.names, ], align = c(rep("c", 2), rep("r", 7), "c"), row.names = FALSE)
 ```
 
 <P style = "page-break-before:always">
@@ -96,7 +102,7 @@ my.grade <- function(name){
 }
 # my.grade(c("강민영", "홍효동"))
 # my.grade("서강현")
-my.grade("장진규")
+# my.grade("장진규")
 ```
 
 <!--### Save Data

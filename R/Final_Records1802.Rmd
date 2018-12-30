@@ -1,6 +1,6 @@
 ---
 title: "생활 속의 통계학 최종"
-author: "금융정보통계학과 이기원교수"
+author: "데이터과학융합스쿨 이기원교수"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -21,6 +21,7 @@ panderOptions("table.split.table", Inf)
 ```
 
 
+
 ```{r, Total Scores, message = FALSE, echo = FALSE}
 total <- read.xlsx(file = "../data/scoreList1802_v4.xlsx", 
                    sheetIndex = 1, 
@@ -32,10 +33,18 @@ total <- read.xlsx(file = "../data/scoreList1802_v4.xlsx",
 total <- total[c(2, 1, 5, 6, 4, 7, 8, 3)]
 v_names_total <- c("ID", "Name", "Offline", "Online", "Quiz", "TED", "Data_Lab", "Total")
 names(total) <- v_names_total
+#> 반올림 문제 수작업
 total[total$Name == "박광진", c("Data_Lab", "Total")] <- c(15.65, 90.0)
 total[total$Name == "홍예진", c("Data_Lab", "Total")] <- c(18.85, 95.0)
-# total[total$Name == "이혁희", c("Data_Lab", "Total")] <- c(8.43, 70.0)
-# total[total$Name == "김재인", c("Data_Lab", "Total")] <- c(6.83, 70.0)
+```
+
+## 성적 입력 대상 누락
+
+출석부에는 있지만 성적입력 명단에는 빠진 사람. 
+성적 등급 분포는 통합정보시스템 성적입력 명단을 기준으로 산출함.
+
+```{r, message = FALSE, echo = FALSE}
+kable(total[total$Name == "나형주", ])
 total <- total[!(total$Name == "나형주"), ]
 ```
 
@@ -47,61 +56,91 @@ FA <- total$ID %in% FA_id
 total[FA, "Name"]
 ```
 
-## 대체 명단
+## 대체 이수자 명단
 
 ```{r, eval = TRUE, message = FALSE, echo = FALSE}
 (Repl_names <- c("문경배", "고원영", "박지윤", "최지용", "엄수정", "고혜성", "신유빈", "이나현"))
 Repl <- total$Name %in% Repl_names
 ```
 
-## 줄기-잎 그림
+## 점수 분포(FA 제외)
 
 ```{r, message = FALSE, echo = FALSE}
 total2 <- total[!FA, ]
+# total2$Total %>% 
+#   stem
+#> 점수분포표
 total2$Total %>% 
-  stem 
+  cut(breaks = c(0, 40, 75, 80, 90, 95, 100), include.lowest = TRUE, right = FALSE) %>%
+  table %>%
+  t %>%
+  `row.names<-`("Counts") %>%
+# row.names(scores_tbl) <- "Counts"
+# scores_tbl %>%
+  cbind(Sum = rowSums(.)) %>%
+  kable(align = "r")
+```
+
+## 성적 등급 분포
+
+```{r, message = FALSE, echo = FALSE}
 total2$Grades <- total2$Total %>% 
   cut(breaks = c(0, 40, 75, 80, 90, 95, 100), include.lowest = TRUE, right = FALSE) %>%
-  factor(labels = c("C0", "C+", "B0", "B+", "A0", "A+"))
+  factor(levels = c("[95,100]", "[90,95)", "[80,90)", "[75,80)", "[40,75)", "[0,40)"),
+         labels = c("A+", "A0", "B+", "B0", "C+", "C0"))
+#  factor(labels = c("C0", "C+", "B0", "B+", "A0", "A+"))
 counts <- total2$Grades %>%
   table
 perc <- counts %>%
   prop.table %>%
   `*`(100) %>%
   round(digits = 2) 
-# rbind("Counts" = format(counts, digits = 0, nsmall = 0), 
-#       "Percentage" = format(perc, digits = 1, nsmall = 1), 
-#       "Cumulative" = format(cumsum(perc), digits = 1, nsmall = 1)) %>%
-#   cbind("Sum" = rowSums(.)) %>%
-#   format(digits = 1, nsmall = 1) %>%
-#   kable(align = "r")
-# total2$Grades %<>% 
-#   factor(labels = c("C0", "C+", "B0", "B+", "A0", "A+"))
 total[!FA, ] <- total2[, -9]
 total[!FA, "Grades"] <- total2$Grades
 #> factor level 맨 아래에 "FA" 추가하는 코드
 levels(total$Grades) <- c(levels(total$Grades), "FA")
-total$Grades <- relevel(total$Grades, ref = "FA")
+# total$Grades <- relevel(total$Grades, ref = "FA")
 # levels(total$Grades) <- list(FA = "FA", "C0" = "C0", "C+" = "C+", "B0" = "B0", "B+" = "B+", "A0" = "A0", "A+" = "A+")
 total[FA, "Grades"] <- "FA"
 #> 대체 수강자 중 A+ => A0
 total[Repl & total$Grades == "A+", "Grades"] <- "A0"
-#> 특별 요청
+#> 재수강을 고려한 특별 강등 요청
 total[total$Name == "김수빈", "Grades"] <- "C+"
 counts2 <- total$Grades %>%
-  table
-perc2 <- counts2 %>%
+  table %>% 
+  c(Sum = sum(.))
+perc2 <- total$Grades %>%
+  table %>%
   prop.table %>%
+  c(Sum = sum(.)) %>%
   `*`(100) %>%
   round(digits = 2) 
-rbind("Counts" = format(counts2, digits = 0, nsmall = 0), 
-      "Percentage" = format(perc2, digits = 1, nsmall = 1), 
-      "Cumulative" = format(rev(cumsum(rev(perc2))), digits = 1, nsmall = 1)) %>%
+# rbind("Counts" = counts2, 
+#       "Percentage" = perc2, 
+#       "Cumulative" = cumsum(perc2)) %>%
 #   cbind("Sum" = rowSums(.)) %>%
+#  format(digits = 1, nsmall = 1) %>%
+rbind("Counts" = format(counts2, digits = 0, nsmall = 0), 
+      "Percentage(%)" = format(perc2, digits = 1, nsmall = 1), 
+      "Cumulative(%)" = format(cumsum(perc2), digits = 1, nsmall = 1)) %>%
+# cbind("Sum" = rowSums(.)) %>%
 #   format(digits = 1, nsmall = 1) %>%
+  `[<-`(3, 8, "") %>%
   kable(align = "r")
+```
+
+## 성적 산출 내역
+
+```{r, message = FALSE, echo = FALSE}
 total %>% 
-  kable(align = c(rep("r", 8), "c"))
+  kable(align = c(rep("c", 2), rep("r", 6), "c"))
+```
+
+## 재수강을 고려한 특별 강등 요청
+
+```{r, message = FALSE, echo = FALSE}
+total[total$Name == "김수빈", ] %>%
+  kable(align = c(rep("c", 2), rep("r", 6), "c"))
 ```
 
 <!--
@@ -138,7 +177,9 @@ my_grade <- function(name){
 # my_grade(c("이지현"))
 # my_grade(c("정해찬"))
 # my_grade(c("강예림"))
-my_grade(c("강민진"))
+# my_grade(c("강민진"))
+# my_grade(c("심윤정"))
+# my_grade(c("송유현"))
 ```
 
 
