@@ -36,8 +36,10 @@ names(total) <- v_names_total
 #> 반올림 문제 수작업
 total[total$Name == "박광진", c("Data_Lab", "Total")] <- c(15.65, 90.0)
 total[total$Name == "홍예진", c("Data_Lab", "Total")] <- c(18.85, 95.0)
+total[total$Name == "김수빈", c("Data_Lab", "Total")] <- c(5.19, 74.9)
 ```
 
+<!--
 ## 성적 입력 대상 누락
 
 출석부에는 있지만 성적입력 명단에는 빠진 사람. 
@@ -47,6 +49,7 @@ total[total$Name == "홍예진", c("Data_Lab", "Total")] <- c(18.85, 95.0)
 kable(total[total$Name == "나형주", ])
 total <- total[!(total$Name == "나형주"), ]
 ```
+-->
 
 ## FA 명단
  
@@ -136,12 +139,14 @@ total %>%
   kable(align = c(rep("c", 2), rep("r", 6), "c"))
 ```
 
+<!--
 ## 재수강을 고려한 특별 강등 요청
 
 ```{r, message = FALSE, echo = FALSE}
 total[total$Name == "김수빈", ] %>%
   kable(align = c(rep("c", 2), rep("r", 6), "c"))
 ```
+-->
 
 <!--
 ## 출석, TED 만점자
