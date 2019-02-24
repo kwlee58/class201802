@@ -39,7 +39,7 @@ literacy_roll <- read.xlsx("../data/literacy_1802.xlsx",
                            header = FALSE, 
                            stringsAsFactors = FALSE)
 names(literacy_roll) <- c("dept", "id", "name", "year", "e.mail", "cell.no", 
-                          paste("Q", 1:25, sep = ""), "group")
+                          paste0("Q", 1:25), "group")
 literacy_roll$group %<>% 
   factor(levels = c("Red", "Black")) #> Boxplot 에서 `xlim` = finite 오류를 피하려면 `factor`변환 필요
 literacy_roll$group %>%
@@ -78,7 +78,7 @@ str(literacy_df)
 
 ```{r, echo = FALSE, fig.width = 9, fig.height = 12}
 library(RColorBrewer)
-par(family = "", mar = c(5.1, 4.1, 4.1, 8.1))
+par(family = "KoPubDotum Medium", mar = c(5.1, 4.1, 4.1, 8.1))
 literacy_tbl <- literacy_df %>%
   sapply(FUN = table, useNA = "no")
 kable(literacy_tbl, caption = "Counts")
@@ -115,7 +115,7 @@ text(x = literacy_tbl[1, ] + literacy_tbl[2, ] + literacy_tbl[3, ] + literacy_tb
 ### 문해력 점수 계산
 
 <!--* 정답 맞춰보기
-    * 정답 읽어들이기. `what = ""`로 설정하여 `char`취급. 
+    * 정답 읽어들이기. `what = "KoPubDotum Medium"`로 설정하여 `char`취급. 
 
 * 각 학생들의 답안과 맞춰보기 위하여 정답표 작성.
     * 문항별로 정답과 비교하기 위하여 각 문항을 리스트의 원소로 분리

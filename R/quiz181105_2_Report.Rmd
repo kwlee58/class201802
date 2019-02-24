@@ -154,7 +154,7 @@ tbl_q3_a %>%
 
 `r knitr::include_graphics("../pics/Quiz171023_04_black.png", dpi = NA)`
 
-소득의 절대값이 아니라 상대 비교가 중요하다는 Solnick and Henenway(1998)의 연구결과와 일치. 랜덤화하였지만 응답에는 차이가 없음.
+소득의 절대값이 아니라 상대 비교가 중요하다는 Solnick and Hemenway(1998)의 연구결과와 일치. 랜덤화하였지만 응답에는 차이가 없음.
 
 #### 집계
 

@@ -74,7 +74,7 @@ max(TED13$days, na.rm = TRUE)
 ### 마감일로부터 제출일까지 기간의 분포
 
 ```{r, echo = FALSE}
-par(family = "HCR Dotum LVT")
+par(family = "KoPubDotum Medium")
 pander(table(cut(TED13$days, breaks = c(0:7, 14, 21, 28), 
                  include.lowest = TRUE, right = FALSE)), caption = "일 단위")
 barplot(rev(table(cut(TED13$days, breaks = c(0:28), 
@@ -97,7 +97,7 @@ pander(table(cut(TED13$days, breaks = breaks,
 ### 하루하루 제출 건수의 분포
 
 ```{r, echo = FALSE, fig.width = 12}
-par(family = "HCR Dotum LVT")
+par(family = "KoPubDotum Medium")
 widths <- c(rep(7, 3), 6, 1)
 freqs <- table(cut(TED13$days, breaks = breaks, include.lowest = TRUE, right = FALSE))
 heights <- freqs / diff(breaks)

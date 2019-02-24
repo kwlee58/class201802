@@ -1,0 +1,826 @@
+
+
+
+
+
+
+
+
+<html>
+<head>
+<title> </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body id="iframbody">
+<table border="1">
+<thead>
+	<tr>
+		<th>번호</th>
+		<th>제목</th>
+		<th>등록자명</th>
+		<th>등록일자</th>
+		<th>조회수</th>
+		<th>내용</th>
+	</tr>
+</thead>
+<tbody>
+	
+		
+		
+			<tr>
+				<td>55</td>
+				<td>TED 181209 제출 시간 분석</td>
+				<td>이기원</td>
+				<td>2018-12-12 20:09:47</td>
+				<td>478</td>
+				<td>
+					
+					
+						마지막 TED 강연 댓글 제출시간 분석입니다.<div><br></div><div><a href="http://rpubs.com/kwlee58/450188" target="_blank">TED13 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>54</td>
+				<td>홀짝 게임 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-12-09 17:55:05</td>
+				<td>432</td>
+				<td>
+					
+					
+										<div>공감과 소통 수업 덕택인가요? 여러분은 최고점을 받은 팀이 무려 셋이나 됩니다.&nbsp;</div><div>집계 내용 보고 협동의 진화에 대한 생각을 해 보시기 바랍니다.&nbsp;</div><div><br></div><div><a href="http://rpubs.com/kwlee58/448485" target="_blank">홀짝게임 181206</a></div><div><br></div><div><br></div><div><a href="http://rpubs.com/kwlee58/394261" target="_blank">홀짝게임 180604</a></div><div><br></div><div><br></div><div><a href="http://rpubs.com/kwlee58/335330" target="_blank">홀짝게임 171129</a></div><div><br></div><div><br></div><div><a href="http://rpubs.com/kwlee58/281434" target="_blank">홀짝게임 170531</a></div><div><br></div><div><br></div><div><a href="http://rpubs.com/kwlee58/232132" target="_blank">홀짝게임 161128</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>53</td>
+				<td>맷칭 문제(인터넷 검색 금지판) 집계입니다.</td>
+				<td>이기원</td>
+				<td>2018-12-08 20:59:54</td>
+				<td>409</td>
+				<td>
+					
+					
+										인터넷 검색을 금지했더니 이론적으로 예측한 기대값과 매우 잘 부합하는 결과가 나왔습니다.<div>관찰도수(Observed)와 기대도수(Expected)가 상당히 비슷하죠?<br><div>6년 만에 드디어 ...</div><div>47번의 Q2 집계와 비교해 보세요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/448117" target="_blank">Matching Problem 181206</a></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>52</td>
+				<td>TED 181202, 181204  댓글 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-12-08 20:55:43</td>
+				<td>373</td>
+				<td>
+					
+					
+						11번째와 12번쨰 TED 댓글 제출시간 분석입니다.&nbsp;<div><br></div><div><a href="http://rpubs.com/kwlee58/448114" target="_blank">TED11 Submission Time</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/448112" target="_blank">TED12 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>51</td>
+				<td>19, 20번째 온라인퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-12-05 00:41:00</td>
+				<td>443</td>
+				<td>
+					
+					
+										마지막 퀴즈의 마감일을 좀더 세분하여 분석하였습니다.&nbsp;<div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/445896" target="_blank">Quiz19 Submission Time</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/445901" target="_blank">Quiz20 Submission Time&nbsp;</a></div><div><br></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>50</td>
+				<td>공감과 소통 201802 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-12-04 22:30:45</td>
+				<td>380</td>
+				<td>
+					
+					
+						동과서의 차이를 묻는 문제에서 여러분들은 동양적 사고를 하는 사람들이 더 많은 것으로 나오는군요.&nbsp;<div>팬더와 바나나를 고른다거나 중간 위치 비행접시를 고른 사람들이 많아서 좀 놀랐습니다.&nbsp;</div><div>이 질문지의 응답은 연도별로 대상별로 좀 다릅니다. 전년도 응답들과 비교해 보십시요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/445861" target="_blank">공감과 소통 201802</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/392795" target="_blank">공감과 소통 201801</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/334485" target="_blank">공감과 소통 201702</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/280519" target="_blank">공감과 소통 201701</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/229259" target="_blank">공감과 소통 201602</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228670" target="_blank">공감과 소통(전남 고흥 리더교육)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228668" target="_blank">공감과 소통 201601</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228635" target="_blank">공감과 소통 201502</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228631" target="_blank">공감과 소통(강원 화천 리더교육)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228470" target="_blank">공감과 소통 201402 (동과 서)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228483" target="_blank">공감과 소통 201402(보이지 않는 고릴라)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228569" target="_blank">공감과 소통 201402(초컬릿 실험)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/228601" target="_blank">공감과 소통 201101</a></div><div><br></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>49</td>
+				<td>영문원문과 한글번역문의 학습효과 비교</td>
+				<td>이기원</td>
+				<td>2018-12-04 22:25:58</td>
+				<td>337</td>
+				<td>
+					
+					
+						영문원문으로 공부하는 것과 부실한 국문번역문으로 공부하는 것의 학습효과 차이는 통계적으로 매우 유의한 것으로 나오는군요. 17번 문항의 정답률이 낮은 까닭은 한글 번역이 틀렸기 때문입니다. 가끔 이런 경우가 나오지만 금방 번역 오류를 파악할 수 있습니다. 따라서 한글로 제대로 번역하는 것이 매우 중요합니다.<div>한글 많이 사랑해 주세요.^^</div><div><br></div><div><a href="http://rpubs.com/kwlee58/445857" target="_blank">Learn in Korean or in English</a><br><div><br></div><div><a href="http://rpubs.com/kwlee58/372489" target="_blank">Learning in Korean or in English</a></div><div><br></div><div>2017년 1학기의 집계결과도 마찬가지입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/278661" target="_blank">Media Effects in Learning 170517</a></div>				</div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>48</td>
+				<td>TED 181106, 181111, 181118, 181125 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-12-02 19:51:34</td>
+				<td>381</td>
+				<td>
+					
+					
+						거의 비슷한 패턴을 보이기 때문에 한꺼번에 올렸습니다.<div>TED대신 지식채널을 올린 181106의 경우 마감일이 주중인 탓인지 미제출이 많다는 것 외에 패턴은 거의 같습니다. 각자의 생각을 올려봅니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/444970" target="_blank">TED 181106</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/444971" target="_blank">TED 181111</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/444972" target="_blank">TED 181118</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/444973" target="_blank">TED 181125</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>47</td>
+				<td>Quiz 181128 (Birthday Problem, ...) 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-28 23:48:07</td>
+				<td>533</td>
+				<td>
+					
+					
+																		이번 퀴즈에서는 통계학에서 잘 알려진 유명한 문제들을 다뤄봅니다.&nbsp;<div>Q1은 생일 문제라고 알려져 있습니다. 22명만 모여 
+있어도 생일이 같은 사람이 한쌍 이상 있을 확률이 1/2을 넘어갑니다. 여러분은 결석생을 감안해도 이 인원을 훨씬 넘어가기 때문에
+ 오히려 생일이 같은 사람은 몇 명이나 있을까를 알아봅니다. 생일이 같은 사람들을 날짜 순으로 늘어넣고 세어보면 랜덤화 효과도 잘
+ 드러나고, 월별로 태어나는 비율도 거의 일정하다는 것을 알 수 있으면서 기대인원이 수학적으로 예측한 값과 크게 차이나지 않는 
+것을 알 수 있습니다.&nbsp;</div><div><br></div><div>Q2는 매칭문제라고 잘 알려져 있는 문제인데 이상하게도 
+가수와 노래를 짝짓는 문제에서는 여러분의 정답율이 매우 높습니다. 다 알고 있나 봅니다. 만약 여러분들이 이 노래를 전혀 모르는 
+상태에서 랜덤하게 고른다면 기껏 한 개 정도를 맞힐 것이고 오차라고 해야 한 개입니다. 재수 없으면 하나도 못 맞히고, 재수 
+좋으면 두 개 정도 맞힌다는 것입니다. 여러분이 이렇게 잘 맞추는 것은 수능세대라서인가요?&nbsp;</div><div><br></div><div>Q3는 Thinking Fast and Slow에 나오는 예로서 연비의 정의를 단위 연료당 갈 수 있는 거리로 정의하다보니 생길 수 읶는 오류를 지적하고 있습니다.</div><div><br></div><div>Q4는 인플레 없이 7%를 삭감하는 것과 12% 인플레 상황에서 5% 임금 인상이 동등한 조건임에도 임금인상"이라는 말에 "수용가능핟"는 응답 비율이 늘어나고 있습니다. 그러나, 통계적으로 유의한 수준은 아니군요.</div><div>예년의 응답결과와 비교해 보십시요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/444689" target="_blank">Quiz 181128 집계 결과 요약(생일문제,짝짓기 문제, 화폐환상)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/392221" target="_blank">Quiz 180523</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/331817" target="_blank">Quiz 171115</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/279227" target="_blank">Quiz 170522</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/229420" target="_blank">Quiz 161116</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/182812" target="_blank">Quiz 160518</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>46</td>
+				<td>17, 18번째 온라인퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-11-28 07:58:34</td>
+				<td>378</td>
+				<td>
+					
+					
+														<span style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">이번 두 퀴즈 제출시간의 분포는 어떠한지 덧글로 올려주기 바랍니다.</span><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/443534" target="_blank">Quiz17 Submission Time</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/443533" target="_blank">Quiz18 Submission Time</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>45</td>
+				<td>Quiz 181126 (Framing Effects) 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-27 22:23:21</td>
+				<td>417</td>
+				<td>
+					
+					
+														Q1, Q2는 모두 다 맞춘 사람들이 워낙 많아서 뿌듯합니다. Q3의 경우에도 정답률이 매우 높은 데 뜬금없이 세 개를 고른 사람들이 두 사람이 있어서 무응답과는 다른 "기타"로 나타냈습니다.<div><span style="font-size: 9pt;">Q4에서는 또 다른 유형의 프레이밍 효과를 살펴봅니다. 실업률 10%난 취업률 90%가 같은 내용이고, 실업률 5%나
+ 취업률 95%가 같은 내용이지만 취업률 관점에서 제안한 곳에서는 인플레이션이 낮아지는 정책을 선호하고 실업률 관점에서 제안한 
+곳에서는 그 경향이 달라지는 것을 볼 수 있습니다. 게다가 그 차이는 통계적으로 매우 유의한 수준입니다. 지난 
+실험들과 비교해 보면 차이는 눈에 띄지만 통계적으로 유의한 수준이 아닌 경우가 제법 있습니다. 그 중에서도 2016년 시행한 퀴즈들은&nbsp; 통계적으로 매우 유의한 차이를 보여줍니다.</span></div><div><div><br></div><div><div><a href="http://rpubs.com/kwlee58/443308" target="_blank">Quiz 181126 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/391517" target="_blank">Quiz 180521</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/331817" target="_blank">Quiz 171115</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/279227" target="_blank">Quiz 170522</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/229420" target="_blank">Quiz 161116</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/182812" target="_blank">Quiz 160518</a></div>								</div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>44</td>
+				<td>Saez 교수의 상위소득자 몫 데이터 업데이트</td>
+				<td>이기원</td>
+				<td>2018-11-25 09:44:53</td>
+				<td>451</td>
+				<td>
+					
+					
+														공지사항에 알렸듯이 Saez 교수님이 오래간만에 데이터를 갱신하셨습니다.<div>따라서 관련 데이터를 포함하여 도표를 다시 작성하였습니다.</div><div>수업 시간에 한 얘기를 종합해 보면 소득상위계층의 몫이 줄어들지 않고 있는 현상이 또다른 금융위기를 초래하지 않겠나 하는 것이었습니다. 새로이 추가된 2016-17 자료를 보고 각자의 생각을 말해 봅시다.</div><div><br></div><div><a href="http://prezi.com/r4ubpgancvpn/?utm_campaign=share&amp;utm_medium=copy" target="_blank">성장과 분배(왜 고를 균(均), 저울대 형(衡)인가?) 2017데이터 포함</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>43</td>
+				<td>15, 16번째 온라인퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-11-23 13:45:38</td>
+				<td>436</td>
+				<td>
+					
+					
+										<span style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">이번 두 퀴즈 제출시간의 분포는 어떠한지 덧글로 올려주기 바랍니다.</span><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/442149" target="_blank">Quiz15 Submission Time</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/442146" target="_blank">Quiz16 Submission Time</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>42</td>
+				<td>Quiz 181119 (Framing Effects) 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-22 00:37:22</td>
+				<td>475</td>
+				<td>
+					
+					
+																						Q1, Q2, Q3는 모두 정답률도 매우 높습니다.^^<div><br></div><div>Q4에서는 또 다른 유형의 프레이밍 효과를 살펴봅니다. 실업률 10%난 취업률 90%가 같은 내용이고, 실업률 5%나
+ 취업률 95%가 같은 내용이지만 취업률 관점에서 제안한 곳에서는 인플레이션이 낮아지는 정책을 선호하고 실업률 관점에서 제안한 
+곳에서는 그 경향이 달라지는 것을 볼 수 있습니다. 물론 이 데이터로부터 그 차이는 통계적으로도 매우 유의한 수준입니다. 지난 
+실험들과 비교해 보십시요. 2016년 집계결과는 좀 이상하죠?</div><div><br><div><a href="http://rpubs.com/kwlee58/441643" target="_blank">Quiz 181119 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/390513" target="_blank">Quiz 180516 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/329709" target="_blank">Quiz 171113 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/274746" target="_blank">Quiz 170508 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/225387" target="_blank">Quiz 161107 : Framing Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/181677" target="_blank">Quiz 160516 : Framing Effects</a></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>41</td>
+				<td>인간의 본성탐구 기본질문 집계결과</td>
+				<td>이기원</td>
+				<td>2018-11-22 00:28:45</td>
+				<td>436</td>
+				<td>
+					
+					
+										인간의 본성탐구 수업을 진행하면서 여러분이 그런 상황에 처한다면 어떨게 하겠느냐는 질문에 대한 응답의 집계입니다. 랜덤화 효과 잘 나타나고 있습니다. 천사와 악마는 워낙 뚜렷하게 새겨지는 모양입니다. 작년 수업에서는
+ 질문 순서를 바꿔 보는 것 까지는 생각하지 못했습니다.<div>여러분 응답의 집계 결과를 한번 살펴보십시요. 어떤 일관된 경향이 읽히지 않습니까?</div><div><br></div><div><a href="http://rpubs.com/kwlee58/441639" target="_blank">Quiz 181119 : Human Nature</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/390528" target="_blank">Quiz 180516 : Human Nature</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/331825" target="_blank">Quiz 171115 : Human Nature</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/275025" target="_blank">Quiz 170508 : Human Nature</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>40</td>
+				<td>Quiz 181114 : Anchor Effects 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-14 16:52:19</td>
+				<td>546</td>
+				<td>
+					
+					
+														Q1, Q2 정답율도 높고 핸덤화 효과도 잘 관찰됩니다. 특히 Q2는 아직 배우지도 않은 내용인데 정답율이 높아서 역시 ... 했습니다.^^&nbsp; 똑같이 직관을 시험해 본 Q3에서는 정답율은 그렇게 높다고 할 수는 없어도 50%가까이 정답율 골라주었습니다. 우리의 식량자급율(사료용 포함)은 25%대에 머물러 있으면서 점점 더 낮아지는 경향을 보이고 있습니다.&nbsp;<div><br></div><div>Q4에서는 기준점이 어디에 있느냐에 따라서 응답이 달라진다는 것을 보여줍니다.&nbsp;국공립대학의 등록금이 무상인 나라들을 소개한 Red군에서는 적정 수준이 "무상" 또는 100만원 이라고 이라고 응답한 비율이 63.1%로 국공립대학의 등록금이 우리나라보다 높거나 대등한 나라들의 예를 먼저 들고 적정 수준을 물어본 경우(Black)에 "무상" 또는 100만원이라고 응답한 비율인 26.2%보다 월등히 높은 것을 알 수 있습니다. 500만원 이상을 적정하다고 응답한 비율이 Red 집단에는 아예 없지만 Black 집단에는 7.7% 정도 관찰되는 점도 마찬가지 이유에서입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/439716" target="_blank">Quiz 181114 : Anchor Effects</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/389047" target="_blank">Quiz 180514</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/327977" target="_blank">Quiz 171108</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/273984" target="_blank">Quiz 170503</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/224172" target="_blank">Quiz 161102</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>39</td>
+				<td>13, 14번째 온라인퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-11-14 00:45:16</td>
+				<td>400</td>
+				<td>
+					
+					
+										이번 두 퀴즈 제출시간은 지난 주 두 퀴즈 제출시간과 약간의 차이가 있네요.<div><br></div><div><a href="http://rpubs.com/kwlee58/439510" target="_blank">Quiz13 Submission Time</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/439509" target="_blank">Quiz14 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>38</td>
+				<td>Quiz 181112_2 : Mental Account</td>
+				<td>이기원</td>
+				<td>2018-11-13 23:26:19</td>
+				<td>470</td>
+				<td>
+					
+					
+										Q1은 랜덤화 효과는 잘 드러나는 데 응답이 양분되었습니다. 소득이 많은 게 아니라 소득증가율이 높은 것입니다. 그리고 실제로 
+나타난 현상을 보면 최고한계세율을 높였을 때 하위 99%의 소득증가율이 높아집니다만 통계적으로 얘기할 수 있는 한계는 객관적인 사실,
+ 즉, 최고한계세율이 높았던 시기에 하위99%의 소득증가율도 높았다는 것까지입니다. Q2에서는 랜덤화 효과가 좀 덜 드러난다 싶지만 통계적으로 유의한 수준은 아니고, 정답율이 무려 80%를 넘고 있습니다.Q3에서는 랜덤화효과도 잘 안 보인다 싶더니 통계적으로 유의한 수준의 차이가 나고 있숩니다. 정답률은 만족스럽습니다.<div><br><div>Q4는 심적회계에 대한 질문입니다. 같은 금액이라도 티켓과 현금은 다른 취급을 받습니다. 티켓을 잃어버리는 것과
+ 티켓을 살 현금을 잃어버리는 것에 대한 대응이 판이합니다. 현금을 잃어버리면 가지고 있던 카드로 티켓을 구입할 가능성이 티켓을 
+잃어버렸을 때 재구매할 가능성보다 높습니다. 그 비율이 어떻게 다섯 번의 실험에서 비슷하게 나오는지 신기할 따름입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/439488" target="_blank">Quiz 181112_2 : Mental Account</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/387360" target="_blank">Quiz 180502</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/277809" target="_blank">Quiz 170515 (Q5 참조)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/230170" target="_blank">Quiz 161123 (Q5 참조)</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/230171" target="_blank">Quiz 160530 (Q5 참조)</a></div>				</div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>37</td>
+				<td>Quiz 181112_1 : Monty Hall Problem</td>
+				<td>이기원</td>
+				<td>2018-11-13 23:12:41</td>
+				<td>491</td>
+				<td>
+					
+					
+														<div>이번 퀴즈에서는 랜덤화효과외 여러분의 뛰어난 학습능력을 함께 볼 수 있었습니다. Q1, Q2, Q3 공히 정답률도 높고 랜덤화 효과도 잘 관찰됩니다. 다만, Q2에서 인과관계를 논하는 건은 지나친 비약이라고 했는데도 불구하고 높아지면 낮아진다에 응답한 사람들도 제법 있었습니다.</div><div><br></div><div>Monty Hall 문제로 널리 알려진 Q4에서는 우리의 직관이 얼마나 취약한지 알 수 있습니다. "직관의 헌계" 수업 시간에 
+다루겠지만 염소가 들어 있는 문을 하나 열어 보여주었기 때문에 다른 문에 자동차가 들어 있을 확률은 2/3로 늘어납니다. 따라서 
+바꾸는 것이 옳은 전략입니다. 여러분이 특이한 것은 이전의 정답비율이 꾸준히 낮은 데 비하여 높다는 점이 눈에 띕니다. Red와 Black의 차이는 "바꾼다"와
+ "고수한다"의 순서를 바꾼 것으로 "바꾼다"를 앞에 내세운 Black집단에서 "바꾼다"는 응답이 다소 높게 나왔지만 통계적으로 
+유의한 수준은 아닙니다. 2017년 2학기에는 유의한 차이가 나오기도 했습니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/439490" target="_blank">Quiz 181112_1 : Monty Hall Problem</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/385063" target="_blank">Quiz 180430_2</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/327068" target="_blank">Quiz 171106</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/273972" target="_blank">Quiz 170501</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/222222" target="_blank">Quiz 161026</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/179326" target="_blank">Quiz 160504</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>36</td>
+				<td>Quiz 181107 : Prospect Theory 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-10 19:34:39</td>
+				<td>557</td>
+				<td>
+					
+					
+										Quiz 181107의 Q1은 정답률이 매우 높아서 랜덤화 효과를 논하기 그렇지만, Q2에서는 아주 두렷이 나타납니다. Q3에서는 랜덤화 효과가 다소 의심되어 카이제곱 값을 구해보니 결과에서 보다시피 통계적으로 유의한 차이가 관찰되었습니다. Q4는 우리가 이익은 확실히 하고 손실은 운에 맡기려는 성향을 갖고 있다는 점을 보여 줍니다. 이전 학기의 집계결과와도 비교해 보세요.<div><br></div><div><a href="http://rpubs.com/kwlee58/438378" target="_blank">Quiz 181107 : Prospect Theory</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/387343" target="_blank">Quiz 180430_1</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/325751" target="_blank">Quiz 171030</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/270717" target="_blank">Quiz 170424</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/221329" target="_blank">Quiz 161024</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/178078" target="_blank">Quiz 160502</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>35</td>
+				<td>열한번째와 열두번째 퀴즈 제출시간 분석입니다.</td>
+				<td>이기원</td>
+				<td>2018-11-10 18:58:10</td>
+				<td>430</td>
+				<td>
+					
+					
+										<div>일요일 마감인 퀴즈와 화요일 마감인 퀴즈의 제출시간 집계로부터 어느 정도의 패턴을 찾을 수 있습니다.</div><div>자신의 경험과 집계결과로부터 느낀 바를 덧글로 올려봅시다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/438373" target="_blank">Quiz11 Submission Time</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/438375" target="_blank">Quiz12 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>34</td>
+				<td>TED181028, TED181104 댓글 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-11-10 15:55:58</td>
+				<td>382</td>
+				<td>
+					
+					
+										다섯번째와 여섯번째 TED 댓글 제출시간 분석입니다. 어느 정도 패넡이 보입니다.<div>각자의 생각과 경험을 덧글로 올려주세요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/438345" target="_blank">TED05 Submission Time</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/438346" target="_blank">TED06 Submissiom Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>33</td>
+				<td>아홉번째와 열번째 온라인 퀴즈 제출시간 분석입니다.</td>
+				<td>이기원</td>
+				<td>2018-11-10 11:23:09</td>
+				<td>426</td>
+				<td>
+					
+					
+						막대그래프에 요일을 표시하였으니 어떤 변화와 특징이 있는지 살펴보고 덧글로 올려주기 바랍니다.<div><br></div><div><a href="http://rpubs.com/kwlee58/433039" target="_blank">Quiz 181014 마감 Submission Time</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/433045" target="_blank">Quiz 181021 마감 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>32</td>
+				<td>Quiz 181105_2 : Which world? 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-11-06 22:21:58</td>
+				<td>523</td>
+				<td>
+					
+					
+														이 퀴즈의 Q1, Q2는 어느 정도의 소득 불평등을 여러분이 인정하는가를 묻습니다. 21세기 자본의 저자 토마 피케티는 소득 상위 1%가 전체 소득의 7% 정도를가지거나 소득상위 10%가 전체 소득의 25% 정도를 가져가면 불평등이 심하지 않다고 하였습니다. 여러분의 생각과 비교해 보세요. 그리고 Q3는 현실입니다.<div>Q4는 소득의 절대값보다 상대적 비교를 중시한다는 Solnick and Henenway의 연구결과를 그대로 보여줍니다. 지난 학기들의 집계결과와 비교해 보면 매우 일관된 경향을 파악할 수 있습니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/437057" target="_blank">Quiz 181105_2 : Whcih World?</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/321691" target="_blank">Quiz 171023 : Whcih World?</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/267418" target="_blank">Quiz 170412 : Whcih World?</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/217944" target="_blank">Quiz 161012 : Whcih World?</a></div><div><br></div><div><div><a href="http://rpubs.com/kwlee58/173333" target="_blank">Quiz 160418 : Whcih World?&nbsp;</a></div></div><div><br></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>31</td>
+				<td>TED 181014, 181021  댓글 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-11-04 15:48:16</td>
+				<td>514</td>
+				<td>
+					
+					
+										세번쨰와 네번째 TED 댓글 제출시간 분석입니다. 두번쨰 TED 댓글 제출시간과의 비교를 추가했으니 생각하는 바를 덧글로 올리기 바랍니다.&nbsp;<div><br></div><div><a href="http://rpubs.com/kwlee58/436278" target="_blank">TED 181014 댓글 제출시간 분석</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/436291" target="_blank">TED 181021 댓글 제출시간 분석</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>30</td>
+				<td>성격유형진단과 다중지능검사 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-30 23:11:18</td>
+				<td>512</td>
+				<td>
+					
+					
+																																														여러분의 성격유형진단과 다중지능검사 결과 요약입니다.&nbsp;<div>외향성이 낮은 사람들이 생각보다 많죠? 개방이 높은 사람은 매우 드물고 ...<br><div>개별 검사결과는 학번으로 찾을 수 있도록 하였습니다.</div><div>자신이 현재 추구하고 있는 진로와 잘 맞는지 살펴보세요.</div><div><br></div><div>지난 학기들의 검사결과도 첨부하였으니 비교하고 덧글달아주기 바랍니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/434958" target="_blank">성격유형진단과 다증지능검사결과 요약&nbsp;: 201802</a></div><div><br></div></div><div><a href="http://rpubs.com/kwlee58/379534" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201801</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/333347" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201702</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/275750" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201701</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/226217" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201602</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/180823" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201601</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/333766" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201502</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/333767" target="_blank">성격유형진단과 다중지능검사결과 요약 : 201501</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>29</td>
+				<td>Quiz 181029 - Wason Selection 집계결과요약</td>
+				<td>이기원</td>
+				<td>2018-10-30 15:48:57</td>
+				<td>529</td>
+				<td>
+					
+					
+						이번 퀴즈에서 Q1은 랜덤화 과정이 들어간다는 얘기인데 더블블라인드(이중눈가림)에 혹한 사람들이 많았습니다. 다 제 탓입니다. Q2에서는 상당히 정답률도 높고, 랜덤화도 잘 관찰되고 있습니다. Q3와 Q4는 인지과학에서 잘 알려진 Wason Selection에다 문제 순서까지 섞어보았습니다. 우리는 대체로 추상적인 질문에 약합니다. 이 실험 결과는 이러한 사실을 명확히 보여줍니다. 과거 자료와 비교해 보십시요. 추상적 질문에는 낮은 정답률이 관찰된다는 것을 꾸준히 보여주고 있습니다.<div><br></div><div><a href="http://rpubs.com/kwlee58/434865" target="_blank">Quiz 181029 - Wason Selection</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/378249" target="_blank">Quiz 180419</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/333346" target="_blank">Quiz 171120</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/275035" target="_blank">Quiz 170510</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/227473" target="_blank">Quiz 161114</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/180670" target="_blank">Quiz 160509</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>28</td>
+				<td>선거여론조사의 발달 (마국편)과 (우리나라편) 온라인 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-26 00:36:36</td>
+				<td>533</td>
+				<td>
+					
+					
+																		<div>이번 두 온라인 퀴즈의 제출시간은 지난 퀴즈들과는 또 다른 분포를 보여줍니다.&nbsp;</div><div>랜덤화효과가 놀랄만큼 잘 나타난 경우도 있지만 다소 먼 경우도 있습니다.&nbsp;</div><div>그럼에도 불구하고 통계적으로 유의한 수준은 아니고요.</div><div>이번에 나타난 제출시간 분포의 특징은 무엇이라고 할 수 있겠습니까?</div><div>## 우리나라 편 말미에 미국편 퀴즈 자료를 가져다가 수요일과 일요일에 함께 제출한 사람들의 수효를 계산해 놓았습니다. 여러분의 설명이 맞는 것 같습니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/433039" target="_blank">선거여론조사의 발달 (미국편) 온라인 퀴즈 제출시간 분석</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/433045" target="_blank">선거연론조사의 발달 (우리나라편) 온라인 퀴즈 제출시간 분석</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>27</td>
+				<td>8번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-18 13:02:57</td>
+				<td>501</td>
+				<td>
+					
+					
+														주중에 마감날이 들어 있어서 어떤 모양이 나올까 궁금했는데 6번째 퀴즈와 비슷합니다.<div>일요일 낮 12시 이후가 어떤 의미가 있는 걸까요.</div><div>Quiz07을 일요일에 제출한 사람들과 Quiz08을 일요일에 제출한 사람 중에 몇 명이 겹치는지 추가하였습니다.</div><div>여러분의 생각이 잘 들어맞고 있나요?</div><div><br></div><div><a href="http://rpubs.com/kwlee58/430471" target="_blank">Quiz08 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>26</td>
+				<td>Quiz 181017_02 선거여론조사의 발달(우리나라편) 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-18 01:58:24</td>
+				<td>471</td>
+				<td>
+					
+					
+														Q1의 정답률은 94%로 매우 높은 편이나 Q2의 정답률은 41%, Q3의 정답률은 49%에 불과하였음.<div>Q4에서는&nbsp;빠른 시기(지방선거와 동시 실시)가 먼저 나오는지(Red), 늦은 시기 (내년이후 실시)가 먼저 나오는지(Black)에 따라 응답이 달라질 것으로, Red 집단의 빠른 시기 선호비율이 높게, Black 집단의 늦은 시기 선호 비율이 높게 나올 것으로 기대하였고 표면적으로 그렇게 나왔으며, 통계적으로 유의한 수준임. "불참" =&gt; "모름/응답거절" 으로 재분류. 지난 학기의 실험에서는 표면적으로 차이가 나지만 통계적으로 유의한 수준은 아니었는데 이번 학기에는 뚜렷한 차이를 보입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/430289" target="_blank">Quiz 181017_02 집계결과 요약</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/376958" target="_blank">Quiz 180404 집계결과 요약</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>25</td>
+				<td>Quiz 181017_01 - 선거여론조사의 발달(미국편) 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-18 01:43:35</td>
+				<td>444</td>
+				<td>
+					
+					
+						복습형 퀴즈로 돌려보았으나 Q1의 정답률은 88%, Q2의 정답률은 78%, Q3의 정답룰은 62%로 상당히 높습니다. 잘 가르친 것 같습니다.&nbsp;긍정 답안(찬성한다)가 먼저 나오는지(Red), 부정 답안(반대한다)가 먼저 나오는지(Black)에 따라 응답이 달라질 것으로, Red 집단의 찬성비율이 높게 나올 것으로 기대하였으나, 오히려 엄청난 랜덤화 효과를 확인하였음. ㅠㅠ<div><br></div><div><a href="http://rpubs.com/kwlee58/430287" target="_blank">Quiz 181017_01 집계결과 요약</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/376030" target="_blank">Quiz 180402 집계결과 요약</a><br><div><span style="font-size: 9pt;"><br></span></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>24</td>
+				<td>식생활습관 관련 동영상교육 효과조사 1802 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-16 15:34:28</td>
+				<td>430</td>
+				<td>
+					
+					
+						이번 실험의 목적은 동영상교육의 효과를 측정하는 것입니다.&nbsp;<div>분명히 점수 차이는 통계적으로 유의한 결과 나왔습니다.</div><div>그런데 식생활습관 점수는 모두가 고쳐야 할 상태이고, 동영상을 본 후에도 단지 네 명만 등급이 개선되었습니다. 지난 학기 수강생들의 응답과는 너무 달라서 좀 당황스럽습니다.</div><div><br></div><div>단순히 식생활습관조사만 시행한 경우도 뒤에 올렸으니 비교해 보십시요.</div><div>여러분의 식생활습관에 대해서 몹시 걱정됩니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/429787" target="_blank">식생활습관 관련 동영상교육 효과조사 1802</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/388513" target="_blank">식생활습관 관련 동영상교육 효과조사 1801</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/333349" target="_blank">식생활습관 조사 1702</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/184650" target="_blank">식생활습관 조사 1601&nbsp;</a></div><div><br></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>23</td>
+				<td>7번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-16 14:22:23</td>
+				<td>459</td>
+				<td>
+					
+					
+						일요일이 마감일인 이번 퀴즈의 제출시간은 수요일이 마감이었던 바로 지난번 퀴즈 제출시간과 다른 패턴을 보여줍니다. 마치 다섯번째 상황으로 돌아간 것 같습니다. 제출 인원의 변화, 랜덤화 효과, 제출시간의 변화에 대해서 각자 생각을 올려보세요.<div><br></div><div><a href="http://rpubs.com/kwlee58/429775" target="_blank">Quiz07 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>22</td>
+				<td>독서실태조사 181010 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-16 14:11:44</td>
+				<td>463</td>
+				<td>
+					
+					
+														여러분들의 기본배경부터 종이책, 전자책 독서율과 독서량을 요약하여 올렸습니다.&nbsp;<div>랜덤화 효과 잘 관찰되고 있습니다. 이전 학기의 조사결과와 비교해 보십시요.&nbsp;</div><div>일정한 패턴이 감지될 것입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/429776" target="_blank">독서실태조사 181010</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/368136" target="_blank">독서실태조사 180307</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/311163" target="_blank">독서실태조사 170920</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/262014" target="_blank">독서실태조사 170308</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/212230" target="_blank">독서실태조사 160921</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/165319" target="_blank">독서실태조사 160323</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>21</td>
+				<td>TED 181007 댓글 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-12 00:18:07</td>
+				<td>549</td>
+				<td>
+					
+					
+						두번째 TED 강연 댓글 제출시간 분석입니다. 제출 인원은 늘었는데 마감날 몰리는 현상은 더 심해졌습니다.<div>랜덤화 효과도 지난 TED와 비슷한 수준입니다. 비교해 보세요. TED01과의 비교표를 추가하였습니다. 어떤 변화가 있나요?</div><div><br></div><div><a href="http://rpubs.com/kwlee58/428328" target="_blank">TED 181007 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>20</td>
+				<td>TED 180930 댓글 제출 시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-11 23:57:12</td>
+				<td>514</td>
+				<td>
+					
+					
+						퀴즈와는 달리 제출 시간의 분포에서는 랜덤화 효과가 잘 드러나지 않은 것 같아 보이지만 p-value는 이 정도의 값도 얼마든지 랜덤화효과로 볼 수 있다고 합니다. 퀴즈와 또 다른 점은 마지막 날에 몰리는 정도가 훨씬 심하다는 것입니다. 함께 올리는 TED 181007 댓글 제출시간 분석과 비교해 보세요.<div><br></div><div><a href="http://rpubs.com/kwlee58/428324" target="_blank">TED Submission Time : 180930</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>19</td>
+				<td>6번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-10 08:00:19</td>
+				<td>554</td>
+				<td>
+					
+					
+										<div>금번 퀴즈 제출시간의 분포는 이전과 아주 다른 양상을 보여줍니다.</div><div>랜덤화는 여전히 놀랄 정도입니다만 제출시간이 언제 밀리는지 한번 보시기 바랍니다.</div><div><br></div><a href="http://rpubs.com/kwlee58/427752" target="_blank">Quiz06 Submission Time</a>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>18</td>
+				<td>Quiz 181008_02 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-10 01:40:44</td>
+				<td>467</td>
+				<td>
+					
+					
+						Q1, Q2, Q3 공히 정답률이 매우 높습니다. 랜덤화 효과를 논하기 어려운 상태입니다. Q4의 경우 높다는 문항이 먼저나오는 Red에서는 높다는 응답이 더 많이 나오고, 낮다는 문항이 먼저 나오는 Black에서는낮다는 응답이 더 많이 나올 것으로 기대하였는데 숫자 상으로 그렇게 나왔으나 통계적으로 유의한 수준은 아닙니다.<div>순서를 바꾸는 정도로는 여러분의 눈을 속이기 쉽지 않습니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/427629" target="_blank">Quiz 181008_02 집계결과 요약</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>17</td>
+				<td>Quiz 181008_01 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-10 01:34:53</td>
+				<td>472</td>
+				<td>
+					
+					
+						Q1, Q2, Q3 공히 정답률이 매우 높아서 랜덤화효과를 논하기 어렵습니다. Q4의 경우 찬성을 앞에 내세운 Red에서는 찬성비율이 높고, 반대를 앞 세운 Black에서는 반대 비율인 높을 것으로 기대하였으나 기대한 결과가 나오지 않았습니다. 모름/무응답이 유난히 많습니다. 정말로 국회 비준이 필요하단 사실을 모르는 건가요?<div><br></div><div><a href="http://rpubs.com/kwlee58/427634" target="_blank">Quiz 181008_01 집계결과 요약</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>16</td>
+				<td>5번 퀴즈 제출 시간 분석</td>
+				<td>이기원</td>
+				<td>2018-10-08 00:14:37</td>
+				<td>528</td>
+				<td>
+					
+					
+						이번에는 17명이 미제출입니다. 랜덤화효과는 저도 놀랄 지경입니다.&nbsp;<div>마감 시간에 몰리는 현상이 다시 눈에 띄고, 점수차가 좀 나는 것 같지만 통계적으로 유의한 수준은 아닙니다.</div><div>그밖에 왜 마감날 오후 2시 이후에 몰리는 걸까요?</div><div><br></div><div><a href="http://rpubs.com/kwlee58/426807" target="_blank">Quiz05 Submission TIme</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>15</td>
+				<td>Quiz 181001 - 문해력 조사 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-03 22:26:47</td>
+				<td>592</td>
+				<td>
+					
+					
+										Q1, Q2는 정답률도 상당히 높은 편이면서 랜덤화 효과도 잘 보여줍니다. 다만, 결석 인원이 1교시나 2교시 모두 잘 나뉘지는 않았으나 전체적으로는 랜덤화효과를 잘 보여줍니다. 그런데 1교시와 2교시에 결석한 사람의 그룹이 한명 바뀌었습니다. 어쩐 일일까요?<div>Q3는 수업 시간에 강조하였지만 놓친 사람들이 제법 많습니다. 문해력이 높은 집단이 낮은 집단보다 시간당 중위 임금이 60%높습니다. 이 이야기로부터 문해력이 낮은 집단은 높은 집단보다 시간당 중위임금이 60% 낮다고 해서는 곤란하죠. 믄해력이 낮은 집단은 높은 집단의 1/1.6 = 62.5%를 받습니다. Q4에서는 응답 문항의 순서를 역으로 했을 때 어떤 차이가 생기는지를 살펴보았습니다. 대체로 앞에 나오는 문항에 응답을 많이 한다는 설에 부합하는 응답결과입니다. 통계적으로 유의한 차이가 나왔습니다. 그런 이유로 이러한 문항을 질문할 때에는 로테이션을 해서 문항 위치에 따른 편향을 줄입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/425435" target="_blank">Quiz 181001 - 문해력 조사 집계결과 요약&nbsp;</a></div><div><br></div><div><a href="https://www.nesdc.go.kr/files/result/201810/FILE_201809270125219740.pdf.htm" target="_blank">KBS 추석 여론조사 교차분석표</a></div><div><br></div><div><br></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>14</td>
+				<td>Quiz 181001 - 한글의 힘 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-10-03 22:12:07</td>
+				<td>568</td>
+				<td>
+					
+					
+										이번 퀴즈에서는 Q1, Q2는 정답률이 매우 높아서 랜덤화 효과를 논하기 적절치 않고, Q3는 다소 흐트러져 보야도 랜덤화효과가 잘 나타나 있음을 보여줍니다. Q4에서는 당초에 Red에는 긍정적 답변이 먼저 나오고, Black에는 부정적 답변이 먼저 나오도록 한 것이었는데 복사 과정에서 같은 문항이 나와서 랜덤화효과만 확인한 결과가 되었습니다. 이전 사례에서 보면 문항 순서를 바꾸는 것만으로 어느 정도 영향이 있어 보이기는 한데 아주 통계적으로 유의한 차이를 발견하기는 어렵습니다. 다음 퀴즈 집계결과와 비교해 보십시요.<div><br></div><div><a href="http://rpubs.com/kwlee58/425416" target="_blank">Quiz 181001 - 한글의 힘 집계 결과 요약</a></div><div><br></div><div><br></div><div><a href="http://rpubs.com/kwlee58/371946" target="_blank">Quiz 180319&nbsp;</a>&nbsp;(통계적으로 거의 유의한 차이)</div><div><br></div><div><br></div><div><br></div><div><a href="https://www.nesdc.go.kr/files/result/201810/FILE_201809270125219740.pdf.htm" target="_blank">KBS 추석 여론조사 교차분석표</a></div><div><br></div><div><br></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>13</td>
+				<td>4번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-09-27 01:07:31</td>
+				<td>620</td>
+				<td>
+					
+					
+						Quiz04 제출시간 분석입니다. 이번에는 추석연휴의 여파로 당초 마감일까지 제출이 부진하였고, 제 응답이 미흡한 경우가 일부 있어서 할 수 없이 하루를 연장하였습니다. 데이터를 살펴보니 지금까지와는 다른 패턴이 발견됩니다. 매일 오후 6시 이후의 제출건수 비율과 그 이전의 제출 비율을 비교해 보았습니다. 랜덤화 현상에는 여전히 놀라게 되는데 일찍 제출한 사람들과 늦게 제출한 사람들의 특성 비교에서 차이가 있어 보이지만 통계적으로 유의할 정도는 아닙니다. 각자 생각을 덧글로 올려보세요.<div><br></div><div><a href="http://rpubs.com/kwlee58/423385" target="_blank">Quiz04 Submission Time</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>12</td>
+				<td>3번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-09-24 00:31:51</td>
+				<td>556</td>
+				<td>
+					
+					
+										<span style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">3번 퀴즈 제출시간을 분석하였습니다. 앞 전에 올린 1, 2번 퀴즈 제출시간 분석과 비교해 보십시요.</span><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">마감날 오후2시를 기준으로 나누어 분석한 결과를 추가하였으니 참고하시기 바랍니다.</div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">이번에도 양 집단의 점수 차이가 없습니다. 랜덤화효과에는 저도 놀랍니다.</div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br><div><a href="http://rpubs.com/kwlee58/422484" target="_blank">3번 퀴즈 제출시간 분석</a></div></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>11</td>
+				<td>Quiz 180919 집계결과 요약</td>
+				<td>이기원</td>
+				<td>2018-09-19 11:41:13</td>
+				<td>647</td>
+				<td>
+					
+					
+														이번 퀴즈에서 각 질문에 대하여 랜덤화효과가 잘 보입니다. 다만, Q3의 경우 정답율이 낮아서 반성을 깊이 하고 있습니다. Q4에서는 Red는 갤럽의 질문 원문을 그대로 살리고, Black에서만 분배의 필요성을 부연설명하였는데 그 효과인지 Black집단의 분배 지지가 다소 높게 나타납니다만 통계적으로 유의한 수준은 아닙니다.<div>전체적으로 응답자의 70%정도 성장보다 분배에 경제정책의 주안점을 두어야 한다고 보는 것 같습니다.</div><div>이는 갤럽의 조사결과 중 20대의 54%보다 월등히 높은 수치입니다.&nbsp;</div><div><br></div><div><a href="http://rpubs.com/kwlee58/421297" target="_blank">Quiz 180919 집계결과 요약</a></div><div><br></div><div><a href="http://www.nesdc.go.kr/files/result/201809/FILE_201808310947081320.pdf.htm" target="_blank">한국갤럽 8월5주차 조사결과</a></div><div><br></div><div><a href="http://www.yonhapnews.co.kr/bulletin/2018/09/01/0200000000AKR20180901020600001.HTML" target="_blank">근로소득 상위 0.1% ...(연합뉴스)</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>10</td>
+				<td>Quiz 180917 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-09-18 14:56:15</td>
+				<td>621</td>
+				<td>
+					
+					
+										이번 퀴즈 집계결과는 랜덤화 효과가 무너진 사례들입니다. 항상 기대한 대로 나오지는 않습니다. ㅠㅠ<div>Q1의 경우 정답인 8:2에 응답이 몰려서 파악할 수 없고, Q2와 Q3는 p값이 보여주듯이 두 집단의 응답이 닮았다고 하기 어렵습니다. 통계적으로 유의한 차이가 나왔습니다.</div><div>Q4는 누가 프레임 선점에 능한가의 문제입니다. 통일비용이라는 간단한 단어 하나로 질문과 응답 문항을 제시할 때와 분단비용, 경제 성장 효과를 함께 늘어놓는 프레임 중에서 통일비용 프레임이 더 설득력이 있는 것 같습니다. 그런데, 정말 그렇다고 생각들 하나요?</div><div><br></div><div><a href="http://rpubs.com/kwlee58/421031" target="_blank">Quiz 201817</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>9</td>
+				<td>2번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-09-17 00:18:56</td>
+				<td>558</td>
+				<td>
+					
+					
+														2번 퀴즈 제출시간을 분석하였습니다. 앞 전에 올린 1번 퀴즈 제출시간 분석과 비교해 보십시요.<div>마감날 오후2시를 기준으로 나누어 분석한 결과를 추가하였으니 참고하시기 바랍니다.</div><div>이번에는 양 집단의 점수 차이가 없습니다. (9/18 오후 3:49에 업데이트하였습니다.)<br><div><br></div><div><a href="http://rpubs.com/kwlee58/420945" target="_blank">2번 퀴즈 제출시간 분석</a></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>8</td>
+				<td>1번 퀴즈 제출시간 분석</td>
+				<td>이기원</td>
+				<td>2018-09-16 22:45:19</td>
+				<td>511</td>
+				<td>
+					
+					
+																		마감날 저녁6시 이후에 집중되는 것을 기초통계량과 그래프로 확인할 수 있습니다.<div>마감날 저녁6시 이전에 제출하는 사람들과 그 이후에 제출하는 사람들도 양 집단에 고르게 나뉩니다.</div><div>퀴즈 점수는 그렇지 않네요. (9/18 오후 3:47에 업데이트 하였습니다)<br><div><br></div><div><a href="http://rpubs.com/kwlee58/421039" target="_blank">1번 퀴즈 제출시간 분석</a></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>7</td>
+				<td>Quiz 180912 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-09-15 22:20:29</td>
+				<td>667</td>
+				<td>
+					
+					
+																																		Q1은 정답율이 96.5%에 이를 정도 한 항목에 답안이 몰렸습니다. Q2와 Q3는 랜덤하게 답을 고르도록 했는데 랜덤화현상으로 보기 힘들 정도로 제멋대로인 듯하지만 통계적으로는 충분히 나올 수 있는 경우입니다.&nbsp;<div>부연설명의 효과를 보고자 편집한 Q4에서는 찬성을 유도하는 Red에는 찬성에 필요한 부연설명을 붙이고, 반대를 유도하는 Black에는 반대에 필요한 부연설명을 붙인 결과 표면적으로는 Red의 찬성 인원이 결석인원이 더 많았음에도 불구하고 Black의 찬성 인원보다 많이 나왔습니다. 그러나 p값에서 보듯이 통계적으로 유의한 수준은 아닙니다.&nbsp;</div><div><br></div><div><a href="http://rpubs.com/kwlee58/420029" target="_blank">Quiz 180912</a></div><div><br></div><div>지난 학기 3월5일자 퀴즈도 같은 결과를 보여줍니다. Q4만 비교합니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/366756" target="_blank">Quiz 180305</a></div><div><br></div><div>ㅇ 테러방지법 논란</div><div><br></div><div>한편 테러방지법의 찬반 의견을 묻는 2017년 2학기 8월 30일 퀴즈에서는 통계적으로 유의한 차이가 나타납니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/303908" target="_blank">Quiz 170830</a></div><div><br></div><div>그러나, 같은 주제에 대한 질문임에도 1학기 전인 2017년 3월6일 퀴즈에서 표면적으로는 차이가 있지만 통계적으로 유의한 수준은 결코 아닙니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/257769" target="_blank">Quiz 170306</a></div><div><br></div><div>ㅇ THAAD 도입 찬반</div><div><br></div><div><div>THAAD도입 관련 찬반의견을 묻는 2016년 1학기 3월2일 퀴즈에서도 현격한 차이를 보여줍니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/302661" target="_blank">Quiz 160302</a></div></div><div><br></div><div>그런데 한 학기 지난 8월31일 퀴즈에서는 통계적으로 유의한 차이는 아니지만 Red 보다 Black의 찬성 비율이 더 높게 나와서 당황스러웠습니다.&nbsp;</div><div><br></div><div><a href="http://rpubs.com/kwlee58/420055" target="_blank">Quiz 160831</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>6</td>
+				<td>Quiz 180910 집계 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-09-11 18:19:47</td>
+				<td>721</td>
+				<td>
+					
+					
+																						Q1, Q3 는 너무 정답률이 높아서 랜덤화 효과를 따질 수 없을 정도이고, Q2는 참 닮았죠?<div>Q4에서는 부연설명의 여부에 따라서 응답이 달라진다는 것을 보여주고 싶었는데 예산과는 반대의 결과가 나왔습니다. 소득주도성장이 어떤 것이라는 설명을 들어있는 Red에 찬성이 더 나올 것으로 예상했는데 결과는 반대로 나왔습니다. 통계적으로 유의한 결과는 아니지만 아슬아슬합니다. 부연설명 여부로 비교해보기는 처음인데 예상과 다른 결과가 나와서 뜻밖입니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/418840" target="_blank">Quiz 180910</a></div><div><br></div><div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>5</td>
+				<td>문해력 조사 집계 결과</td>
+				<td>이기원</td>
+				<td>2018-09-09 23:23:50</td>
+				<td>656</td>
+				<td>
+					
+					
+										9월5일에 실시한 문해력 조사 결과 요약입니다. 등급 분포, 결석 인원의 분포 등에서 관찰되는 랜덤화 효과도 신기하지만 예년과의 비교도 흥미롭습니다.<div><br></div><div><a href="http://rpubs.com/kwlee58/424525" target="_blank">문해력조사 201802</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/368134" target="_blank">문해력조사 201801</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/309626" target="_blank">문해력조사 201702</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/260037" target="_blank">문해력조사 201701</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/210128" target="_blank">문해력조사 201602</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/210131" target="_blank">문해력조사 201601</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/110483" target="_blank">문해력조사 201502</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/71466" target="_blank">문해력조사 201501</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>4</td>
+				<td>9월 7일 출석부를 반영한 랜덤화 결과</td>
+				<td>이기원</td>
+				<td>2018-09-08 22:09:01</td>
+				<td>639</td>
+				<td>
+					
+					
+										<div>9월4일 랜덤화결과를 올린 이후 9월7일 수강신청변경 최종일 사이 19명이 나가고 13명이 새로 들어왔습니다. 나간 19명 중에 Red가 9명, Black이 10명입니다. 따라서 새로 들어 온 13명은 Red 6명, Black 7명으로 랜덤하게 나누었습니다. 물론 여러 변수를 동시에 닮도록 하기 위하여 여러 번의 시행을 거쳤습니다. 학년같은 변수는 사실 랜덤화 단계에서 고려하지 않았던 변수입니다. 결과를 보고 간단한 덧글 올리세요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/417904" target="_blank">Red and Black 180907</a></div><div><a href="http://rpubs.com/kwlee58/417904" target="_blank">&nbsp;</a></div><div><a href="http://rpubs.com/kwlee58/417894" target="_blank">Randomization Report (180907)</a></div>				
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>3</td>
+				<td>9월 4일 출석부를 반영한 랜덤화 결과</td>
+				<td>이기원</td>
+				<td>2018-09-04 23:55:34</td>
+				<td>678</td>
+				<td>
+					
+					
+														9월1일자 출석부에서 16명이 수강 변경하고, 16명이 새로 들어와서 인원은 똑같이 162명입니다.<div>수강 변강한 사람들 중에 Red가 7명, Black이 9명이었습니다. 이 숫자도 비슷하죠?</div><div>따라서 새로 들어온 16명은 그룹 간 인원의 균형을 맞추기 위해 Red 7명, Black 9명으로 랜덤하게 배정하였습니다.&nbsp;</div><div>9월1일 랜덤화 결과와 9월4일 랜덤화 결과를 비교하십시요.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/416700" target="_blank">Red and Black 180904</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/417903" target="_blank">Randomization Report 180904</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>2</td>
+				<td>Quiz 180903 집계와 분석</td>
+				<td>이기원</td>
+				<td>2018-09-04 15:04:41</td>
+				<td>757</td>
+				<td>
+					
+					
+										1~3번은 랜덤화 효과를 확인합니다만 1번의 경우만 의미가 있고 2, 3번은 정답에 몰려서 큰 의미를 부여하기는 그렇습니다. 다만, 결석 인원조차 양쪽에 랜덤하게 나뉘었다는 점에 유의할 필요가 있습니다.<div>두 학생이 원래 Red 인데 Black 에 가서 작성해서 제출했군요. 원모군과 안모군은 원래 자리로 가기 바랍니다.</div><div><br></div><div>4번은 질문에 어떤 단어를 사용하느냐에 따라 응답이 달라질 수 있는 사례로 분류되는 데 작년 2학기에 처음 도입을 했습니다. 당시 이슈이었던 탓인지 단어 사용에 따라 약간의 차이가 관찰되었으나 통계적으로 유의한 수준은 아니었고, 금년 1학기에 이어 이번에는 오히려 랜덤화 효과만 관찰되고 있습니다. 내년부터는 다른 단어를 도입해야 할 것 같습니다.</div><div><br></div><div><a href="http://rpubs.com/kwlee58/416604" target="_blank">Quiz 180903 집계결과 요약</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/365982" target="_blank">Quiz 180227 집계결과 요약</a></div><div><br></div><div><a href="http://rpubs.com/kwlee58/416608" target="_blank">Quiz 170828 집계결과 요약</a></div>
+									
+				</td>
+			</tr>
+		
+			<tr>
+				<td>1</td>
+				<td>랜덤화 결과 요약</td>
+				<td>이기원</td>
+				<td>2018-09-01 13:48:11</td>
+				<td>748</td>
+				<td>
+					
+					
+										<div><br></div><div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;">랜덤화의 결과 Red 와 Black 두 집단이 얼마나 닮게 되었는지 2016년 수강생들의 자료부터 살펴봅니다.</div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/415910" target="_blank">Randomization Report</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><a href="http://rpubs.com/kwlee58/364666" target="_blank">Randomization Report(1801)</a><br><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/302325" target="_blank">Randomization Report(1702)</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/253731" target="_blank">Randomization Report(1701)</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/205214" target="_blank">Randomization Report(1602)</a></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><br></div><div style="color: rgb(75, 75, 75); font-family: 돋움, Arial;"><a href="http://rpubs.com/kwlee58/160440" target="_blank">Randomization Report(1601)</a></div></div>
+									
+				</td>
+			</tr>
+		
+		
+</tbody>		
+</table>
+</body>
+</html>
