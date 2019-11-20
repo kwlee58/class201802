@@ -23,7 +23,7 @@ options(width = 180)
 -->
 
 ```{r, data, echo = FALSE, results = 'hide'}
-food <- read.xlsx("../data/food_plan_181015.xlsx", 
+food <- read.xlsx("../data/food_plan_181015_recoding.xlsx", 
                   sheetIndex = 1, 
                   startRow = 2, endRow = 155, 
                   colIndex = c(3:7, 9:30), 
