@@ -178,6 +178,7 @@ pander(t(matrix(paste(format(prop.table(tbl.stereotype)*100, digits = 2, nsmall 
 ```{r, chocolate, echo = FALSE}
 # pander(summary(chocolate), caption = "몇 개나 줄 거예요?")
 pander(table(chocolate_1), caption = "몇 개나 줄 거예요?")
+pander(summary(gorilla$Q9.1), caption = "기초통계")
 pander(table(chocolate_2), caption = "초등학교 2학년")
 pander(table(chocolate_3), caption = "유치원 아동")
 ```
